@@ -1,1 +1,1 @@
-# FSC
+# Flight Scheduling Capstone
