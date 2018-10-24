@@ -71,3 +71,25 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<accordion close-others="false">
+       <accordion-group is-open="isopen">
+         <accordion-heading ng-click="isopen=!isopen">
+         <div>{{item.Title}}</div>
+         </accordion-heading>
+         <div ng-bind-html="item.Content"></div>
+       <ol ui-tree-nodes="" ng-model="item.Options">
+         <li ng-repeat="subItem in item.Options " ui-tree-node>
+           <div ui-tree-handle>
+             <accordion close-others="false">
+               <accordion-group>
+                 <accordion-heading>{{subItem.Title}}
+                 </accordion-heading>
+                 <div ng-bind-html="subItem.Content"></div>
+               </accordion-group>
+             </accordion>
+           </div>
+         </li>
+       </ol>
+       </accordion-group>
+     </accordion>
