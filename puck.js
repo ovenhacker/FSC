@@ -1,5 +1,5 @@
 $(function(){
-	$('.dragbox')
+	$('.puck')
 	.each(function(){
 		$(this).hover(function(){
 			$(this).find('h2').addClass('collapse');
@@ -8,11 +8,9 @@ $(function(){
 		})
 		.find('h2').hover(function(){
 			$(this).find('.configure').css('visibility', 'visible');
-		}, function(){
-			$(this).find('.configure').css('visibility', 'hidden');
 		})
 		.click(function(){
-			$(this).siblings('.dragbox-content').toggle();
+			$(this).siblings('.puck-content').toggle();
 		})
 		.end()
 		.find('.configure').css('visibility', 'hidden');

@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- manual CSS specifications -->
+    <link rel="stylesheet" type="text/css" href=".\puck.css">
     <style>
       body{
         padding-top: 56px;
@@ -29,7 +30,7 @@
   <body>
     <!-- Fixed navbar which I copied and pasted from Bootstrap website -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">4th Fighter Wing Scheduling</a>
+      <a class="navbar-brand" href="#">PUCC: 4th Fighter Wing</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,35 +62,63 @@
       </div>
     </nav>
     <div class="container-fluid" id="schedule-container" style="background:gray">
-      <!--Sample schedule picture -->
-      <img src="ScheduleExample.jpg" alt="Schedule (probably in JavaScript) goes here">
-    </div>
+      <!-- Copied from  http://webdeveloperplus.com/jquery/collpasible-drag-drop-panels/ -->
+      <div class="column" id="column1">
+        <div class="puck" id="item1" >
+            <h2>Handle 1</h2>
+      	    <div class="puck-content" >
+      				<table style="width:100%">
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Age</th>
+                </tr>
+                <tr>
+                  <td>Jill</td>
+                  <td>Smith</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Eve</td>
+                  <td>Jackson</td>
+                  <td>94</td>
+                </tr>
+              </table>
+      			</div>
+      	</div>
+      	<div class="puck" id="item2" >
+      		  <h2>Handle 2</h2>
+      			<div class="puck-content" >
+      				<!-- Panel Content Here -->
+      			</div>
+      	</div>
+    		<div class="puck" id="item3" >
+      			<h2>Handle 3</h2>
+      			<div class="puck-content" >
+      				<!-- Panel Content Here -->
+      			</div>
+    		</div>
+      </div>
+      <div class="column" id="column2" >
+    		<div class="puck" id="item4" >
+    			<h2>Handle 4</h2>
+    			<div class="puck-content" >
+    				<!-- Panel Content Here-->
+    			</div>
+    		</div>
+    		<div class="puck" id="item5" >
+    			<h2>Handle 5</h2>
+    			<div class="puck-content" >
+    				<!--Panel Content Here-->
+    			</div>
+    		</div>
+      </div>
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src=".\puck.js"></script>
   </body>
 </html>
-
-<accordion close-others="false">
-       <accordion-group is-open="isopen">
-         <accordion-heading ng-click="isopen=!isopen">
-         <div>{{item.Title}}</div>
-         </accordion-heading>
-         <div ng-bind-html="item.Content"></div>
-       <ol ui-tree-nodes="" ng-model="item.Options">
-         <li ng-repeat="subItem in item.Options " ui-tree-node>
-           <div ui-tree-handle>
-             <accordion close-others="false">
-               <accordion-group>
-                 <accordion-heading>{{subItem.Title}}
-                 </accordion-heading>
-                 <div ng-bind-html="subItem.Content"></div>
-               </accordion-group>
-             </accordion>
-           </div>
-         </li>
-       </ol>
-       </accordion-group>
-     </accordion>
