@@ -1,0 +1,126 @@
+<!-- The Schedule -->
+<!--What kind of views do we want to include in our schedule solution?-->
+<!--What restrictions should we place on the various views?-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- manual CSS specifications -->
+    <link rel="stylesheet" type="text/css" href=".\puck.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      body{
+        padding-top: 56px;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      #schedule-container{
+        height: 92vh;
+        width: 100vw;
+        border: 2px solid;
+      }
+    </style>
+    <title>Schedule - 4th Fighter Wing</title>
+  </head>
+  <body>
+    <!-- Fixed navbar which I copied and pasted from Bootstrap website -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">PUCC: 4th Fighter Wing</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Schedule <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Medical <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Maintenance <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Operations <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Training <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Help <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+    <!-- pucks go here-->
+    <div class="container-fluid" id="schedule-container" style="background:gray">
+      <!-- Copied from  http://webdeveloperplus.com/jquery/collpasible-drag-drop-panels/ -->
+      <div class="column" id="column1">
+        <div class="puck" id="item1" >
+            <h2>Handle 1</h2>
+      	    <div class="puck-content" >
+      				<table style="width:100%">
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Age</th>
+                </tr>
+                <tr>
+                  <td>Jill</td>
+                  <td>Smith</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Eve</td>
+                  <td>Jackson</td>
+                  <td>94</td>
+                </tr>
+              </table>
+      			</div>
+      	</div>
+      	<div class="puck" id="item2" >
+      		  <h2>Handle 2</h2>
+      			<div class="puck-content" >
+      				<!-- Panel Content Here -->
+      			</div>
+      	</div>
+    		<div class="puck" id="item3" >
+      			<h2>Handle 3</h2>
+      			<div class="puck-content" >
+      				<!-- Panel Content Here -->
+      			</div>
+    		</div>
+      </div>
+      <div class="column" id="column2" >
+    		<div class="puck" id="item4" >
+    			<h2>Handle 4</h2>
+    			<div class="puck-content" >
+    				<!-- Panel Content Here-->
+    			</div>
+    		</div>
+    		<div class="puck" id="item5" >
+    			<h2>Handle 5</h2>
+    			<div class="puck-content" >
+    				<!--Panel Content Here-->
+    			</div>
+    		</div>
+      </div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src=".\puck.js"></script>
+  </body>
+</html>
