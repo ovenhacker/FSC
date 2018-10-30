@@ -28,10 +28,16 @@
     </style>
   <script>
   $( function() {
-    $( ".sortable" ).sortable({
-      connectWith: ".sortable"
+    $( ".flight" ).sortable({
+      connectWith: ".flight"
     });
-    $( ".sortable" ).disableSelection();
+    $( ".flight" ).disableSelection();
+  } );
+  $( function() {
+    $( ".pilot" ).sortable({
+      connectWith: "pilot"
+    });
+    $( ".pilot" ).disableSelection();
   } );
   </script>
 </head>
@@ -71,17 +77,32 @@
   </nav>
   <!-- pucks go here-->
   <div class="container-fluid" id="schedule-container" style="background:gray">
-    <ul class="sortable" style="width: 30em; float:left;">
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1A</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2A</li>
+    <ul class="flight" style="width: 30em; float:left;">
+      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1A
+        <ul class="pilot">
+          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot A</li>
+
+        </ul>
+      </li>
+      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2A
+        <ul class="pilot">
+          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot C</li>
+          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot D</li>
+        </ul>
+      </li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3A</li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4A</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5A</li>
+      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5A
+        <ul class="pilot">
+          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot E</li>
+          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot F</li>
+        </ul>
+      </li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6A</li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7A</li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 8A</li>
     </ul>
-    <ul class="sortable" style="width: 30em; float:left;">
+    <ul class="flight" style="width: 30em; float:left;">
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1B</li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2B</li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3B</li>
@@ -91,7 +112,7 @@
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7B</li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 8B</li>
     </ul>
-    <ul class="sortable" style="width: 30em; float:left;">
+    <ul class="flight" style="width: 30em; float:left;">
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1C</li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2C</li>
       <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3C</li>
