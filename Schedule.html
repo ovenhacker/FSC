@@ -16,9 +16,22 @@
       body{
         padding-top: 56px;
       }
-      img {
-        width: 100%;
-        height: auto;
+      .day {
+        width: 200px;
+        padding:25px;
+      }
+      .slot {
+          background-color: white;
+          width: 200px;
+          height: 30px;
+          border: 1px solid black;
+      }
+      .item {
+          background-color: white;
+          width: 200px;
+          height: 30px;
+          float: right;
+          border: 1px solid black;
       }
       #schedule-container{
         height: 92vh;
@@ -27,18 +40,23 @@
       }
     </style>
   <script>
-  $( function() {
-    $( ".flight" ).sortable({
-      connectWith: ".flight"
+    $(function() {
+      $(".item").draggable();
+      $(".slot").droppable({
+        drop: function(event, ui) {
+          var $this = $(this);
+          $this.append(ui.draggable);
+          var width = $this.width();
+          var height = $this.height();
+          var cntrLeft = (width / 2) - (ui.draggable.width() / 2);
+          var cntrTop = (height / 2) - (ui.draggable.height() / 2);
+          ui.draggable.css({
+            left: cntrLeft + "px",
+            top: cntrTop + "px"
+          });
+        }
+      });
     });
-    $( ".flight" ).disableSelection();
-  } );
-  $( function() {
-    $( ".pilot" ).sortable({
-      connectWith: "pilot"
-    });
-    $( ".pilot" ).disableSelection();
-  } );
   </script>
 </head>
 <body>
@@ -75,53 +93,40 @@
 
     </div>
   </nav>
-  <!-- pucks go here-->
+  <!-- puckboard-->
   <div class="container-fluid" id="schedule-container" style="background:gray">
-    <ul class="flight" style="width: 30em; float:left;">
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1A
-        <ul class="pilot">
-          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot A</li>
-
-        </ul>
-      </li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2A
-        <ul class="pilot">
-          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot C</li>
-          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot D</li>
-        </ul>
-      </li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3A</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4A</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5A
-        <ul class="pilot">
-          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot E</li>
-          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Pilot F</li>
-        </ul>
-      </li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6A</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7A</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 8A</li>
-    </ul>
-    <ul class="flight" style="width: 30em; float:left;">
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1B</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2B</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3B</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4B</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5B</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6B</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7B</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 8B</li>
-    </ul>
-    <ul class="flight" style="width: 30em; float:left;">
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1C</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2C</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3C</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4C</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5C</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6C</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7C</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 8C</li>
-    </ul>
+    <div class="day" style="float: right">
+      <div class="item">Flight 1</div>
+      <div class="item">Flight 2</div>
+      <div class="item">Flight 3</div>
+      <div class="item">Flight 4</div>
+      <div class="item">Flight 5</div>
+      <div class="item">Flight 6</div>
+    </div>
+    <div class="day">
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+    </div>
+    <div class="day">
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+    </div>
+    <div class="day">
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+    </div>
   </div>
 </body>
 </html>
