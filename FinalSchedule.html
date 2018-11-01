@@ -1,80 +1,62 @@
 <!-- finalized schedule -->
-
-<!doctype html>
+<!-- copied from W3Schools for drop down menus -->
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
+  <title>Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href=".\puck.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <!--jQuery imports -->
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- manual CSS specifications -->
-  <style>
-      body{
-        padding-top: 56px;
-      }
-      img {
-        width: 100%;
-        height: auto;
-      }
-      #schedule-container{
-        height: 92vh;
-        width: 100vw;
-        border: 2px solid;
-      }
-    </style>
-  <script>
-  $( function() {
-    $( ".sortable" ).sortable({
-      connectWith: ".sortable"
-    });
-    $( ".sortable" ).disableSelection();
-  } );
-  </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <!-- Fixed navbar which I copied and pasted from Bootstrap website -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">PUCC: 4th Fighter Wing</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href=".\finalschedule.html">Final Schedule <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href=".\Schedule.html">Schedule <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href=".\medical.html">Medical <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href=".\MXpage.html">Maintenance <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href=".\OperationsSchedulingoffice.html">Operations <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href=".\trainingSquadron.html">Training <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href=".\accountsettings.html">Profile <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Help <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <font size= "+1">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=".\index.html"><font size= "+2">PUCC: 4th Fighter Wing</font></a>
     </div>
-  </nav>
+    <ul class="nav navbar-nav">
 
-  <h1> Final Schedule </h>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href=".\FinalSchedule.html">Finalized Schedule</a></li>
+          <li><a href=".\Schedule.html">Edit Schedule</a></li>
+          <li><a href=".\MXConfigs.html">MX Configs</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Inputs
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href=".\MedicalInputs.html">Medical</a></li>
+          <li><a href=".\AirSchedulingOffice.html">Airspace</a></li>
+          <li><a href=".\PilotInputs.html">Personal</a></li>
+          <li><a href=".\TrainingSquadron.html">Currencies/Quals/Flight#</a></li>
+          <li><a href=".\GroundTraining.html">Academics</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href=".\AccountSettings.html">Account Settings</a></li>
+          <li><a href=".\LogIn.html">Logout</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    </font>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>The Finalized Schedule</h3>
+  <p>The pilots can come here to see the schedule for t he weeks (they can also look threough previous weeks) </p>
+</div>
+
 </body>
 </html>
