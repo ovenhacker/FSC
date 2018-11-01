@@ -2,12 +2,66 @@
 <!-- copied from W3Schools for drop down menus -->
 <html lang="en">
 <head>
-  <title>Home</title>
+  <title>Final Schedule</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--jQuery imports -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- manual CSS specifications -->
+  <style>
+      body{
+        padding-top: 56px;
+      }
+      .day {
+        width: 200px;
+        padding:25px;
+      }
+      .slot {
+          background-color: white;
+          width: 200px;
+          height: 30px;
+          border: 1px solid black;
+      }
+      .item {
+          background-color: white;
+          width: 200px;
+          height: 30px;
+          float: right;
+          border: 1px solid black;
+      }
+      #schedule-container{
+        height: 92vh;
+        width: 100vw;
+        border: 2px solid;
+      }
+    </style>
+  <script>
+    $(function() {
+      $(".item").draggable();
+      $(".slot").droppable({
+        drop: function(event, ui) {
+          var $this = $(this);
+          $this.append(ui.draggable);
+          var width = $this.width();
+          var height = $this.height();
+          var cntrLeft = (width / 2) - (ui.draggable.width() / 2);
+          var cntrTop = (height / 2) - (ui.draggable.height() / 2);
+          ui.draggable.css({
+            left: cntrLeft + "px",
+            top: cntrTop + "px"
+          });
+        }
+      });
+    });
+  </script>
+
+
+
+
 </head>
 <body>
 
@@ -53,10 +107,46 @@
   </div>
 </nav>
 
+<!--
 <div class="container">
   <h3>The Finalized Schedule</h3>
   <p>The pilots can come here to see the schedule for t he weeks (they can also look threough previous weeks) </p>
 </div>
+-->
+
+<div class="container-fluid" id="schedule-container" style="background:gray">
+  <div class="day" style="float: right">
+    <div class="item">Flight 1</div>
+    <div class="item">Flight 2</div>
+    <div class="item">Flight 3</div>
+    <div class="item">Flight 4</div>
+    <div class="item">Flight 5</div>
+    <div class="item">Flight 6</div>
+  </div>
+  <div class="day">
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+  </div>
+  <div class="day">
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+  </div>
+  <div class="day">
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+    <div class="slot"></div>
+  </div>
 
 </body>
 </html>
