@@ -13,45 +13,49 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- manual CSS specifications -->
   <style>
-      body
-      .day {
-        width: 200px;
-        padding:25px;
-      }
-      .slot {
-          background-color: white;
-          width: 200px;
-          height: 30px;
-          border: 1px solid black;
-      }
-      .item {
-          background-color: white;
-          width: 200px;
-          height: 30px;
-          float: right;
-          border: 1px solid black;
-      }
+    .navbar {
+      position: relative;
+      min-height: 50px;
+      margin-bottom: 0px;
+      border: 1px solid transparent;
+    }
+    .day {
+      width: 200px;
+      padding:25px;
+    }
+    .slot {
+      background-color: white;
+      width: 200px;
+      height: 30px;
+      border: 1px solid black;
+    }
+    .item {
+      background-color: white;
+      width: 200px;
+      height: 30px;
+      float: right;
+      border: 1px solid black;
+    }
 
-      .column {
-          float: left;
-          width: 15%;
-          padding:25px;
-      }
-      /* Clear floats after the columns */
-      .row:after {
-          content: "";
-          display: table;
-          clear: both;
-          padding:25px;
-      }
+    .column {
+      float: left;
+      width: 15%;
+      padding:25px;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      padding:25px;
+    }
 
-
-      #schedule-container{
-        height: 92vh;
-        width: 100vw;
-        border: 2px solid;
-      }
-    </style>
+    #schedule-container{
+      height: 92vh;
+      width: 100vw;
+      border: 2px solid;
+    }
+  </style>
   <script>
     $(function() {
       $(".item").draggable();
@@ -75,16 +79,15 @@
 </head>
 <body>
 <!-- Nav bar! -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-static-top" style="background-color: #393a3d">
   <div class="container-fluid">
     <font size= "+1">
     <div class="navbar-header">
-      <a class="navbar-brand" href=".\index.html"><font size= "+2">PUCC: 4th Fighter Wing</font></a>
+      <a class="navbar-brand" href=".\index.html"><font size= "+2"style="color:white">PUCC: 4th Fighter Wing</font></a>
     </div>
-    <ul class="nav navbar-nav">
-
+    <ul class="nav navbar-nav" style="float: right">
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"style="color:white">Schedule
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href=".\FinalSchedule.html">Finalized Schedule</a></li>
@@ -93,7 +96,7 @@
         </ul>
       </li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Inputs
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Inputs
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href=".\MedicalInputs.html">Medical</a></li>
@@ -104,14 +107,13 @@
         </ul>
       </li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"style="color:white">User
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href=".\AccountSettings.html">Account Settings</a></li>
           <li><a href=".\LogIn.html">Logout</a></li>
         </ul>
       </li>
-
     </ul>
     </font>
   </div>
@@ -136,31 +138,31 @@
     <div class="item">Flight 6</div>
   </div>
   <div class="row">
-  <div class="column">
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
+    <div class="column">
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+    </div>
+    <div class="column">
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+    </div>
+    <div class="column">
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+    </div>
   </div>
-  <div class="column">
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-  </div>
-  <div class="column">
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-    <div class="slot"></div>
-  </div>
-</div>
 </div>
 
 </body>
