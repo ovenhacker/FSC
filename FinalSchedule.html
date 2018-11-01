@@ -31,6 +31,21 @@
           float: right;
           border: 1px solid black;
       }
+
+      .column {
+          float: left;
+          width: 15%;
+          padding:25px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+          content: "";
+          display: table;
+          clear: both;
+          padding:25px;
+      }
+
+
       #schedule-container{
         height: 92vh;
         width: 100vw;
@@ -57,12 +72,9 @@
     });
   </script>
 
-
-
-
 </head>
 <body>
-
+<!-- Nav bar! -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <font size= "+1">
@@ -104,7 +116,7 @@
     </font>
   </div>
 </nav>
-
+<!-- Nav bar end -->
 <!--
 <div class="container">
   <h3>The Finalized Schedule</h3>
@@ -113,6 +125,8 @@
 -->
 
 <div class="container-fluid" id="schedule-container" style="background:gray">
+
+
   <div class="day" style="float: right">
     <div class="item">Flight 1</div>
     <div class="item">Flight 2</div>
@@ -121,7 +135,8 @@
     <div class="item">Flight 5</div>
     <div class="item">Flight 6</div>
   </div>
-  <div class="day">
+  <div class="row">
+  <div class="column">
     <div class="slot"></div>
     <div class="slot"></div>
     <div class="slot"></div>
@@ -129,7 +144,7 @@
     <div class="slot"></div>
     <div class="slot"></div>
   </div>
-  <div class="day">
+  <div class="column">
     <div class="slot"></div>
     <div class="slot"></div>
     <div class="slot"></div>
@@ -137,7 +152,7 @@
     <div class="slot"></div>
     <div class="slot"></div>
   </div>
-  <div class="day">
+  <div class="column">
     <div class="slot"></div>
     <div class="slot"></div>
     <div class="slot"></div>
@@ -145,6 +160,8 @@
     <div class="slot"></div>
     <div class="slot"></div>
   </div>
+</div>
+</div>
 
 </body>
 </html>
