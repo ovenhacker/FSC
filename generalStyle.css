@@ -9,7 +9,8 @@
 }
 .day {
   width: 200px;
-  padding:5px;
+  padding:5px
+  floar: right;
 }
 .dropdown-menu {
   right: 0;
