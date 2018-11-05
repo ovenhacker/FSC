@@ -1,44 +1,20 @@
-<!doctype html>
+<!-- finalized schedule -->
+<!-- copied from W3Schools for drop down menus -->
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
+  <title>Final Schedule</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href=".\puck.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- standard Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- manual CSS overrides sheet -->
+  <link rel="stylesheet" type="text/css" href="generalStyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!--jQuery imports -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- manual CSS specifications -->
-  <style>
-      body{
-        padding-top: 56px;
-      }
-      .day {
-        width: 200px;
-        padding:25px;
-      }
-      .slot {
-          background-color: white;
-          width: 200px;
-          height: 30px;
-          border: 1px solid black;
-      }
-      .item {
-          background-color: white;
-          width: 200px;
-          height: 30px;
-          float: right;
-          border: 1px solid black;
-      }
-      #schedule-container{
-        height: 92vh;
-        width: 100vw;
-        border: 2px solid;
-      }
-    </style>
+
   <script>
     $(function() {
       $(".item").draggable();
@@ -58,52 +34,72 @@
       });
     });
   </script>
+
 </head>
 <body>
-  <!-- Fixed navbar which I copied and pasted from Bootstrap website -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">PUCC: 4th Fighter Wing</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Schedule <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Medical <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Maintenance <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Operations <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Training <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Help <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
+<!-- Nav bar! -->
+<nav class="navbar navbar-inverse navbar-static-top" style="background-color: #393a3d">
+  <div class="container-fluid">
+    <font size= "+1">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=".\index.html"><font class="navbar-title" size= "+2">PUCC: 4th Fighter Wing</font></a>
+    </div>
+    <ul class="nav navbar-nav" style="float: right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><font class="navbar-title">Schedule</font>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href=".\FinalSchedule.html">Finalized Schedule</a></li>
+          <li><a href=".\Schedule.html">Edit Schedule</a></li>
+          <li><a href=".\MXConfigs.html">MX Configs</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><font class="navbar-title">Inputs</font>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href=".\MedicalInputs.html">Medical</a></li>
+          <li><a href=".\AirSchedulingOffice.html">Airspace</a></li>
+          <li><a href=".\PilotInputs.html">Personal</a></li>
+          <li><a href=".\TrainingSquadron.html">Currencies/Quals/Flight#</a></li>
+          <li><a href=".\GroundTraining.html">Academics</a></li>
+        </ul>
+      </li>
+      <li class="dropdown dropdown-menu-right">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><font class="navbar-title">User</font>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href=".\AccountSettings.html">Account Settings</a></li>
+          <li><a href=".\LogIn.html">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+    </font>
+  </div>
+</nav>
+<!-- Nav bar end -->
 
-    </div>
-  </nav>
-  <!-- puckboard-->
-  <div class="container-fluid" id="schedule-container" style="background:gray">
-    <div class="day" style="float: right">
-      <div class="item">Flight 1</div>
-      <div class="item">Flight 2</div>
-      <div class="item">Flight 3</div>
-      <div class="item">Flight 4</div>
-      <div class="item">Flight 5</div>
-      <div class="item">Flight 6</div>
-    </div>
-    <div class="day">
+
+<!--
+<div class="container">
+  <h3>The Finalized Schedule</h3>
+  <p>The pilots can come here to see the schedule for t he weeks (they can also look threough previous weeks) </p>
+</div>
+-->
+<!--Schedule container start-->
+<div class="container-fluid" id="schedule-container" style="background:gray">
+
+
+  <div class="day" style="float: right">
+    <div class="item">Flight 1</div>
+    <div class="item">Flight 2</div>
+    <div class="item">Flight 3</div>
+    <div class="item">Flight 4</div>
+    <div class="item">Flight 5</div>
+    <div class="item">Flight 6</div>
+  </div>
+  <div class="row">
+    <div class="column">
       <div class="slot"></div>
       <div class="slot"></div>
       <div class="slot"></div>
@@ -111,7 +107,7 @@
       <div class="slot"></div>
       <div class="slot"></div>
     </div>
-    <div class="day">
+    <div class="column">
       <div class="slot"></div>
       <div class="slot"></div>
       <div class="slot"></div>
@@ -119,7 +115,7 @@
       <div class="slot"></div>
       <div class="slot"></div>
     </div>
-    <div class="day">
+    <div class="column">
       <div class="slot"></div>
       <div class="slot"></div>
       <div class="slot"></div>
@@ -128,5 +124,7 @@
       <div class="slot"></div>
     </div>
   </div>
+</div>
+
 </body>
 </html>
