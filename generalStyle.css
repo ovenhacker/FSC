@@ -8,11 +8,17 @@
     color: white;
 }
 .day {
+<<<<<<< HEAD
   width: 150px;
   padding:0px;
   z-index: 1;
   position:absolute;
   float:right;
+=======
+  width: 200px;
+  padding:5px;
+  float: right;
+>>>>>>> e416a64ed69c6efbcd300b78616f346e7148c6bd
 }
 .dropdown-menu {
   right: 0;
@@ -46,9 +52,12 @@
   padding:25px;
   z-index: 2;
 }
-
-#schedule-container{
-  height: 92vh;
+#navigation{
+  height: 58px;
   width: 100vw;
+}
+#schedule-container{
+  height: 90vh;
+  width: 99vw;
   border: 2px solid;
 }
