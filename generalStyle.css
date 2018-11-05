@@ -1,0 +1,49 @@
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0px;
+  border: 1px solid transparent;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+.day {
+  width: 200px;
+  padding:5px;
+}
+.dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.slot {
+  background-color: white;
+  width: 200px;
+  height: 30px;
+  border: 1px solid black;
+}
+.item {
+  background-color: white;
+  width: 200px;
+  height: 30px;
+  float: right;
+  border: 1px solid black;
+}
+
+.column {
+  float: left;
+  width: 15%;
+  padding:25px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  padding:25px;
+}
+
+#schedule-container{
+  height: 92vh;
+  width: 100vw;
+  border: 2px solid;
+}
