@@ -15,14 +15,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-  <!-- jQuery navbar shortcut script -->
-  <script src="jquery.js"></script>
-  <script>
-    $(function(){
-      $("#navigation").load("navbar.html");
-    });
-  </script>
-
+  <!-- drag and drop "puck" functionality script -->
   <script>
     $(function() {
       $(".item").draggable();
@@ -45,9 +38,10 @@
 
 </head>
 <body>
-<!-- Nav bar! -->
-<div id="navigation"></div>
-<!-- Nav bar end -->
+  <!-- Nav bar! -->
+  <iframe id="navigation" frameBorder="0" src="navbar.html"></iframe>
+  <!--object height="50px" width="100%" data="navbar.html"></object-->
+  <!-- Nav bar end -->
 
 
 <!--
@@ -58,8 +52,6 @@
 -->
 <!--Schedule container start-->
 <div class="container-fluid" id="schedule-container" style="background:gray">
-
-
   <div class="day">
     <div class="item">Flight 1</div>
     <div class="item">Flight 2</div>

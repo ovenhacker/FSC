@@ -42,9 +42,12 @@
   clear: both;
   padding:25px;
 }
-
-#schedule-container{
-  height: 92vh;
+#navigation{
+  height: 58px;
   width: 100vw;
+}
+#schedule-container{
+  height: 90vh;
+  width: 99vw;
   border: 2px solid;
 }
