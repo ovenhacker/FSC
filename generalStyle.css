@@ -8,17 +8,12 @@
     color: white;
 }
 .day {
-<<<<<<< HEAD
   width: 150px;
   padding:0px;
   z-index: 1;
-  position:absolute;
-  float:right;
-=======
+  float: right;
   width: 200px;
   padding:5px;
-  float: right;
->>>>>>> e416a64ed69c6efbcd300b78616f346e7148c6bd
 }
 .dropdown-menu {
   right: 0;
@@ -36,7 +31,6 @@
   height: 30px;
   float: right;
   border: 1px solid black;
-  z-index: 2;
 }
 
 .column {

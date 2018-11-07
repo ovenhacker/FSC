@@ -2,7 +2,7 @@
 <!-- copied from W3Schools for drop down menus -->
 <html lang="en">
 <head>
-  <title>Final Schedule</title>
+  <title>Schedule</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,9 +11,33 @@
   <!-- manual CSS overrides sheet -->
   <link rel="stylesheet" type="text/css" href="generalStyle.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--jQuery imports -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- drag and drop "puck" functionality script -->
+  <script>
+    $(function() {
+      $(".item").draggable();
+      $(".slot").droppable({
+        drop: function(event, ui) {
+          var $this = $(this);
+          $this.append(ui.draggable);
+          var width = $this.width();
+          var height = $this.height();
+          var cntrLeft = (width / 2) - (ui.draggable.width() / 2);
+          var cntrTop = (height / 2) - (ui.draggable.height() / 2);
+          ui.draggable.css({
+            left: cntrLeft + "px",
+            top: cntrTop + "px"
+          });
+        }
+      });
+    });
+  </script>
 </head>
+
+
 <body>
 
   <nav class="navbar navbar-inverse navbar-static-top" style="background-color: #393a3d">
@@ -56,33 +80,6 @@
     </div>
   </nav>
 
-
-
-  <!-- drag and drop "puck" functionality script -->
-  <script>
-    $(function() {
-      $(".item").draggable();
-      $(".slot").droppable({
-        drop: function(event, ui) {
-          var $this = $(this);
-          $this.append(ui.draggable);
-          var width = $this.width();
-          var height = $this.height();
-          var cntrLeft = (width / 2) - (ui.draggable.width() / 2);
-          var cntrTop = (height / 2) - (ui.draggable.height() / 2);
-          ui.draggable.css({
-            left: cntrLeft + "px",
-            top: cntrTop + "px"
-          });
-        }
-      });
-    });
-  </script>
-
-</head>
-<body>
-
-
 <!--
 <div class="container">
   <h3>The Finalized Schedule</h3>
@@ -90,42 +87,42 @@
 </div>
 -->
 <!--Schedule container start-->
-<div class="container-fluid" id="schedule-container" style="background:gray">
-  <div class="day">
-    <div class="item">Flight 1</div>
-    <div class="item">Flight 2</div>
-    <div class="item">Flight 3</div>
-    <div class="item">Flight 4</div>
-    <div class="item">Flight 5</div>
-    <div class="item">Flight 6</div>
+  <div class="container-fluid" id="schedule-container" style="background:gray">
+    <div class="day" style="float: right">
+      <div class="item">Flight 1</div>
+      <div class="item">Flight 2</div>
+      <div class="item">Flight 3</div>
+      <div class="item">Flight 4</div>
+      <div class="item">Flight 5</div>
+      <div class="item">Flight 6</div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+      </div>
+      <div class="column">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+      </div>
+      <div class="column">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <div class="column">
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </div>
-    <div class="column">
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </div>
-    <div class="column">
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
