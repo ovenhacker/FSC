@@ -1,32 +1,32 @@
-<!-- MX sees configs -->
-<!-- copied from W3Schools for drop down menus -->
 <html lang="en">
 <head>
-  <title>Home</title>
+  <title>Schedule</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+  <!-- standard Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- CSS overrides sheet -->
+  <link rel="stylesheet" type="text/css" href="generalStyle.css">
+
+  <!--jQuery imports -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- script references -->
+  <script src="generalScripts.js"></script>
 </head>
+
 <body>
 
-  <div id="nav-placeholder">
+  <!--Navbar div-->
+  <div id="navigation"></div>
 
+  <div class="container">
+    <h3>The Home Page!</h3>
+    <p>Some information regarding the wing or squadron... </p>
   </div>
-
-  <script>
-  $(function(){
-    $("#nav-placeholder").load("navbar.html");
-  });
-  </script>
-
-<div class="container">
-  <h3>MX Configs</h3>
-  <p>Maintanence can see the configurations that are needed</p>
-</div>
 
 </body>
 </html>

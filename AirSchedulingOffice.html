@@ -1,61 +1,32 @@
-<!-- copied from W3Schools for drop down menus -->
 <html lang="en">
 <head>
-  <title>Air Scheduling</title>
+  <title>Schedule</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- standard Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- CSS overrides sheet -->
+  <link rel="stylesheet" type="text/css" href="generalStyle.css">
+
+  <!--jQuery imports -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- script references -->
+  <script src="generalScripts.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <font size= "+1">
-    <div class="navbar-header">
-      <a class="navbar-brand" href=".\index.html"><font size= "+2">PUCC: 4th Fighter Wing</font></a>
-    </div>
-    <ul class="nav navbar-nav">
+  <!--Navbar div-->
+  <div id="navigation"></div>
 
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href=".\FinalSchedule.html">Finalized Schedule</a></li>
-          <li><a href=".\Schedule.html">Edit Schedule</a></li>
-          <li><a href=".\MXConfigs.html">MX Configs</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Inputs
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href=".\MedicalInputs.html">Medical</a></li>
-          <li><a href=".\AirSchedulingOffice.html">Airspace</a></li>
-          <li><a href=".\PilotInputs.html">Personal</a></li>
-          <li><a href=".\TrainingSquadron.html">Currencies/Quals/Flight#</a></li>
-          <li><a href=".\GroundTraining.html">Academics</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href=".\AccountSettings.html">Account Settings</a></li>
-          <li><a href=".\LogIn.html">Logout</a></li>
-        </ul>
-      </li>
-
-    </ul>
-    </font>
+  <div class="container">
+    <h3>The Home Page!</h3>
+    <p>Some information regarding the wing or squadron... </p>
   </div>
-</nav>
-
-<div class="container">
-  <h3>Air Scheduling Office</h3>
-  <p>The 1OCs can imput what the finalized available air spacese are. Either a spread sheet input or uploading an excel or .CSV </p>
-</div>
 
 </body>
 </html>
