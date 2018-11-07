@@ -16,69 +16,13 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <!-- drag and drop "puck" functionality script -->
-  <script>
-    $(function() {
-      $(".item").draggable();
-      $(".slot").droppable({
-        drop: function(event, ui) {
-          var $this = $(this);
-          $this.append(ui.draggable);
-          var width = $this.width();
-          var height = $this.height();
-          var cntrLeft = (width / 2) - (ui.draggable.width() / 2);
-          var cntrTop = (height / 2) - (ui.draggable.height() / 2);
-          ui.draggable.css({
-            left: cntrLeft + "px",
-            top: cntrTop + "px"
-          });
-        }
-      });
-    });
-  </script>
+  <script src="puckScripts.js"></script>
+  <script src="generalScripts.js"></script>
 </head>
-
 
 <body>
 
-  <nav class="navbar navbar-inverse navbar-static-top" style="background-color: #393a3d">
-    <div class="container-fluid">
-      <font size= "+1">
-      <div class="navbar-header">
-        <a class="navbar-brand" href=".\index.html"><font class="navbar-title" size= "+2">PUCC: 4th Fighter Wing</font></a>
-      </div>
-      <ul class="nav navbar-nav" style="float: right">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><font class="navbar-title">Schedule</font>
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href=".\FinalSchedule.html">Finalized Schedule</a></li>
-            <li><a href=".\Schedule.html">Edit Schedule</a></li>
-            <li><a href=".\MXConfigs.html">MX Configs</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><font class="navbar-title">Inputs</font>
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href=".\MedicalInputs.html">Medical</a></li>
-            <li><a href=".\AirSchedulingOffice.html">Airspace</a></li>
-            <li><a href=".\PilotInputs.html">Personal</a></li>
-            <li><a href=".\TrainingSquadron.html">Currencies/Quals/Flight#</a></li>
-            <li><a href=".\GroundTraining.html">Academics</a></li>
-          </ul>
-        </li>
-        <li class="dropdown dropdown-menu-right">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><font class="navbar-title">User</font>
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href=".\AccountSettings.html">Account Settings</a></li>
-            <li><a href=".\LogIn.html">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-      </font>
-    </div>
-  </nav>
+<div id="navigation"></div>
 
 <!--
 <div class="container">
