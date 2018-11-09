@@ -1,3 +1,4 @@
+//script for drag and drop of flight pucks
 $(function() {
   $(".item").draggable();
   $(".slot").droppable({
@@ -15,7 +16,7 @@ $(function() {
     }
   });
 });
-
+//script for drag and drop of pilot pucks
 $(function() {
   $(".sub-item").draggable();
   $(".item").droppable({
