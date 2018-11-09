@@ -7,10 +7,9 @@
 .navbar-title {
     color: white;
 }
-.day {
+.pile {
   width: 150px;
   padding:0px;
-  z-index: 1;
   float: right;
   width: 200px;
   padding:5px;
@@ -29,23 +28,9 @@
   background-color: white;
   width: 150px;
   height: 30px;
-  float: right;
   border: 1px solid black;
 }
 
-.column {
-  float: left;
-  width: 155px;
-  padding:1%;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-  padding:25px;
-  z-index: 2;
-}
 #navigation{
   height: 58px;
   width: 100vw;
