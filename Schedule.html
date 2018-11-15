@@ -10,6 +10,8 @@
   <!-- CSS overrides sheet -->
   <link rel="stylesheet" type="text/css" href="generalStyle.css">
 
+  <!--interact.js import-->
+  <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
   <!--jQuery imports -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -26,81 +28,86 @@
 
 <!--Schedule container start-->
   <div class="container-fluid" style="background:gray; height:auto">
-    <div class="row">
-      <div class="col-xs-3"style="background-color:blue">
-        <div class="title-box">
-          <b>Monday</b>
+    <!--days of schedule container-->
+    <div id="days">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="title-box">
+            <b>Monday</b>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="title-box">
+            <b>Tuesday</b>
+          </div>
+        </div>
+        <div class="col-xs-3 pl-0 pr-0">
+          <div class="title-box">
+            <b>Wednesday</b>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="title-box">
+            <b>Pucks</b>
+          </div>
         </div>
       </div>
-      <div class="col-xs-3">
-        <div class="title-box">
-          <b>Tuesday</b>
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+        </div>
+        <div class="col-xs-3">
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+        </div>
+        <div class="col-xs-3">
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot"></div>
+        </div>
+        <div class="col-xs-3">
+          <div class="item">Flight 1</div>
+          <div class="item">Flight 2</div>
+          <div class="item">Flight 3</div>
+          <div class="item">Flight 4</div>
+          <div class="item">Flight 5</div>
+          <div class="item">Flight 6</div>
+          <div class="sub-item">Pilot 1</div>
         </div>
       </div>
-      <div class="col-xs-3 pl-0 pr-0">
-        <div class="title-box">
-          <b>Wednesday</b>
-        </div>
+      <div id="pucks">
       </div>
-      <div class="col-xs-3">
-        <div class="title-box">
-          <b>Pucks</b>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-      </div>
-      <div class="col-xs-3">
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-      </div>
-      <div class="col-xs-3">
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-        <div class="slot"></div>
-      </div>
-      <div class="col-xs-3">
-        <div class="item">Flight 1</div>
-        <div class="item">Flight 2</div>
-        <div class="item">Flight 3</div>
-        <div class="item">Flight 4</div>
-        <div class="item">Flight 5</div>
-        <div class="item">Flight 6</div>
-        <div class="sub-item">Pilot 1</div>
-      </div>
-    </div>
+  </div>
   </div>
 
 </body>
