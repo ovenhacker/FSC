@@ -3,7 +3,7 @@ interact('.item')
   .draggable({
     // enable inertial throwing
     inertia: true,
-    // keep the element within the area of it's parent
+    // keep the element within the area of the screen
     restrict: {
       restriction: {left:0, right: $(window).width(), top: 50, bottom:$(window).height()},
       endOnly: false,
@@ -11,39 +11,13 @@ interact('.item')
     },
     // enable autoScroll
     autoScroll: true,
-
     // call this function on every dragmove event
     onmove: dragMoveListener,
     // call this function on every dragend event
-    onend: function (event) {
-      var textEl = event.target.querySelector('p');
-
-      textEl && (textEl.textContent =
-        'moved a distance of '
-        + (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                     Math.pow(event.pageY - event.y0, 2) | 0))
-            .toFixed(2) + 'px');
-    }
+    // onend:
   });
+  // end of "item" class
 
-  function dragMoveListener (event) {
-    var target = event.target,
-        // keep the dragged position in the data-x/data-y attributes
-        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-    // translate the element
-    target.style.webkitTransform =
-    target.style.transform =
-      'translate(' + x + 'px, ' + y + 'px)';
-
-    // update the posiion attributes
-    target.setAttribute('data-x', x);
-    target.setAttribute('data-y', y);
-  }
-
-  // this is used later in the resizing and gesture demos
-  window.dragMoveListener = dragMoveListener;
 
   // target elements with the "sub-item" class
   interact('.sub-item')
@@ -52,25 +26,18 @@ interact('.item')
       inertia: true,
       // keep the element within the area of it's parent
       restrict: {
-        endOnly: true,
+        restriction: {left:0, right: $(window).width(), top: 50, bottom:$(window).height()},
+        endOnly: false,
         elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
       },
       // enable autoScroll
       autoScroll: true,
-
       // call this function on every dragmove event
       onmove: dragMoveListener,
       // call this function on every dragend event
-      onend: function (event) {
-        var textEl = event.target.querySelector('p');
-
-        textEl && (textEl.textContent =
-          'moved a distance of '
-          + (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                       Math.pow(event.pageY - event.y0, 2) | 0))
-              .toFixed(2) + 'px');
-      }
+      // onend:
     });
+    // end of "sub-item" class
 
     function dragMoveListener (event) {
       var target = event.target,
@@ -79,14 +46,9 @@ interact('.item')
           y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
       // translate the element
-      target.style.webkitTransform =
-      target.style.transform =
-        'translate(' + x + 'px, ' + y + 'px)';
+      target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
 
       // update the posiion attributes
       target.setAttribute('data-x', x);
       target.setAttribute('data-y', y);
     }
-
-    // this is used later in the resizing and gesture demos
-    window.dragMoveListener = dragMoveListener;

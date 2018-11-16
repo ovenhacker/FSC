@@ -1,3 +1,8 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .navbar {
   position: relative;
   min-height: 50px;
@@ -22,7 +27,7 @@
   padding-right: 0;
 }
 
-.title-box{
+.title-box {
   background-color: white;
   text-align: center;
   font-size: 30px;
@@ -66,6 +71,10 @@
 }
 .forms-input{
   padding-left: 10px;
+}
+
+#schedule{
+  height: 93vh;
 }
 
 #navigation{
