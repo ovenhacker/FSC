@@ -18,13 +18,8 @@ html, body {
   left: auto;
 }
 
-.row {
-  padding: 0;
-}
-
-.col {
-  padding-left: 0;
-  padding-right: 0;
+.nopadding {
+   padding: 0 !important;
 }
 
 .title-box {
@@ -40,6 +35,7 @@ html, body {
   width: auto;
   height: 50px;
   border: 1px solid black;
+  z-index: 1 !important;
 }
 .item,
 .item * {
@@ -47,7 +43,7 @@ html, body {
   width: auto;
   height: 50px;
   border: 1px solid black;
-  z-index: 98 !important;
+  z-index: 998 !important;
   user-select: none;
   -ms-touch-action: none;
   touch-action: none;
