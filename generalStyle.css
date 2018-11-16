@@ -36,23 +36,21 @@
   height: 50px;
   border: 1px solid black;
 }
-.item {
+.item,
+.item * {
   background-color: lightblue;
   width: auto;
   height: 50px;
   border: 1px solid black;
   z-index: 98 !important;
-  width: 25%;
-  height: 100%;
   min-height: 6.5em;
-  margin: 10%;
   background-color: #29e;
   color: white;
   border-radius: 0.75em;
   padding: 4%;
   user-select: none;
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
 .sub-item{

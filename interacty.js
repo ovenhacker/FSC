@@ -1,5 +1,5 @@
 // target elements with the "draggable" class
-interact('.item')
+interact('.draggable')
   .draggable({
     // enable inertial throwing
     inertia: true,
