@@ -43,11 +43,6 @@
   height: 50px;
   border: 1px solid black;
   z-index: 98 !important;
-  min-height: 6.5em;
-  background-color: #29e;
-  color: white;
-  border-radius: 0.75em;
-  padding: 4%;
   user-select: none;
   -ms-touch-action: none;
   touch-action: none;
@@ -59,6 +54,8 @@
   height: 30px;
   border: 1px solid black;
   z-index: 99 !important;
+  user-select: none;
+  touch-action: none;
 }
 
 .form-group{
