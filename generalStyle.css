@@ -35,7 +35,6 @@ html, body {
   width: auto;
   height: 50px;
   border: 1px solid black;
-  z-index: 1 !important;
 }
 .item,
 .item * {
@@ -43,7 +42,8 @@ html, body {
   width: auto;
   height: 50px;
   border: 1px solid black;
-  z-index: 998 !important;
+  z-index: 98 !important;
+  position: relative;
   user-select: none;
   -ms-touch-action: none;
   touch-action: none;
@@ -55,6 +55,7 @@ html, body {
   height: 30px;
   border: 1px solid black;
   z-index: 99 !important;
+  position: relative;
   user-select: none;
   touch-action: none;
 }
