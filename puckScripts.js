@@ -16,7 +16,32 @@ interact('.item')
     // call this function on every dragend event
     // onend:
   });
-  // end of "item" class
+  // end of draggable
+
+interact('.item')
+  .snap({
+    mode: 'anchor',
+    anchors: [],
+    range: Infinity,
+    elementOrigin: { x: 0.5, y: 0.5 },
+    endOnly: true
+  });
+
+interact('.slot')
+  .on('dragenter', function (event) {
+    var dropRect = interact.getElementRect(event.target),
+        dropCenter = {
+          x: dropRect.left + dropRect.width  / 2,
+          y: dropRect.top  + dropRect.height / 2
+        };
+
+    event.draggable.snap({
+      anchors: [ dropCenter ]
+    });
+  })
+  .on('dragleave', function (event) {
+    event.draggable.snap(false);
+  });
 
 
   // target elements with the "sub-item" class
