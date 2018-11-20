@@ -9,6 +9,7 @@ html, body {
   margin-bottom: 0px;
   border: 1px solid transparent;
 }
+
 .navbar-title {
     color: white;
 }
@@ -72,9 +73,12 @@ html, body {
 
 #schedule{
   height: 93vh;
+  padding-top: 5px;
 }
 
 #navigation{
+  z-index: 99 !important;
+  position: relative;
   height: 50px;
   width: 100vw;
 }
