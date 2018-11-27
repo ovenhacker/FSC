@@ -3,6 +3,16 @@ interact('.item')
   .draggable({
     // enable inertial throwing
     inertia: true,
+    snap: {
+      targets: [
+        // snap to the point (0, 450) if the pointer gets 50 pixels close
+        { x: 0, y: 450, range: 50 },
+
+        // snap only the y coord to 100
+        // i.e. move horizontally at y=100
+        { y: 100, range: Infinity }
+      ]
+    },
     // keep the element within the area of the screen
     restrict: {
       restriction: {left:0, right: $(window).width(), top: 50, bottom:$(window).height()},
@@ -17,15 +27,6 @@ interact('.item')
     // onend:
   });
   // end of draggable
-
-interact('.item')
-  .snap({
-    mode: 'anchor',
-    anchors: [],
-    range: Infinity,
-    elementOrigin: { x: 0.5, y: 0.5 },
-    endOnly: true
-  });
 
 interact('.slot')
   .on('dragenter', function (event) {
