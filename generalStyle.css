@@ -62,7 +62,7 @@ html, body {
 }
 
 .active:after {
-  content: ''\2212';
+  content: '\2212';
 }
 
 .content {
@@ -80,7 +80,8 @@ html, body {
 .item * {
   background-color: lightblue;
   width: auto;
-  height: 50px;
+  height: auto;
+  min-height: 50px;
   border: 1px solid black;
   z-index: 98 !important;
   position: relative;
