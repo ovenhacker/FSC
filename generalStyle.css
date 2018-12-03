@@ -37,6 +37,45 @@ html, body {
   height: 50px;
   border: 1px solid black;
 }
+
+.palette,
+.palette * {
+  background-color: lightyellow;
+  width: 120px;
+  height: 50px;
+  border: 1px solid black;
+  z-index: 99 !important;
+  position: absolute;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+}
+
+.palette:after {
+  content: '\002B';
+  font-weight: bold;
+  float: right;
+}
+
+.active:after {
+  content: ''\2212';
+}
+
+.content {
+  max-height: 0;
+  width: 16%;
+  overflow: hidden;
+  position: absolute;
+  top: 105px;
+  transition: max-height 0.2s ease-out;
+    z-index: 98 !important;
+  background-color: #f1f1f1;
+}
+
 .item,
 .item * {
   background-color: lightblue;
@@ -47,17 +86,6 @@ html, body {
   position: relative;
   user-select: none;
   -ms-touch-action: none;
-  touch-action: none;
-}
-
-.sub-item{
-  background-color: lightyellow;
-  width: 80px;
-  height: 30px;
-  border: 1px solid black;
-  z-index: 99 !important;
-  position: relative;
-  user-select: none;
   touch-action: none;
 }
 
