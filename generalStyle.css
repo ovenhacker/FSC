@@ -56,13 +56,17 @@ html, body {
 }
 
 .palette:after {
-  content: '\002B';
+  content: '+';
   font-weight: bold;
   float: right;
 }
 
-.active:after {
-  content: '\2212';
+.open:after {
+  content: "-";
+}
+
+.open, .palette:hover {
+  background-color: #ccc;
 }
 
 .content {
@@ -72,7 +76,7 @@ html, body {
   position: absolute;
   top: 105px;
   transition: max-height 0.2s ease-out;
-    z-index: 98 !important;
+  z-index: 98 !important;
   background-color: #f1f1f1;
 }
 
