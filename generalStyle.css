@@ -61,11 +61,11 @@ html, body {
   float: right;
 }
 
-.open:after {
+.expand:after {
   content: "-";
 }
 
-.open, .palette:hover {
+.expand, .palette:hover {
   background-color: #ccc;
 }
 

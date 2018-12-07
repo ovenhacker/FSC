@@ -24,7 +24,7 @@ interact('.palette').draggable({
 //palette expand functionality
 interact('.palette').on('tap', function (event) {
   var palette = event.target;
-  document.getElementsByClassName("palette")[0].classList.toggle("open");
+  document.getElementsByClassName("palette")[0].classList.toggle("expand");
   var content = palette.nextElementSibling;
   if (content.style.maxHeight){
     content.style.maxHeight = null;
