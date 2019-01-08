@@ -87,6 +87,8 @@ interact('.slot').dropzone({
 interact('.slot').on('tap', function (event) {
   var item = event.relatedTarget,
       slot = event.target;
+      var paletteContent = document.getElementsByClassName('palette-content');
+      paletteContent[0].innerHTML += '<div class="item">Flight 1</div>';
       //slot.textContent = "TAPPED";
 });
 
@@ -96,10 +98,8 @@ function dragItem (event) {
   var item = event.target;
   var x = (parseFloat(item.getAttribute('data-x')) || 0) + event.dx;
   var y = (parseFloat(item.getAttribute('data-y')) || 0) + event.dy;
-
   // translate the element
   item.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-
   // update the posiion attributes
   item.setAttribute('data-x', x);
   item.setAttribute('data-y', y);
@@ -110,11 +110,9 @@ function dragPalette (event) {
   var content = event.target.nextElementSibling;
   var x = (parseFloat(palette.getAttribute('data-x')) || 0) + event.dx;
   var y = (parseFloat(palette.getAttribute('data-y')) || 0) + event.dy;
-
   // translate the element
   palette.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
   content.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-
   // update the posiion attributes
   palette.setAttribute('data-x', x);
   palette.setAttribute('data-y', y);

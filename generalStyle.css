@@ -69,7 +69,7 @@ html, body {
   background-color: #ccc;
 }
 
-.content {
+.palette-content {
   max-height: 0;
   width: 16%;
   overflow: hidden;
