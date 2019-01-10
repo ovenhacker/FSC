@@ -32,6 +32,7 @@
   <div class="form-group">
     <label for="pilot">Select Pilot</label>
     <select class="form-control" id="pilotselect">
+      <!-- in reality this will get a selection from the DB getting all the pilots -->
       <option>Bob Joe</option>
       <option>POTUS Lipkin</option>
       <option>Meghan VanderMaas</option>
@@ -40,6 +41,7 @@
     </select>
   </div>
   <div class="form-check">
+    <!-- some how this selection needs to go through the db query -->
     <input class="form-check-input" type="radio" name="medRadios" id="DnifOption" value="dnif" checked>
     <label class="form-check-label" for="DnifOption">
       DNIF
@@ -52,6 +54,7 @@
     </label>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+  <!-- on submit, should go to doMedicalSubmission.php -->
 </div>
 
 </body>
