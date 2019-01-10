@@ -83,12 +83,12 @@ html, body {
 .item,
 .item * {
   background-color: lightblue;
-  width: auto;
-  height: auto;
+  width: 250px;
+  height: 50px;
   min-height: 50px;
   border: 1px solid black;
   z-index: 98 !important;
-  position: relative;
+  position: absolute;
   user-select: none;
   -ms-touch-action: none;
   touch-action: none;

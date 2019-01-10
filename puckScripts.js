@@ -73,23 +73,31 @@ interact('.slot').dropzone({
   },
   ondrop: function (event) {
     var item = event.relatedTarget,
-        slot = event.target;
-    slot.textContent = item.textContent;
-    item.style.display = "none";
-    $(slot).css("background-color", "lightblue");
+    slot = event.target;
+    if(slot.innerHTML == ""){
+      slot.textContent = item.textContent;
+      item.style.display = "none";
+      $(slot).css("background-color", "lightblue");
+    }
   },
   ondropdeactivate: function (event) {
 
   }
 });
 
-//clickable features
+//upon click on a slot, an item is created and moved to mouse location, slot info is deleted
 interact('.slot').on('tap', function (event) {
-  var item = event.relatedTarget,
-      slot = event.target;
-      var paletteContent = document.getElementsByClassName('palette-content');
-      paletteContent[0].innerHTML += '<div class="item">Flight 1</div>';
-      //slot.textContent = "TAPPED";
+  var slot = event.target;
+  var slotInfo = slot.innerHTML;
+  if (slot.innerHTML != ""){
+    slot.innerHTML = "";
+    $(slot).css("background-color", "white");
+    document.getElementById("schedule").innerHTML += '<div class="item">New Flight</div>';
+    var items = document.getElementsByClassName('item');
+    newItem = items[items.length-1];
+    newItem.innerHTML = slotInfo;
+    $(newItem).css( {top: event.pageY, left: event.pageX});
+  }
 });
 
 
