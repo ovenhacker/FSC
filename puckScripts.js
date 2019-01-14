@@ -59,7 +59,7 @@ interact('.item').draggable({
   });
 
 
-//dropzone features
+//slot dropzone features
 interact('.slot').dropzone({
   accept: '.item',
   overlap: 0.60,
@@ -71,6 +71,7 @@ interact('.slot').dropzone({
   ondragleave: function (event) {
     //event.relatedTarget.textContent = 'Dragged out';
   },
+  //destroys puck on drop, copies data to slot
   ondrop: function (event) {
     var item = event.relatedTarget,
     slot = event.target;
@@ -85,23 +86,38 @@ interact('.slot').dropzone({
   }
 });
 
+// trash dropzone features
+interact('.trash').dropzone({
+  accept: '.item',
+  overlap: 0.10,
+  ondrop: function (event) {
+    var item = event.relatedTarget;
+    item.style.display = "none";
+    }
+});
+
 //upon click on a slot, an item is created and moved to mouse location, slot info is deleted
 interact('.slot').on('tap', function (event) {
   var slot = event.target;
   var slotInfo = slot.innerHTML;
   if (slot.innerHTML != ""){
-    slot.innerHTML = "";
-    $(slot).css("background-color", "white");
-    document.getElementById("schedule").innerHTML += '<div class="item">New Flight</div>';
+    //if slot is permenant, don't dont delete it
+    if (!(slot.className.includes("permenant"))){
+      slot.innerHTML = "";
+      $(slot).css("background-color", "white");
+    }
+    document.getElementById("schedule").innerHTML += '<div class="item">New Puck</div>';
     var items = document.getElementsByClassName('item');
     newItem = items[items.length-1];
     newItem.innerHTML = slotInfo;
     $(newItem).css( {top: event.pageY, left: event.pageX});
+    // resize object to match slot's size
+    newItem.style.width = document.getElementsByClassName('slot')[0].offsetWidth;
+    newItem.style.height = document.getElementsByClassName('slot')[0].offsetHeight;
   }
 });
 
-
-
+//keeps track of item position relative to start
 function dragItem (event) {
   var item = event.target;
   var x = (parseFloat(item.getAttribute('data-x')) || 0) + event.dx;
@@ -111,8 +127,12 @@ function dragItem (event) {
   // update the posiion attributes
   item.setAttribute('data-x', x);
   item.setAttribute('data-y', y);
+  // resize object to match slot's size
+  item.style.width = document.getElementsByClassName('slot')[0].offsetWidth;
+  item.style.height = document.getElementsByClassName('slot')[0].offsetHeight;
 }
 
+//keeps track of palette position relative to start
 function dragPalette (event) {
   var palette = event.target;
   var content = event.target.nextElementSibling;
