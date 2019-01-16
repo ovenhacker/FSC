@@ -33,14 +33,18 @@ html, body {
 
 .slot {
   background-color: white;
-  width: auto;
   height: 50px;
   border: 1px solid black;
 }
 
+.permenant{
+  width: 50%;
+  float: left;
+}
+
 .palette,
 .palette * {
-  background-color: lightyellow;
+  background-color: yellow;
   width: 120px;
   height: 50px;
   border: 1px solid black;
@@ -71,13 +75,12 @@ html, body {
 
 .palette-content {
   max-height: 0;
-  width: 16%;
+  width: 20%;
   overflow: hidden;
   position: absolute;
   top: 105px;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0s ease-out;
   z-index: 98 !important;
-  background-color: #f1f1f1;
 }
 
 .item,

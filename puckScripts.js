@@ -77,8 +77,8 @@ interact('.slot').dropzone({
     slot = event.target;
     if(slot.innerHTML == ""){
       slot.textContent = item.textContent;
-      item.style.display = "none";
-      $(slot).css("background-color", "lightblue");
+        $(slot).css("background-color", item.style.backgroundColor);
+      item.remove();
     }
   },
   ondropdeactivate: function (event) {
@@ -92,7 +92,7 @@ interact('.trash').dropzone({
   overlap: 0.10,
   ondrop: function (event) {
     var item = event.relatedTarget;
-    item.style.display = "none";
+    item.remove();
     }
 });
 
@@ -100,6 +100,7 @@ interact('.trash').dropzone({
 interact('.slot').on('tap', function (event) {
   var slot = event.target;
   var slotInfo = slot.innerHTML;
+  var slotColor = slot.style.backgroundColor;
   if (slot.innerHTML != ""){
     //if slot is permenant, don't dont delete it
     if (!(slot.className.includes("permenant"))){
@@ -110,6 +111,7 @@ interact('.slot').on('tap', function (event) {
     var items = document.getElementsByClassName('item');
     newItem = items[items.length-1];
     newItem.innerHTML = slotInfo;
+    $(newItem).css("background-color", slotColor);
     $(newItem).css( {top: event.pageY, left: event.pageX});
     // resize object to match slot's size
     newItem.style.width = document.getElementsByClassName('slot')[0].offsetWidth;
