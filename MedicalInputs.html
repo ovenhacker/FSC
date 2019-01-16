@@ -16,6 +16,15 @@
 
   <!-- script references -->
   <script src="generalScripts.js"></script>
+
+  <!-- testing php stuff -->
+  <script>
+  function submitMedical()
+  {
+    alert("Here the infomation is sent to the Database!");
+  }
+  </script>
+
 </head>
 
 <body>
@@ -53,8 +62,8 @@
       Fly Opted
     </label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <!-- on submit, should go to doMedicalSubmission.php -->
+  <button type="input" onclick="submitMedical()" class="btn btn-primary">Submit</button>
+  <!-- on submit, the function should update the DB with info -->
 </div>
 
 </body>
