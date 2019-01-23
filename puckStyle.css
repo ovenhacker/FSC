@@ -3,6 +3,13 @@ html, body {
     overflow-x: hidden;
 }
 
+body {
+  background:#265E91 !important;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .navbar {
   position: relative;
   min-height: 50px;
@@ -66,7 +73,9 @@ html, body {
 }
 
 .expand:after {
-  content: "-";
+  content: '-';
+  font-weight: bold;
+  float: right;
 }
 
 .expand, .palette:hover {
@@ -123,7 +132,7 @@ img {
 
 #schedule{
   top: 50px;
-  height:100%;
+  height:93%;
   width: 100%;
   padding-top: 5px;
 }
