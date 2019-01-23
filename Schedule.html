@@ -10,7 +10,7 @@
 
   <!-- CSS overrides sheet -->
   <link rel="stylesheet" type="text/css" href="puckStyle.css">
-  
+
   <!--interact.js import-->
   <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
   <!--jQuery imports -->
@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body onmouseover="getCoords(event)">
   <!--Navbar div-->
   <div id="navigation"></div>
   <!--Schedule container start-->
@@ -138,6 +138,11 @@
   <div class="trash">
     <img src="trash-icon.png">
   </div>
-
+  <div id="popup" title="Inputs">
+   <select>
+      <option value="FCP">FCP</option>
+      <option value="RCP">RCP</option>
+    </select>
+  </div>
 </body>
 </html>
