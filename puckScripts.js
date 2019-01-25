@@ -1,5 +1,3 @@
-var absX;
-var absY;
 //-----------------------------INTERACT.JS STUFF----------------------------------//
 // target elements with the "palette" class
 interact('.palette').draggable({
@@ -76,7 +74,7 @@ interact('.slot').dropzone({
     var item = event.relatedTarget,
     slot = event.target;
     $("#popup").show();
-    $("#popup").css({top: absY, left: absX});
+    $("#popup").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
     if(slot.innerHTML == ""){
       slot.textContent = item.textContent;
         $(slot).css("background-color", item.style.backgroundColor);
@@ -121,7 +119,7 @@ interact('.slot').on('tap', function (event) {
 });
 //--------------------------END INTERACT.JS STUFF----------------------//
 
-//keeps track of item position relative to start
+//keeps track of absolute item position
 function dragItem (event) {
   var item = event.target;
   var x = (parseFloat(item.getAttribute('data-x')) || 0) + event.dx;
@@ -150,9 +148,4 @@ function dragPalette (event) {
   palette.setAttribute('data-y', y);
   content.setAttribute('data-x', x);
   content.setAttribute('data-y', y);
-}
-
-function getCoords(event) {
-  absX = event.clientX;
-  absY = event.clientY;
 }
