@@ -57,7 +57,6 @@ interact('.item').draggable({
   // onend:
   });
 
-
 //slot dropzone features for item
 interact('.slot').dropzone({
   accept: '.item',
@@ -73,8 +72,8 @@ interact('.slot').dropzone({
   ondrop: function (event) {
     var item = event.relatedTarget,
     slot = event.target;
-    $("#popup").show();
-    $("#popup").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
+    $(".popbox").show();
+    $(".popbox").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
     if(slot.innerHTML == ""){
       slot.textContent = item.textContent;
         $(slot).css("background-color", item.style.backgroundColor);
@@ -148,4 +147,8 @@ function dragPalette (event) {
   palette.setAttribute('data-y', y);
   content.setAttribute('data-x', x);
   content.setAttribute('data-y', y);
+}
+
+function clearPopBox(){
+  $(".popbox").hide();
 }

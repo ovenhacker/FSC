@@ -13,6 +13,7 @@
 
   <!--interact.js import-->
   <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
+
   <!--jQuery imports -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -138,11 +139,11 @@
   <div class="trash">
     <img src="trash-icon.png">
   </div>
-  <div id="popup" title="Inputs">
-   <select>
-      <option value="FCP">FCP</option>
-      <option value="RCP">RCP</option>
-    </select>
+  <div class="popbox">
+    Mission: <input type="text" name="Mission" value=""><br>
+    Lines: <input type="text" name="Lines" value=""><br>
+    Airspace: <input type="text" name="Airspace" value=""><br>
+    <button type="button" onclick="clearPopBox()"> DONE </button>
   </div>
 </body>
 </html>

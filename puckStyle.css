@@ -7,7 +7,7 @@ html, body {
 }
 
 .navbar {
-  position: relative;
+  position: absolute;
   min-height: 50px;
   margin-bottom: 0px;
   border: 1px solid transparent;
@@ -110,6 +110,14 @@ html, body {
   right: 15;
 }
 
+.popbox{
+  background: red;
+  display: none;
+  border: 1px solid black;
+  position: absolute;
+  background:#265E91
+}
+
 img {
     max-width: 100%;
     max-height: 100%;
@@ -127,11 +135,4 @@ img {
   position: relative;
   height: 50px;
   width: 100vw;
-}
-
-#popup{
-  display: none;
-  position: absolute;
-  height: 200px;
-  width: 200px;
 }
