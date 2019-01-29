@@ -1,4 +1,6 @@
-//-----------------------------INTERACT.JS STUFF----------------------------------//
+var item;
+var slot;
+//-----------------------------PALETTE PROPERTIES----------------------------------//
 // target elements with the "palette" class
 interact('.palette').draggable({
   // enable inertial throwing
@@ -19,7 +21,9 @@ interact('.palette').draggable({
   // call this function on every dragend event
   // onend:
 });
+//---------------------------END PALETTE PROPERTIES--------------------------------//
 
+//-------------------------------PALETTE EXPAND------------------------------------//
 //palette expand functionality
 interact('.palette').on('tap', function (event) {
   var palette = event.target;
@@ -33,8 +37,9 @@ interact('.palette').on('tap', function (event) {
     content.style.overflow = "visible";
   }
 });
+//------------------------------END PALETTE EXPAND---------------------------------//
 
-
+//-------------------------------ITEM PROPERTIES------------------------------------//
 // target elements with the "item" class
 interact('.item').draggable({
   // enable inertial throwing
@@ -56,7 +61,9 @@ interact('.item').draggable({
   // call this function on every dragend event
   // onend:
   });
+//------------------------------END ITEM PROPERTIES--------------------------------//
 
+//---------------------------------ITEM DROP---------------------------------------//
 //slot dropzone features for item
 interact('.slot').dropzone({
   accept: '.item',
@@ -70,7 +77,7 @@ interact('.slot').dropzone({
   },
   //destroys puck on drop, copies data to slot
   ondrop: function (event) {
-    var item = event.relatedTarget,
+    item = event.relatedTarget,
     slot = event.target;
     $(".popbox").show();
     $(".popbox").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
@@ -83,20 +90,24 @@ interact('.slot').dropzone({
   ondropdeactivate: function (event) {
   }
 });
+//-------------------------------END ITEM DROP-------------------------------------//
 
+//----------------------------------TRASH CAN--------------------------------------//
 // trash dropzone features
 interact('.trash').dropzone({
   accept: '.item',
   overlap: 0.10,
   ondrop: function (event) {
-    var item = event.relatedTarget;
+    item = event.relatedTarget;
     item.remove();
     }
 });
+//--------------------------------END TRASH CAN------------------------------------//
 
+//--------------------------------SLOT CLICK--------------------------------------//
 //upon click on a slot, an item is created and moved to mouse location, slot info is deleted
 interact('.slot').on('tap', function (event) {
-  var slot = event.target;
+  slot = event.target;
   var slotInfo = slot.innerHTML;
   var slotColor = slot.style.backgroundColor;
   if (slot.innerHTML != ""){
@@ -116,11 +127,11 @@ interact('.slot').on('tap', function (event) {
     newItem.style.height = document.getElementsByClassName('slot')[0].offsetHeight;
   }
 });
-//--------------------------END INTERACT.JS STUFF----------------------//
+//-------------------------------END SLOT CLICK------------------------------------//
 
 //keeps track of absolute item position
 function dragItem (event) {
-  var item = event.target;
+  item = event.target;
   var x = (parseFloat(item.getAttribute('data-x')) || 0) + event.dx;
   var y = (parseFloat(item.getAttribute('data-y')) || 0) + event.dy;
   // translate the element
@@ -149,6 +160,13 @@ function dragPalette (event) {
   content.setAttribute('data-y', y);
 }
 
-function clearPopBox(){
+function clearPopBox() {
+  var mission = document.getElementById("Mission").value,
+  lines = document.getElementById("Lines").value,
+  airspace = document.getElementById("Airspace").value;
+  slot.innerHTML += '  [' + mission + '], [' + lines + '], [' + airspace + ']';
+  document.getElementById("Mission").value = "";
+  document.getElementById("Lines").value = "";
+  document.getElementById("Airspace").value = "";
   $(".popbox").hide();
 }
