@@ -111,7 +111,7 @@ interact('.slot').on('tap', function (event) {
   var slotInfo = slot.innerHTML;
   var slotColor = slot.style.backgroundColor;
   if (slot.innerHTML != ""){
-    //if slot is permenant, don't dont delete it
+    //if slot is permenant (on palette), don't dont delete it
     if (!(slot.className.includes("permenant"))){
       slot.innerHTML = "";
       $(slot).css("background-color", "white");
