@@ -189,16 +189,19 @@
     <button type="button" onclick="clearPopBox()"> DONE </button>
     -->
     <!-- popbox changes -->
-    <!-- bay need to adjust everything to be form types -->
-    Mission: <input type="button" class="btn mission" id="mission" value="SAN-1"></input>
-      <input type="button" class="btn mission" id="mission" value="LASDT-2"></input>
+    <!-- may need to adjust everything to be form types -->
+    Mission:
+    <input type="radio" id="mission1" name="mission" value="SAN-1"><label for="mission1" class="btn mission">SAN-1</label></input>
+    <input type="radio" id="mission2" name="mission" value="LASDT-2"><label for="mission2" class="btn mission">LASDT-2</label></input>
       <br />
-    Config: <input type="button" class="btn config" name="config" value="COLD GUN"></input>
-      <input type="button" class="btn config" name="config" value="8xBDL50"></input>
+    Config:
+      <input type="radio" id="config1" name="config" value="COLD GUN"><label for="config1" class="btn config">COLD GUN</label></input>
+      <input type="radio" id="config2" name="config" value="8xBDL50"><label for="config2" class="btn config">8xBDL50</label></input>
       <br />
-    Airspace: <input type="button" class="btn airspace" name="airspace" value="BURNER HI"></input>
-      <input type="button" class="btn airspace" name="airspace" value="BURNER LOW"></input>
-      <input type="button" class="btn airspace" name="airspace" value="W-122: 1-7"></input>
+    Airspace:
+      <input type="radio" id="airspace1" name="airspace" value="BURNER HI"><label for="airspace1" class="btn airspace">BURNER HI</label></input>
+      <input type="radio" id="airspace2" name="airspace" value="BURNER LOW"><label for="airspace2" class="btn airspace">BURNER LOW</label></input>
+      <input type="radio" id="airspace3" name="airspace" value="W-122: 1-7"><label for="airspace3" class="btn airspace">W-122: 1-7</label></input>
       <br />
     FCP: <select class="form-control" id="FCP">
         <!-- in reality this will get a selection from the DB getting all the pilots -->
