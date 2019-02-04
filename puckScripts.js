@@ -63,35 +63,6 @@ interact('.item').draggable({
   });
 //------------------------------END ITEM PROPERTIES--------------------------------//
 
-//---------------------------------ITEM DROP---------------------------------------//
-//slot dropzone features for item
-interact('.slot').dropzone({
-  accept: '.item',
-  overlap: 0.60,
-  ondropactivate: function (event) {
-  },
-  ondragenter: function (event) {
-  },
-  ondragleave: function (event) {
-    //event.relatedTarget.textContent = 'Dragged out';
-  },
-  //destroys puck on drop, copies data to slot
-  ondrop: function (event) {
-    item = event.relatedTarget,
-    slot = event.target;
-    $(".popbox").show();
-    $(".popbox").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
-    if(slot.innerHTML == ""){
-      slot.textContent = item.textContent;
-        $(slot).css("background-color", item.style.backgroundColor);
-      item.remove();
-    }
-  },
-  ondropdeactivate: function (event) {
-  }
-});
-//-------------------------------END ITEM DROP-------------------------------------//
-
 //-------------------------------SOURCE CLICK-------------------------------------//
 //upon click on a source, an item is created and moved to mouse location
 interact('.source').on('tap', function (event) {
@@ -104,7 +75,7 @@ interact('.source').on('tap', function (event) {
   var newItem = document.createElement('div');
   newItem.className = 'item';
   document.getElementById('schedule').appendChild(newItem);
-  //add in the info
+  //creates and adds divs for the info
   var nameDiv = document.createElement('div');
   nameDiv.innerHTML = puckName;
   nameDiv.className = 'puck-name';
@@ -122,29 +93,81 @@ interact('.source').on('tap', function (event) {
 });
 //-----------------------------END SOURCE CLICK-------------------------------------//
 
+//---------------------------------ITEM DROP---------------------------------------//
+//slot dropzone features for item
+interact('.slot').dropzone({
+  accept: '.item',
+  overlap: 0.60,
+  ondropactivate: function (event) {
+  },
+  ondragenter: function (event) {
+  },
+  ondragleave: function (event) {
+    //event.relatedTarget.textContent = 'Dragged out';
+  },
+  //destroys puck on drop, copies data to slot
+  ondrop: function (event) {
+    item = event.relatedTarget,
+    slot = event.target;
+    //only allow drop if the slot is empty
+    if(slot.innerHTML == ""){
+      //get name and syllabus values
+      var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
+      var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
+      //show the popbox to choose inputs
+      $(".popbox").show();
+      //make it appear where item was dropped
+      $(".popbox").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
+      //creates and adds divs for the info
+      var nameDiv = document.createElement('div');
+      nameDiv.innerHTML = puckName;
+      nameDiv.className = 'puck-name';
+      slot.appendChild(nameDiv);
+      var syllabusDiv = document.createElement('div');
+      syllabusDiv.innerHTML = puckSyllabus;
+      syllabusDiv.className = 'puck-syllabus';
+      slot.appendChild(syllabusDiv);
+      $(slot).css("background-color", item.style.backgroundColor);
+      item.remove();
+    }
+  },
+  ondropdeactivate: function (event) {
+  }
+});
+//-------------------------------END ITEM DROP-------------------------------------//
+
 //--------------------------------SLOT CLICK--------------------------------------//
 //upon click on a slot, an item is created and moved to mouse location, slot info is deleted
 interact('.slot').on('tap', function (event) {
   slot = event.target;
   var puckName = slot.getElementsByClassName("puck-name")[0].innerHTML;
-  var slotInfo = slot.innerHTML;
+  var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
   var slotColor = slot.style.backgroundColor;
   //if slot is not blank
   if (slot.innerHTML != ""){
-    //if slot is permenant (on palette), don't dont delete it
-    if (!(slot.className.includes("permenant"))){
-      slot.innerHTML = "";
-      $(slot).css("background-color", "white");
-    }
-    document.getElementById("schedule").innerHTML += '<div class="item"></div>';
-    var items = document.getElementsByClassName('item');
-    newItem = items[items.length-1];
-    newItem.innerHTML += '<div class="puck-name">'+ puckName + '</div>';
+    $(".popbox").hide();
+    //empty out the slot
+    slot.innerHTML = "";
+    $(slot).css("background-color", "white");
+    //create new puck item
+    var newItem = document.createElement('div');
+    newItem.className = 'item';
+    document.getElementById('schedule').appendChild(newItem);
+    //creates and adds divs for the info
+    var nameDiv = document.createElement('div');
+    nameDiv.innerHTML = puckName;
+    nameDiv.className = 'puck-name';
+    newItem.appendChild(nameDiv);
+    var syllabusDiv = document.createElement('div');
+    syllabusDiv.innerHTML = puckSyllabus;
+    syllabusDiv.className = 'puck-syllabus';
+    newItem.appendChild(syllabusDiv);
     $(newItem).css("background-color", slotColor);
+    //match the mouse click's position
     $(newItem).css( {top: event.pageY, left: event.pageX});
     // resize object to match slot's size
-    newItem.style.width = document.getElementsByClassName('slot')[0].offsetWidth;
-    newItem.style.height = document.getElementsByClassName('slot')[0].offsetHeight;
+    newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
+    newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
   }
 });
 //-------------------------------END SLOT CLICK------------------------------------//
@@ -194,12 +217,12 @@ function dragPalette (event) {
 }
 
 function clearPopBox() {
-  var mission = document.getElementById("Mission").value,
-  config = document.getElementById("Config").value,
-  airspace = document.getElementById("Airspace").value;
-  slot.innerHTML += '  [' + mission + '], [' + cofig + '], [' + airspace + ']';
-  document.getElementById("Mission").value = "";
-  document.getElementById("Config").value = "";
-  document.getElementById("Airspace").value = "";
+  //var mission = document.getElementById("Mission").value,
+  //config = document.getElementById("Config").value,
+  //airspace = document.getElementById("Airspace").value;
+  //slot.innerHTML += '  [' + mission + '], [' + cofig + '], [' + airspace + ']';
+  //document.getElementById("Mission").value = "";
+  //document.getElementById("Config").value = "";
+  //document.getElementById("Airspace").value = "";
   $(".popbox").hide();
 }
