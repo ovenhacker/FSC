@@ -195,11 +195,11 @@ function dragPalette (event) {
 
 function clearPopBox() {
   var mission = document.getElementById("Mission").value,
-  lines = document.getElementById("Lines").value,
+  config = document.getElementById("Config").value,
   airspace = document.getElementById("Airspace").value;
-  slot.innerHTML += '  [' + mission + '], [' + lines + '], [' + airspace + ']';
+  slot.innerHTML += '  [' + mission + '], [' + cofig + '], [' + airspace + ']';
   document.getElementById("Mission").value = "";
-  document.getElementById("Lines").value = "";
+  document.getElementById("Config").value = "";
   document.getElementById("Airspace").value = "";
   $(".popbox").hide();
 }
