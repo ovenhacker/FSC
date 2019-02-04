@@ -4,8 +4,7 @@ html, body {
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
-  /*
-  background:#265E91 !important;*/
+  /*background:#265E91 !important;*/
 }
 
 .navbar {
@@ -23,104 +22,63 @@ html, body {
   right: 0;
   left: auto;
 }
-/*
+
 .nopadding {
    padding: 0 !important;
 }
-*/
 
 .title-box {
-  background-color: white;
-  /*text-align: center;*/
-  font-size: 16px;
+  /*background-color: white;
+  border: 1px solid black;*/
+  text-align: center;
+  font-size: 28px;
   font-style: bold;
-  /*border: 1px solid black;*/
 }
 
-.slot {
+.puck-name{
   /* shadows */
-  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-
-  background-color: white;
-  height: 50px;
-  border: 1px solid black;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  position: relative !important;
+  float: left !important;
+  font-size: 20px !important;
+  font-style: oblique !important;
+  left: 5% !important;
+  border: none !important;
+  pointer-events: none !important;
 }
 
-.puck-name {
-  text-align: center;
-  font-size: 20px;
-  left: 10px;
-  top: 15px;
+.puck-syllabus {
+  /* shadows */
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  position: relative !important;
+  float: right !important;
+  font-size: 10px !important;
+  font-style: oblique !important;
+  right: 5% !important;
+  top: 60% !important;
+  border: none !important;
+  pointer-events: none !important;
 }
 
-.puck-info {
-  text-align: center;
-  font-size: 10px;
-  right: 10px;
-  bottom: 10px;
-}
-
-.permenant{
+.source{
   border-radius: 5px;
   width: 50%;
   float: left;
-}
-
-.palette,
-.palette * {
   /* shadows */
   -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-
-  border-radius: 5px;
-  background-color: lightyellow;
-  width: 120px;
+  background-color: white;
   height: 50px;
-
   border: 1px solid black;
-  z-index: 99 !important;
-  position: absolute;
-  user-select: none;
-  -ms-touch-action: none;
-  touch-action: none;
-  cursor: pointer;
-  text-align: left;
-  outline: none;
-  font-size: 25px;
-}
-
-.palette:after {
-  content: '+';
-  font-weight: bold;
-  float: right;
-}
-
-.expand:after {
-  content: '-';
-  font-weight: bold;
-  float: right;
-}
-
-.palette:hover {
-  background-color: #ccc;
-}
-
-.palette-content {
-
-  font-style: oblique;
-  text-align: center;
-  font-size: 20px;
-  max-height: 0;
-  width: 20%;
-  min-width: 400px;
-  overflow: hidden;
-  position: absolute;
-  top: 105px;
-  transition: max-height 0s ease-out;
-  z-index: 98 !important;
 }
 
 .item,
@@ -144,6 +102,73 @@ html, body {
   touch-action: none;
 }
 
+.slot {
+  /* shadows */
+  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  background-color: white;
+  height: 50px;
+  border: 1px solid black;
+}
+
+/********************************PALETTE CSS**********************************/
+.palette,
+.palette * {
+  /* shadows */
+  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+
+  border-radius: 5px;
+  background-color: lightyellow;
+  width: 120px;
+  height: 50px;
+
+  border: 1px solid black;
+  z-index: 98 !important;
+  position: absolute;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  font-style: oblique;
+}
+
+.palette:after {
+  content: '+';
+  font-weight: bold;
+  float: right;
+}
+
+.expand:after {
+  content: '-';
+  font-weight: bold;
+  float: right;
+}
+
+.palette:hover {
+  background-color: #ccc;
+}
+
+.palette-content {
+  font-style: oblique;
+  text-align: center;
+  font-size: 20px;
+  max-height: 0;
+  width: 20%;
+  min-width: 400px;
+  overflow: hidden;
+  position: absolute;
+  top: 105px;
+  transition: max-height 0s ease-out;
+  z-index: 98 !important;
+}
+/*******************************END PALETTE CSS********************************/
+
 .trash {
   position: absolute;
   z-index: 97 !important;
@@ -163,7 +188,7 @@ html, body {
   display: none;
   border: 1px solid black;
   position: absolute;
-  background:#c9c9c9
+  background: #c9c9c9;
 }
 
 img {

@@ -92,6 +92,63 @@ interact('.slot').dropzone({
 });
 //-------------------------------END ITEM DROP-------------------------------------//
 
+//-------------------------------SOURCE CLICK-------------------------------------//
+//upon click on a source, an item is created and moved to mouse location
+interact('.source').on('tap', function (event) {
+  slot = event.target;
+  //get info from source puck
+  var puckName = slot.getElementsByClassName("puck-name")[0].innerHTML;
+  var puckSyllabus = slot.getElementsByClassName("puck-syllabus")[0].innerHTML;
+  var slotColor = slot.style.backgroundColor;
+  //create new puck item
+  var newItem = document.createElement('div');
+  newItem.className = 'item';
+  document.getElementById('schedule').appendChild(newItem);
+  //add in the info
+  var nameDiv = document.createElement('div');
+  nameDiv.innerHTML = puckName;
+  nameDiv.className = 'puck-name';
+  newItem.appendChild(nameDiv);
+  var syllabusDiv = document.createElement('div');
+  syllabusDiv.innerHTML = puckSyllabus;
+  syllabusDiv.className = 'puck-syllabus';
+  newItem.appendChild(syllabusDiv);
+  $(newItem).css("background-color", slotColor);
+  //match the mouse click's position
+  $(newItem).css( {top: event.pageY, left: event.pageX});
+  // resize object to match slot's size
+  newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
+  newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
+});
+//-----------------------------END SOURCE CLICK-------------------------------------//
+
+//--------------------------------SLOT CLICK--------------------------------------//
+//upon click on a slot, an item is created and moved to mouse location, slot info is deleted
+interact('.slot').on('tap', function (event) {
+  slot = event.target;
+  var puckName = slot.getElementsByClassName("puck-name")[0].innerHTML;
+  var slotInfo = slot.innerHTML;
+  var slotColor = slot.style.backgroundColor;
+  //if slot is not blank
+  if (slot.innerHTML != ""){
+    //if slot is permenant (on palette), don't dont delete it
+    if (!(slot.className.includes("permenant"))){
+      slot.innerHTML = "";
+      $(slot).css("background-color", "white");
+    }
+    document.getElementById("schedule").innerHTML += '<div class="item"></div>';
+    var items = document.getElementsByClassName('item');
+    newItem = items[items.length-1];
+    newItem.innerHTML += '<div class="puck-name">'+ puckName + '</div>';
+    $(newItem).css("background-color", slotColor);
+    $(newItem).css( {top: event.pageY, left: event.pageX});
+    // resize object to match slot's size
+    newItem.style.width = document.getElementsByClassName('slot')[0].offsetWidth;
+    newItem.style.height = document.getElementsByClassName('slot')[0].offsetHeight;
+  }
+});
+//-------------------------------END SLOT CLICK------------------------------------//
+
 //----------------------------------TRASH CAN--------------------------------------//
 // trash dropzone features
 interact('.trash').dropzone({
@@ -104,31 +161,7 @@ interact('.trash').dropzone({
 });
 //--------------------------------END TRASH CAN------------------------------------//
 
-//--------------------------------SLOT CLICK--------------------------------------//
-//upon click on a slot, an item is created and moved to mouse location, slot info is deleted
-interact('.slot').on('tap', function (event) {
-  slot = event.target;
-  var slotInfo = slot.innerHTML;
-  var slotColor = slot.style.backgroundColor;
-  if (slot.innerHTML != ""){
-    //if slot is permenant (on palette), don't dont delete it
-    if (!(slot.className.includes("permenant"))){
-      slot.innerHTML = "";
-      $(slot).css("background-color", "white");
-    }
-    document.getElementById("schedule").innerHTML += '<div class="item">New Puck</div>';
-    var items = document.getElementsByClassName('item');
-    newItem = items[items.length-1];
-    newItem.innerHTML = slotInfo;
-    $(newItem).css("background-color", slotColor);
-    $(newItem).css( {top: event.pageY, left: event.pageX});
-    // resize object to match slot's size
-    newItem.style.width = document.getElementsByClassName('slot')[0].offsetWidth;
-    newItem.style.height = document.getElementsByClassName('slot')[0].offsetHeight;
-  }
-});
-//-------------------------------END SLOT CLICK------------------------------------//
-
+//--------------------------------HELPER FUNCTIONS--------------------------------//
 //keeps track of absolute item position
 function dragItem (event) {
   item = event.target;
@@ -140,8 +173,8 @@ function dragItem (event) {
   item.setAttribute('data-x', x);
   item.setAttribute('data-y', y);
   // resize object to match slot's size
-  item.style.width = document.getElementsByClassName('slot')[0].offsetWidth;
-  item.style.height = document.getElementsByClassName('slot')[0].offsetHeight;
+  item.style.width = document.getElementsByClassName('source')[0].offsetWidth;
+  item.style.height = document.getElementsByClassName('source')[0].offsetHeight;
 }
 
 //keeps track of palette position relative to start
