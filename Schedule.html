@@ -182,10 +182,42 @@
     <img src="trash-icon.png">
   </div>
   <div class="popbox">
+    <!--
     Mission: <input type="text" id="Mission" value=""><br>
     Lines: <input type="text" id="Lines" value=""><br>
     Airspace: <input type="text" id="Airspace" value=""><br>
     <button type="button" onclick="clearPopBox()"> DONE </button>
+    -->
+    <!-- popbox changes -->
+    <!-- bay need to adjust everything to be form types -->
+    Mission: <input type="button" class="btn mission" id="mission" value="SAN-1"></input>
+      <input type="button" class="btn mission" id="mission" value="LASDT-2"></input>
+      <br />
+    Config: <input type="button" class="btn config" name="config" value="COLD GUN"></input>
+      <input type="button" class="btn config" name="config" value="8xBDL50"></input>
+      <br />
+    Airspace: <input type="button" class="btn airspace" name="airspace" value="BURNER HI"></input>
+      <input type="button" class="btn airspace" name="airspace" value="BURNER LOW"></input>
+      <input type="button" class="btn airspace" name="airspace" value="W-122: 1-7"></input>
+      <br />
+    FCP: <select class="form-control" id="FCP">
+        <!-- in reality this will get a selection from the DB getting all the pilots -->
+        <option>BROWN</option>
+        <option>MILLER</option>
+        <option>LEE</option>
+        <option>WHITE</option>
+        <option>CORTEZ</option>
+        </select>
+    RCP:<select class="form-control" id="RCP">
+        <!-- in reality this will get a selection from the DB getting all the pilots -->
+        <option>JOHNSON</option>
+        <option>SANCHEZ</option>
+        <option>SMITH</option>
+        <option>PATEL</option>
+        <option>JAMESON</option>
+        </select>
+    <button type="button" class="btn done" onclick="clearPopBox()"> Done </button>
+    <!-- popbox changes -->
   </div>
 </body>
 </html>
