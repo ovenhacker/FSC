@@ -1,3 +1,4 @@
+/* general stuff */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -23,89 +24,6 @@ html, body {
    padding: 0 !important;
 }
 
-.title-box {
-  background-color: white;
-  text-align: center;
-  font-size: 30px;
-  font-style: bold;
-  border: 1px solid black;
-}
-
-.slot {
-  background-color: white;
-  height: 50px;
-  border: 1px solid black;
-}
-
-.permenant{
-  width: 50%;
-  float: left;
-}
-
-.palette,
-.palette * {
-  background-color: yellow;
-  width: 120px;
-  height: 50px;
-  border: 1px solid black;
-  z-index: 99 !important;
-  position: absolute;
-  user-select: none;
-  -ms-touch-action: none;
-  touch-action: none;
-  cursor: pointer;
-  text-align: left;
-  outline: none;
-  font-size: 25px;
-}
-
-.palette:after {
-  content: '+';
-  font-weight: bold;
-  float: right;
-}
-
-.expand:after {
-  content: "-";
-}
-
-.expand, .palette:hover {
-  background-color: #ccc;
-}
-
-.palette-content {
-  max-height: 0;
-  width: 20%;
-  overflow: hidden;
-  position: absolute;
-  top: 105px;
-  transition: max-height 0s ease-out;
-  z-index: 98 !important;
-}
-
-.item,
-.item * {
-  background-color: lightblue;
-  width: 100px;
-  height: 50px;
-  min-height: 50px;
-  border: 1px solid black;
-  z-index: 98 !important;
-  position: absolute;
-  user-select: none;
-  -ms-touch-action: none;
-  touch-action: none;
-}
-
-.trash {
-  position: absolute;
-  z-index: 97 !important;
-  height: 80px;
-  width: 80px;
-  bottom: 15;
-  right: 15;
-}
-
 img {
     max-width: 100%;
     max-height: 100%;
@@ -119,13 +37,10 @@ img {
 }
 .forms-input{
   padding-left: 10px;
+  border-radius: 5px;
 }
-
-#schedule{
-  top: 50px;
-  height:100%;
-  width: 100%;
-  padding-top: 5px;
+.form-check{
+  margin-top: 5px;
 }
 
 #navigation{
@@ -133,4 +48,26 @@ img {
   position: relative;
   height: 50px;
   width: 100vw;
+}
+
+/* search stuff */
+.search {
+  /*background-image: url('/search-icon.png')5%;*/
+  width: 350px;
+  font-size: 14px;
+  padding: 7px 5px 7px 15px;
+  border: 1px solid #ddd;
+  /*margin-bottom: 12px;*/
+}
+.box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 7px 5px 7px 15px;
+}
+.comment {
+  width: 700px;
+  height: 100px;
+
 }
