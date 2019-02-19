@@ -235,10 +235,12 @@ function cloneSource(event){
   newItem.appendChild(syllabusDiv);
   $(newItem).css("background-color", slotColor);
   //match the mouse click's position
-  $(newItem).css( {top: event.pageY, left: event.pageX});
+  var itemWidth = document.getElementsByClassName('source')[0].offsetWidth;
+  var itemHeight = document.getElementsByClassName('source')[0].offsetHeight;
+  $(newItem).css( {top: event.pageY - itemHeight/3, left: event.pageX - itemWidth/3});
   // resize object to match slot's size
-  newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
-  newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
+  newItem.style.width = itemWidth;
+  newItem.style.height = itemHeight;
   return newItem;
 }
 
