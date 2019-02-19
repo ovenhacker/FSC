@@ -1,5 +1,6 @@
 var item;
 var slot;
+var newItem;
 //-----------------------------PALETTE PROPERTIES----------------------------------//
 // target elements with the "palette" class
 interact('.palette').draggable({
@@ -54,7 +55,7 @@ interact('.item').draggable({
   autoScroll: true,
   // call this function on every dragstart event
   onstart: function (event) {
-
+    item = event.target;
   },
   // call this function on every dragmove event
   onmove: dragItem
@@ -63,33 +64,34 @@ interact('.item').draggable({
   });
 //------------------------------END ITEM PROPERTIES--------------------------------//
 
+//-------------------------------SOURCE PROPERTIES------------------------------------//
+// target elements with the "source" class
+interact('.source').draggable({
+  // enable inertial throwing
+  inertia: true,
+  // keep the element within the area of it's parent
+  restrict: {
+    restriction: '#schedule',
+    endOnly: false,
+    elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+  },
+  // enable autoScroll
+  autoScroll: true,
+  // call this function on every dragstart event
+  onstart: function (event) {
+    item = cloneSource(event);
+  },
+  // call this function on every dragmove event
+  onmove: dragItem
+  // call this function on every dragend event
+  // onend:
+  });
+//------------------------------END SOURCE PROPERTIES--------------------------------//
+
 //-------------------------------SOURCE CLICK-------------------------------------//
 //upon click on a source, an item is created and moved to mouse location
 interact('.source').on('tap', function (event) {
-  slot = event.target;
-  //get info from source puck
-  var puckName = slot.getElementsByClassName("puck-name")[0].innerHTML;
-  var puckSyllabus = slot.getElementsByClassName("puck-syllabus")[0].innerHTML;
-  var slotColor = slot.style.backgroundColor;
-  //create new puck item
-  var newItem = document.createElement('div');
-  newItem.className = 'item';
-  document.getElementById('schedule').appendChild(newItem);
-  //creates and adds divs for the info
-  var nameDiv = document.createElement('div');
-  nameDiv.innerHTML = puckName;
-  nameDiv.className = 'puck-name';
-  newItem.appendChild(nameDiv);
-  var syllabusDiv = document.createElement('div');
-  syllabusDiv.innerHTML = puckSyllabus;
-  syllabusDiv.className = 'puck-syllabus';
-  newItem.appendChild(syllabusDiv);
-  $(newItem).css("background-color", slotColor);
-  //match the mouse click's position
-  $(newItem).css( {top: event.pageY, left: event.pageX});
-  // resize object to match slot's size
-  newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
-  newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
+  cloneSource(event);
 });
 //-----------------------------END SOURCE CLICK-------------------------------------//
 
@@ -140,9 +142,11 @@ interact('.slot').dropzone({
 //upon click on a slot, an item is created and moved to mouse location, slot info is deleted
 interact('.slot').on('tap', function (event) {
   slot = event.target;
-  var puckName = slot.getElementsByClassName("puck-name")[0].innerHTML;
-  var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
-  var slotColor = slot.style.backgroundColor;
+  if (slot.innerHTML != ""){
+    var puckName = slot.getElementsByClassName("puck-name")[0].innerHTML;
+    var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
+    var slotColor = slot.style.backgroundColor;
+  }
   //if slot is not blank
   if (slot.innerHTML != ""){
     $(".popbox").hide();
@@ -187,7 +191,6 @@ interact('.trash').dropzone({
 //--------------------------------HELPER FUNCTIONS--------------------------------//
 //keeps track of absolute item position
 function dragItem (event) {
-  item = event.target;
   var x = (parseFloat(item.getAttribute('data-x')) || 0) + event.dx;
   var y = (parseFloat(item.getAttribute('data-y')) || 0) + event.dy;
   // translate the element
@@ -200,7 +203,22 @@ function dragItem (event) {
   item.style.height = document.getElementsByClassName('source')[0].offsetHeight;
 }
 
-//keeps track of palette position relative to start
+//keeps track of absolute item position
+function dragClone (event) {
+  item = newItem;
+  var x = (parseFloat(item.getAttribute('data-x')) || 0) + event.dx;
+  var y = (parseFloat(item.getAttribute('data-y')) || 0) + event.dy;
+  // translate the element
+  item.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+  // update the posiion attributes
+  item.setAttribute('data-x', x);
+  item.setAttribute('data-y', y);
+  // resize object to match slot's size
+  item.style.width = document.getElementsByClassName('source')[0].offsetWidth;
+  item.style.height = document.getElementsByClassName('source')[0].offsetHeight;
+}
+
+//keeps track of palette and its content's absolute position
 function dragPalette (event) {
   var palette = event.target;
   var content = event.target.nextElementSibling;
@@ -214,6 +232,35 @@ function dragPalette (event) {
   palette.setAttribute('data-y', y);
   content.setAttribute('data-x', x);
   content.setAttribute('data-y', y);
+}
+
+//clones the source puck into an item puck
+function cloneSource(event){
+  slot = event.target;
+  //get info from source puck
+  var puckName = slot.getElementsByClassName("puck-name")[0].innerHTML;
+  var puckSyllabus = slot.getElementsByClassName("puck-syllabus")[0].innerHTML;
+  var slotColor = slot.style.backgroundColor;
+  //create new puck item
+  newItem = document.createElement('div');
+  newItem.className = 'item';
+  document.getElementById('schedule').appendChild(newItem);
+  //creates and adds divs for the info
+  var nameDiv = document.createElement('div');
+  nameDiv.innerHTML = puckName;
+  nameDiv.className = 'puck-name';
+  newItem.appendChild(nameDiv);
+  var syllabusDiv = document.createElement('div');
+  syllabusDiv.innerHTML = puckSyllabus;
+  syllabusDiv.className = 'puck-syllabus';
+  newItem.appendChild(syllabusDiv);
+  $(newItem).css("background-color", slotColor);
+  //match the mouse click's position
+  $(newItem).css( {top: event.pageY, left: event.pageX});
+  // resize object to match slot's size
+  newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
+  newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
+  return newItem;
 }
 
 function clearPopBox() {
