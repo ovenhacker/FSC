@@ -66,25 +66,19 @@ interact('.item').draggable({
 
 //-------------------------------SOURCE PROPERTIES------------------------------------//
 // target elements with the "source" class
-interact('.source').draggable({
-  // enable inertial throwing
-  inertia: true,
-  // keep the element within the area of it's parent
-  restrict: {
-    restriction: '#schedule',
-    endOnly: false,
-    elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-  },
-  // enable autoScroll
-  autoScroll: true,
-  // call this function on every dragstart event
-  onstart: function (event) {
-    item = cloneSource(event);
-  },
-  // call this function on every dragmove event
+interact('.source')
+.draggable({
   onmove: dragItem
-  // call this function on every dragend event
-  // onend:
+})
+.on('move',function(event){
+  var interaction = event.interaction;
+    // if the pointer was moved while being held down and an interaction hasn't started yet
+    if (interaction.pointerIsDown && !interaction.interacting()) {
+      // create an item clone of the element
+      item = cloneSource(event);
+      // start a drag interaction targeting the clone
+      interaction.start({ name: 'drag' }, event.interactable, item);
+    }
   });
 //------------------------------END SOURCE PROPERTIES--------------------------------//
 
@@ -191,21 +185,6 @@ interact('.trash').dropzone({
 //--------------------------------HELPER FUNCTIONS--------------------------------//
 //keeps track of absolute item position
 function dragItem (event) {
-  var x = (parseFloat(item.getAttribute('data-x')) || 0) + event.dx;
-  var y = (parseFloat(item.getAttribute('data-y')) || 0) + event.dy;
-  // translate the element
-  item.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-  // update the posiion attributes
-  item.setAttribute('data-x', x);
-  item.setAttribute('data-y', y);
-  // resize object to match slot's size
-  item.style.width = document.getElementsByClassName('source')[0].offsetWidth;
-  item.style.height = document.getElementsByClassName('source')[0].offsetHeight;
-}
-
-//keeps track of absolute item position
-function dragClone (event) {
-  item = newItem;
   var x = (parseFloat(item.getAttribute('data-x')) || 0) + event.dx;
   var y = (parseFloat(item.getAttribute('data-y')) || 0) + event.dy;
   // translate the element

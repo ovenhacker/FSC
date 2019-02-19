@@ -79,6 +79,9 @@ html, body {
   box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   height: 50px;
   border: 1px solid black;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
 .source:hover {
