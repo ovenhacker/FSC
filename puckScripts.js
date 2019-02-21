@@ -37,6 +37,7 @@ interact('.palette').on('tap', function (event) {
     content.style.maxHeight = content.scrollHeight + "px";
     content.style.overflow = "visible";
   }
+  $(content).css({top: palette.offsetTop + palette.offsetHeight, left: palette.offsetLeft});
 });
 //------------------------------END PALETTE EXPAND---------------------------------//
 

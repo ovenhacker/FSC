@@ -8,8 +8,8 @@ input {
 }
 .navbar {
   position: relative;
+  border-radius: 0;
   min-height: 50px;
-  margin-bottom: 0px;
   border: 1px solid transparent;
   z-index: 99 !important;
   width: 100vw;
@@ -47,9 +47,6 @@ img {
   margin-top: 5px;
 }
 
-#navigation{
-}
-
 /* search stuff */
 .search {
   /*background-image: url('/search-icon.png')5%;*/
@@ -83,4 +80,7 @@ img {
 }
 .btn:hover {
   background: #eee;
+}
+
+#navigation{
 }

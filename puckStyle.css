@@ -132,7 +132,6 @@ html, body {
   text-align: left;
   outline: none;
   font-size: 25px;
-  font-style: oblique;
 }
 
 .palette:after {
@@ -160,7 +159,6 @@ html, body {
   min-width: 400px;
   overflow: hidden;
   position: absolute;
-  top: 105px;
   transition: max-height 0s ease-out;
   z-index: 98 !important;
 }
@@ -228,12 +226,11 @@ img {
 
 #schedule{
   border-radius: 8px;
-  top: 50px;
   height:93%;
-  padding-top: 5px;
   width: 100%;
   overflow-x: scroll;
   overflow-y: scroll;
+  padding-bottom: 200px;
 }
 
 #navigation{
