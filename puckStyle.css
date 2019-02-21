@@ -7,17 +7,6 @@ html, body {
   /*background:#A1A1A1 !important;*/
 }
 
-.navbar {
-  position: absolute;
-  min-height: 50px;
-  margin-bottom: 0px;
-  border: 1px solid transparent;
-}
-
-.navbar-title {
-    color: white;
-}
-
 .dropdown-menu {
   right: 0;
   left: auto;
