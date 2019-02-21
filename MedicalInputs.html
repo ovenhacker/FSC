@@ -36,6 +36,38 @@
     <p>The medical staff can come here to update Pilot's medical status... </p>
   </div>
 
+  <!--********************************-->
+  <div class="container">
+    <form>
+      <fieldset>
+        <legend>Medical inputs</legend>
+        <p>
+          <label>Select Pilot</label>
+          <input id="pilot" type="search">
+        </p>
+        <p>
+          <label>Issue</label>
+          <input id="IPList" type="search">
+        </p>
+        <p>
+          <label>DNIF/Fly Opted</label>
+          <input id="availableAirspace" type="search">
+        </p>
+        <p>
+          <label>Description</label>
+          <br />
+          <textarea rows = "3" cols = "80">Comments</textarea>
+        </p>
+      </fieldset>
+    </form>
+  </div>
+  <!--********************************-->
+
+
+
+
+
+
 <div class="forms-input">
   <input class="forms-input search" type="text" id="pilotSearch" onkeyup="searchPilot()" placeholder="Search Pilots">
   <br />
@@ -59,8 +91,8 @@
 
 
   <!-- when dnif selected ... -->
-  Start: <input class="box" type="date" name="bday">
-  End: <input class="box" type="date" name="bday">
+  Start: <input class="box" type="date" id="startdate">
+  End: <input class="box" type="date" id="enddate">
 
   <!--
   <div class="form-group">
@@ -77,7 +109,9 @@
   </div>
   -->
   <br />
-  <input class="box comment" type="text" placeholder="Comments...">
+  <br />
+
+  <textarea rows = "3" cols = "80">Comments</textarea>
 
   <br />
   <button type="input" onclick="submitMedical()" class="btn btn-primary">Submit</button>
