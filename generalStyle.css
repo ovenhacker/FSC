@@ -1,7 +1,6 @@
 /* general stuff */
 html,body {
     max-width: 100%;
-    overflow-x: hidden;
 }
 
 input {
@@ -12,6 +11,8 @@ input {
   min-height: 50px;
   margin-bottom: 0px;
   border: 1px solid transparent;
+  z-index: 99 !important;
+  width: 100vw;
 }
 
 .navbar-title {
@@ -47,10 +48,6 @@ img {
 }
 
 #navigation{
-  z-index: 99 !important;
-  position: relative;
-  height: 50px;
-  width: 100vw;
 }
 
 /* search stuff */
