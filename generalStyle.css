@@ -4,6 +4,9 @@ html,body {
     overflow-x: hidden;
 }
 
+input {
+  border-radius: 5px;
+}
 .navbar {
   position: relative;
   min-height: 50px;
@@ -65,10 +68,22 @@ img {
   border-radius: 5px;
   border: 1px solid #ddd;
   padding: 7px 5px 7px 15px;
-  float: left;
 }
 .comment {
   width: 700px;
   height: 100px;
 
+}
+
+/* button testing medical */
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn:hover {
+  background: #eee;
 }

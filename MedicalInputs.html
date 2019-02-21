@@ -40,7 +40,7 @@
   <div class="container">
     <form>
       <fieldset>
-        <legend>Medical inputs</legend>
+        <legend>Medical inputs - NEW</legend>
         <p>
           <label>Select Pilot</label>
           <input id="pilot" type="search">
@@ -51,7 +51,15 @@
         </p>
         <p>
           <label>DNIF/Fly Opted</label>
-          <input id="availableAirspace" type="search">
+          <input type="radio" id="DNIF" name="status"
+            value="DNIF"><label for="DNIF" class="btn mission">DNIF</label></input>
+          <input type="radio" id="flyOpted" name="status"
+            value="Fly Opted"><label for="flyOpted" class="btn mission">FlyOpted</label></input>
+        </p>
+        <p>
+          <label>Dates</label>
+          Start: <input type="date" id="startdate">
+          End: <input type="date" id="enddate">
         </p>
         <p>
           <label>Description</label>
@@ -59,14 +67,16 @@
           <textarea rows = "3" cols = "80">Comments</textarea>
         </p>
       </fieldset>
+      <button type="input" onclick="submitMedical()" class="btn btn-primary">Submit</button>
     </form>
   </div>
   <!--********************************-->
 
 
+<br />
 
-
-
+<div class="container">
+  <legend>OLD Inputs</legend>
 
 <div class="forms-input">
   <input class="forms-input search" type="text" id="pilotSearch" onkeyup="searchPilot()" placeholder="Search Pilots">
@@ -116,6 +126,7 @@
   <br />
   <button type="input" onclick="submitMedical()" class="btn btn-primary">Submit</button>
   <!-- on submit, the function should update the DB with info -->
+</div>
 </div>
 
 </body>
