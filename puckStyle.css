@@ -1,8 +1,6 @@
 html, body {
   max-width: 100%;
   max-height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
   /*
   background:#A1A1A1 !important;*/
 }
@@ -105,7 +103,7 @@ html, body {
   -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   background-color: white;
-  height: 50px;
+  min-height: 50px;
   cursor: pointer;
   border: 1px solid black;
 }
@@ -226,11 +224,8 @@ img {
 
 #schedule{
   border-radius: 8px;
-  height:93%;
+  height: auto;
   width: 100%;
-  overflow-x: scroll;
-  overflow-y: scroll;
-  padding-bottom: 200px;
 }
 
 #navigation{
