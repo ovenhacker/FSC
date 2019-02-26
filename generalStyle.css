@@ -71,6 +71,9 @@ img {
 }
 
 /* button testing medical */
+input:checked + label {
+    background: #eee;
+}
 .btn {
   border: none;
   background-color: inherit;
@@ -81,6 +84,13 @@ img {
 }
 .btn:hover {
   background: #eee;
+}
+.done {
+  background: WHITE;
+  float: right;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 4px 6px;
 }
 /* button testing end */
 
