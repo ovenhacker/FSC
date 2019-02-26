@@ -103,6 +103,7 @@ html, body {
   -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   background-color: white;
+  height: 6vh;
   min-height: 50px;
   cursor: pointer;
   border: 1px solid black;
@@ -163,7 +164,7 @@ html, body {
 /*******************************END PALETTE CSS********************************/
 
 .trash {
-  position: absolute;
+  position: fixed;
   z-index: 97 !important;
   height: 80px;
   width: 80px;
@@ -223,10 +224,10 @@ img {
 }
 
 #schedule{
-  border-radius: 8px;
-  height: auto;
-  width: 100%;
+  width: 100vw;
 }
 
 #navigation{
+  height: 50px;
+  z-index: 99 !important;
 }
