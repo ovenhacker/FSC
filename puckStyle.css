@@ -4,6 +4,9 @@ html, body {
   /*
   background:#A1A1A1 !important;*/
 }
+.navbar {
+  position: fixed;
+}
 
 .row {
   width: 100%;
@@ -225,6 +228,7 @@ img {
 
 #schedule{
   width: 100vw;
+  height: 90vh;
 }
 
 #navigation{
