@@ -40,94 +40,39 @@
   <div class="container">
     <form>
       <fieldset>
-        <legend>Medical inputs - NEW</legend>
+        <legend>Medical inputs</legend>
         <p>
-          <label>Select Pilot</label>
+          <label>Select Pilot: </label>
           <input id="pilot" type="search">
         </p>
+
         <p>
-          <label>Issue</label>
+          <label>Issue: </label>
           <input id="IPList" type="search">
         </p>
+
         <p>
-          <label>DNIF/Fly Opted</label>
-          <input type="radio" id="DNIF" name="status"
-            value="DNIF"><label for="DNIF" class="btn mission">DNIF</label></input>
-          <input type="radio" id="flyOpted" name="status"
-            value="Fly Opted"><label for="flyOpted" class="btn mission">FlyOpted</label></input>
+          <label>DNIF/Fly Opted: </label>
+          <input type="radio" id="DNIF" name="status" value="DNIF"><label for="DNIF" class="btn">DNIF</label></input>
+          <input type="radio" id="flyOpted" name="status" value="Fly Opted"><label for="flyOpted" class="btn">FlyOpted</label></input>
         </p>
+
         <p>
-          <label>Dates</label>
+          <label>Dates: </label>
           Start: <input type="date" id="startdate">
           End: <input type="date" id="enddate">
         </p>
+
         <p>
-          <label>Description</label>
+          <label>Description: </label>
           <br />
-          <textarea rows = "3" cols = "80">Comments</textarea>
+          <textarea class="comment" rows = "3" cols = "80" placeholder="Comments" ></textarea>
         </p>
       </fieldset>
       <button type="input" onclick="submitMedical()" class="btn btn-primary">Submit</button>
     </form>
   </div>
   <!--********************************-->
-
-
-<br />
-
-<div class="container">
-  <legend>OLD Inputs</legend>
-
-<div class="forms-input">
-  <input class="forms-input search" type="text" id="pilotSearch" onkeyup="searchPilot()" placeholder="Search Pilots">
-  <br />
-
-  <div class="form-check">
-    <!-- some how this selection needs to go through the db query -->
-    <input class="form-check-input" type="radio" name="medRadios" id="DnifOption" value="dnif" checked>
-    <label class="form-check-label" for="DnifOption">
-      DNIF
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="medRadios" id="FlyOption" value="option2">
-    <label class="form-check-label" for="FlyOption">
-      Fly Opted
-    </label>
-  </div>
-
-  <input class="forms-input search" type="text" id="medicalSearch" onkeyup="searchMedical()" placeholder="Search Medical Reason">
-  <br />
-
-
-  <!-- when dnif selected ... -->
-  Start: <input class="box" type="date" id="startdate">
-  End: <input class="box" type="date" id="enddate">
-
-  <!--
-  <div class="form-group">
-    <label for="pilot">Select Pilot</label>
-    <select class="form-control" id="pilotselect">
-      <!-- in reality this will get a selection from the DB getting all the pilots -->
-    <!--
-      <option>Bob Joe</option>
-      <option>POTUS Lipkin</option>
-      <option>Meghan VanderMaas</option>
-      <option>GilesMcGillick</option>
-      <option>LtCol Whosiewhatit</option>
-    </select>
-  </div>
-  -->
-  <br />
-  <br />
-
-  <textarea rows = "3" cols = "80">Comments</textarea>
-
-  <br />
-  <button type="input" onclick="submitMedical()" class="btn btn-primary">Submit</button>
-  <!-- on submit, the function should update the DB with info -->
-</div>
-</div>
 
 </body>
 </html>
