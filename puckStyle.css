@@ -171,7 +171,7 @@ html, body {
   z-index: 97 !important;
   height: 80px;
   width: 80px;
-  bottom: 15;
+  top: 89vh;
   right: 15;
 }
 
@@ -228,7 +228,8 @@ img {
 
 #schedule{
   width: 100vw;
-  height: 90vh;
+  height: 92vh;
+  overflow-y: scroll;
 }
 
 #navigation{

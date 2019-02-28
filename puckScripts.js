@@ -253,5 +253,11 @@ function clearPopBox() {
   //document.getElementById("Mission").value = "";
   //document.getElementById("Config").value = "";
   //document.getElementById("Airspace").value = "";
+  var missionChoice = $("input[name='mission']:checked").val();
+  var configChoice = $("input[name='config']:checked").val();
+  var airspaceChoice = $("input[name='airspace']:checked").val();
+  if(missionChoice){slot.innerHTML += missionChoice;}
+  if(configChoice){slot.innerHTML += configChoice;}
+  if(airspaceChoice){slot.innerHTML += airspaceChoice;}
   $(".popbox").hide();
 }
