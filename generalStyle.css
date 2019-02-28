@@ -93,6 +93,10 @@ input:checked + label {
   padding: 4px 6px;
 }
 /* button testing end */
+.submit {
+  border-radius: 5px;
+}
+
 
 .container {
   max-width: 1200px;
