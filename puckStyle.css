@@ -25,20 +25,43 @@ html, body {
   font-style: bold;
 }
 
+.source {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 50%;
+  height: 6vh;
+  min-height: 40px;
+  float: left;
+  /* shadows */
+  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  border: 1px solid black;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+.source:hover {
+  border: 2px solid !important;
+}
+
 .puck-name{
   /* shadows off*/
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-  width: auto !important;
+  width: 30% !important;
   height: auto !important;
   position: relative !important;
   float: left !important;
   font-size: 20px !important;
   font-style: oblique !important;
   left: 5% !important;
+  top: 0% !important;
   border: none !important;
   pointer-events: none !important;
+  overflow: visible !important;
 }
 
 .puck-syllabus {
@@ -46,7 +69,7 @@ html, body {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-  width: auto !important;
+  width: 30% !important;
   height: auto !important;
   position: relative !important;
   float: right !important;
@@ -56,26 +79,7 @@ html, body {
   top: 60% !important;
   border: none !important;
   pointer-events: none !important;
-}
-
-.source {
-  cursor: pointer;
-  border-radius: 5px;
-  width: 50%;
-  float: left;
-  /* shadows */
-  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  height: 50px;
-  border: 1px solid black;
-  user-select: none;
-  -ms-touch-action: none;
-  touch-action: none;
-}
-
-.source:hover {
-  border: 2px solid !important;
+  overflow: visible !important;
 }
 
 .item,
@@ -92,7 +96,7 @@ html, body {
   height: 50px;
   min-height: 50px;
   border: 1px solid black;
-  z-index: 98 !important;
+  z-index: 90 !important;
   cursor: pointer;
   position: absolute;
   user-select: none;
@@ -106,10 +110,11 @@ html, body {
   -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   background-color: white;
-  height: 6vh;
-  min-height: 50px;
+  height: 12vh;
+  min-height: 100px;
   cursor: pointer;
   border: 1px solid black;
+  z-index: 70;
 }
 
 /********************************PALETTE CSS**********************************/
@@ -122,10 +127,12 @@ html, body {
 
   border-radius: 5px;
   background-color: lightyellow;
-  width: 120px;
-  height: 50px;
+  min-width: 100px;
+  min-height: 40px;
+  width: 7vw;
+  height: 6vh;
   border: 1px solid black;
-  z-index: 98 !important;
+  z-index: 80 !important;
   position: absolute;
   user-select: none;
   -ms-touch-action: none;
@@ -157,18 +164,18 @@ html, body {
   text-align: center;
   font-size: 20px;
   max-height: 0;
-  width: 20%;
-  min-width: 400px;
+  width: 18vw;
+  min-width: 300px;
   overflow: hidden;
   position: absolute;
   transition: max-height 0s ease-out;
-  z-index: 98 !important;
+  z-index: 80 !important;
 }
 /*******************************END PALETTE CSS********************************/
 
 .trash {
   position: fixed;
-  z-index: 97 !important;
+  z-index: 70 !important;
   height: 80px;
   width: 80px;
   top: 89vh;
@@ -229,7 +236,6 @@ img {
 #schedule{
   width: 100vw;
   height: 92vh;
-  overflow-y: scroll;
 }
 
 #navigation{
