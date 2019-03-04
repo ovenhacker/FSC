@@ -29,31 +29,32 @@
   </div>
 
   <div class="container">
+    <p>General Input in form of .csv</p>
+    <p>Select Pilot and edit Currencies/Quals<p>
+
+
     <p>Input instructors</p>
     <p>Input students (including which flight they are on)(csv) (name,course,fl#)</p>
     <p>Input syllabus for each course(csv) (including needed configs)</p>
     <p>Input which airspaces are available</p>
 
+
+
     <form>
       <fieldset>
-        <legend>Manual inputs</legend>
+        <legend>General Inputs</legend>
         <p>
-          <label>Students</label>
-          <input id="studentList" type="file"
-            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
-        </p>
-        <p>
-          <label>Instructor</label>
-          <input id="IPList" type="file"
-            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
-        </p>
-        <p>
-          <label>Airspace</label>
-          <input id="availableAirspace" type="file"
+          <label>Pilots</label>
+          <input id="pilotCurrencies" type="file"
             accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
         </p>
       </fieldset>
     </form>
+
+    <p> Or Specify a Pilot </p>
+    <label>Select Pilot: </label>
+    <input id="pilot" type="search">
+    <p> Then based on how we differentiate the currencies and quals change it here </p>
   </div>
 
 </body>
