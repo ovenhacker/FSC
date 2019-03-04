@@ -176,10 +176,10 @@ html, body {
 .trash {
   position: fixed;
   z-index: 70 !important;
-  height: 80px;
-  width: 80px;
-  top: 89vh;
-  right: 15;
+  height: 5vw;
+  width: 5vw;
+  top: 84vh;
+  right: 1vw;
 }
 
 .popbox{
