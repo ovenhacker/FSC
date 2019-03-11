@@ -16,10 +16,10 @@
 
   <!-- script references -->
   <script src="generalScripts.js"></script>
+
 </head>
 
 <body>
-
   <!--Navbar div-->
   <div id="navigation"></div>
 
@@ -43,6 +43,8 @@
           <label>Pilots</label>
           <input id="studentList" type="file"
             accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+          <button class ="submit" onclick="submitPilots()">Update</button>
+
         </p>
         <p>
           <label>Airspace</label>
@@ -61,6 +63,41 @@
         </p>
       </fieldset>
     </form>
+  </div>
+
+  <div class="container">
+    <!-- this is for testing the databse contection -->
+    <!-- display of the suggestions -->
+		<table cellpadding="4">
+			<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th>Rank</th> <th>Call Sign</th> </tr>
+			<?php
+
+			  // open connection to the database on azure with
+  			@ $db = new mysqli('pucc.database.windows.net', 'mowag', 'DaMcCoVa&WaGu', 'pucc');
+
+  			// Check if there were error and if so, report and exit
+  			if (mysqli_connect_errno()){
+  				echo 'ERROR: Could not connect to database.  Error is '.mysqli_connect_error();
+  				exit;
+  			}
+
+  			// run the SQL query to retrieve the lastest changed entity
+  			$results = $db->query('SELECT * FROM pilots order by pilot id');
+
+  			// determine how many rows were returned allows for changing of size if desired later. also not running without the for loop.
+  			$num_results = $results->num_rows;
+
+  			// loop through each row building the table rows and data columns
+  			for ($i=0; $i < $num_results; $i++){
+  				$r= $results->fetch_assoc();
+  				print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['rank'].'</td><td>'.$r['callSign'].'</td></tr>';
+  			}
+
+  			// deallocate memory for the results and close the database connection
+  			$results->free();
+  			$db->close();
+			?>
+		</table>
   </div>
 
 </body>

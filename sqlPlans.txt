@@ -1,5 +1,23 @@
 
 
+CREATE TABLE pilots;
+ALTER TABLE pilots ADD COLUMN pilotID INT();
+ALTER TABLE pilots ADD COLUMN lName   VARCHAR(256);
+ALTER TABLE pilots ADD COLUMN fName   VARCHAR(256);
+ALTER TABLE pilots ADD COLUMN callSign VARCHAR(256);
+ALTER TABLE pilots ADD COLUMN rank    VARCHAR(256);
+ALTER TABLE pilots ADD COLUMN isIP    CHAR(1);
+ALTER TABLE pilots ADD COLUMN sylbOne VARCHAR(256);
+ALTER TABLE pilots ADD COLUMN sylbTwo VARCHAR(256);
+ALTER TABLE pilots ADD COLUMN sylbThree VARCHAR(256);
+
+INSERT INTO pilots VALUES (1, 'Lipkin', 'Sean', 'POTUS', 'Cpt','y','B','I','N/A');
+INSERT INTO pilots VALUES (2, 'Johnson', 'Dillon', 'Shoe', 'LtCol','y','B','I','S');
+INSERT INTO pilots VALUES (3, 'McGillick', 'Giles', 'Ski', '2Lt','n','B','N/A','N/A');
+INSERT INTO pilots VALUES (4, 'Coffic-Shiavon', 'Sean', 'Headphones', '2Lt','y','B','N/A','N/A');
+
+///////////////////////////////////////////////////////////////////////
+
 CREATE TABLE 'PilotImports';
 ALTER TABLE PilotImports ADD COLUMN PilotID INT();
 ALTER TABLE PilotImports ADD COLUMN LName   VARCHAR(256);
