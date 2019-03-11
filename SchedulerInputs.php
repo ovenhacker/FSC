@@ -96,7 +96,7 @@
   			$num_results = $results->num_rows;
 
   			// loop through each row building the table rows and data columns
-        print $results->fetch assiciation
+        print $results->fetch_assoc();
 
   			//for ($i=0; $i < $num_results; $i++){
   			//	$r= $results->fetch_assoc();
