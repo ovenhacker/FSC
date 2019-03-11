@@ -90,7 +90,7 @@
   			// loop through each row building the table rows and data columns
   			for ($i=0; $i < $num_results; $i++){
   				$r= $results->fetch_assoc();
-  				print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['rank'].'</td><td>'.$r['callSign'].'</td></tr>';
+  				print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['rank'].'</td><td>'.$r['call'].'</td></tr>';
   			}
 
   			// deallocate memory for the results and close the database connection
