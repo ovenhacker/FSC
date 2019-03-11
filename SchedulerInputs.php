@@ -97,7 +97,7 @@
 
   			// loop through each row building the table rows and data columns
         $r =  $results->fetch_assoc();
-        print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['callSign'].'</td><td>'.$r['rank'].'</td></tr>';
+        echo '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['callSign'].'</td><td>'.$r['rank'].'</td></tr>';
 
   			//for ($i=0; $i < $num_results; $i++){
   			//	$r= $results->fetch_assoc();
@@ -108,6 +108,7 @@
   			$results->free();
   			$conn->close();
 			?>
+      <p>3.6</p>
 		</table>
   </div>
 
