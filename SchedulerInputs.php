@@ -69,7 +69,7 @@
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
-			<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th>Rank</th> <th>Call Sign</th> </tr>
+			<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>
 			<?php
 
 			  // open connection to the database on azure with
@@ -96,9 +96,10 @@
   			$num_results = $results->num_rows;
 
   			// loop through each row building the table rows and data columns
+        print $results
   			for ($i=0; $i < $num_results; $i++){
   				$r= $results->fetch_assoc();
-  				print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['rank'].'</td><td>'.$r['callSign'].'</td></tr>';
+  				print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['callSign'].'</td><td>'.$r['rank'].'</td></tr>';
   			}
 
   			// deallocate memory for the results and close the database connection
