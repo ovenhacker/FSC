@@ -101,7 +101,7 @@
         // echo "<tr><td>".$r["pilotID"]."</td><td>".$r["fName"]."</td><td>".$r["lName"]."</td><td>".$r["callSign"]."</td><td>".$r["rank"]."</td></tr>";
 
         if ($result->num_rows > 0) {
-            echo "there is something"
+            echo "<p> there is something </p>";
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$r["callSign"]."</td><td>".$r["rank"]."</td></tr>";
