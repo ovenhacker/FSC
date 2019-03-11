@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.7</p>
+    <p>3.8</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -101,6 +101,7 @@
         // echo "<tr><td>".$r["pilotID"]."</td><td>".$r["fName"]."</td><td>".$r["lName"]."</td><td>".$r["callSign"]."</td><td>".$r["rank"]."</td></tr>";
 
         if ($result->num_rows > 0) {
+            echo "there is something"
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$r["callSign"]."</td><td>".$r["rank"]."</td></tr>";
