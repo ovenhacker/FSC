@@ -73,7 +73,14 @@
 			<?php
 
 			  // open connection to the database on azure with
-  			@ $db = new mysqli('pucc.database.windows.net', 'mowag', 'DaMcCoVa&WaGu', 'pucc');
+        $serverName = "pucc.database.windows.net";
+        $connectionOptions = array(
+        "Database" => "pucc",
+        "Uid" => "mowag",
+        "PWD" => "DaMcCoVa&WaGu" );
+
+        //Establishes the connection
+        $conn = sqlsrv_connect($serverName, $connectionOptions);
 
   			// Check if there were error and if so, report and exit
   			if (mysqli_connect_errno()){
@@ -81,8 +88,9 @@
   				exit;
   			}
 
+
   			// run the SQL query to retrieve the lastest changed entity
-  			$results = $db->query('SELECT * FROM pilots order by pilot id');
+  			$results = $conn->query('SELECT * FROM pilots order by pilot id');
 
   			// determine how many rows were returned allows for changing of size if desired later. also not running without the for loop.
   			$num_results = $results->num_rows;
@@ -95,7 +103,7 @@
 
   			// deallocate memory for the results and close the database connection
   			$results->free();
-  			$db->close();
+  			$conn->close();
 			?>
 		</table>
   </div>
