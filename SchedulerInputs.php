@@ -96,11 +96,12 @@
   			$num_results = $results->num_rows;
 
   			// loop through each row building the table rows and data columns
-        print $results
-  			for ($i=0; $i < $num_results; $i++){
-  				$r= $results->fetch_assoc();
-  				print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['callSign'].'</td><td>'.$r['rank'].'</td></tr>';
-  			}
+        print $results->fetch assiciation
+
+  			//for ($i=0; $i < $num_results; $i++){
+  			//	$r= $results->fetch_assoc();
+  			//	print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['callSign'].'</td><td>'.$r['rank'].'</td></tr>';
+  			//}
 
   			// deallocate memory for the results and close the database connection
   			$results->free();
