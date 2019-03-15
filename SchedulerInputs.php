@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.15</p>
+    <p>3.16</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -101,10 +101,10 @@
         // $conn = sqlsrv_connect($serverName, $connectionOptions);
 
   			// Check if there were error and if so, report and exit
-  			//if (mysqli_connect_errno()){
-  			//	echo 'ERROR: Could not connect to database.  Error is '.mysqli_connect_error();
-  			//	exit;
-  			//}
+  			if (ERROR_MESSAGE()){
+  				echo 'ERROR: Could not connect to database.  Error is '.ERROR_MESSAGE();
+  				exit;
+  			}
 
 
   			// run the SQL query to retrieve the lastest changed entity
