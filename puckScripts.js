@@ -116,15 +116,11 @@ interact('.slot').dropzone({
       //make it appear where item was dropped
       $(".popbox").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
       //creates and adds divs for the info
-      var nameDiv = document.createElement('div');
-      nameDiv.innerHTML = puckName;
-      nameDiv.className = 'puck-name';
-      slot.appendChild(nameDiv);
+      populateSlot();
       var syllabusDiv = document.createElement('div');
       syllabusDiv.innerHTML = puckSyllabus;
       syllabusDiv.className = 'puck-syllabus';
       slot.appendChild(syllabusDiv);
-      $(slot).css("background-color", item.style.backgroundColor);
       item.remove();
     }
   },
@@ -138,9 +134,9 @@ interact('.slot').dropzone({
 interact('.slot').on('tap', function (event) {
   slot = event.target;
   if (slot.innerHTML != ""){
-    var puckName = slot.getElementsByClassName("puck-name")[0].innerHTML;
-    var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
-    var slotColor = slot.style.backgroundColor;
+    var puckName = slot.getElementsByClassName("slot-pilot")[0].innerHTML;
+    var puckSyllabus = slot.getElementsByClassName("puck-syllabus")[0].innerHTML;
+    var puckColor = slot.getElementsByClassName("slot-pilot")[0].style.backgroundColor;
   }
   //if slot is not blank
   if (slot.innerHTML != ""){
@@ -161,7 +157,7 @@ interact('.slot').on('tap', function (event) {
     syllabusDiv.innerHTML = puckSyllabus;
     syllabusDiv.className = 'puck-syllabus';
     newItem.appendChild(syllabusDiv);
-    $(newItem).css("background-color", slotColor);
+    $(newItem).css("background-color", puckColor);
     //match the mouse click's position
     $(newItem).css( {top: event.pageY, left: event.pageX});
     // resize object to match slot's size
@@ -260,4 +256,18 @@ function clearPopBox() {
   if(configChoice){slot.innerHTML += configChoice;}
   if(airspaceChoice){slot.innerHTML += airspaceChoice;}
   $(".popbox").hide();
+}
+
+function populateSlot(){
+  //get info from source puck
+  var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
+  var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
+  var puckColor = item.style.backgroundColor;
+  //create and adds pilot info
+  var pilot1 = document.createElement('div');
+  pilot1.className = 'slot-pilot';
+  pilot1.innerHTML = puckName;
+  slot.appendChild(pilot1);
+  $(pilot1).css("background-color", puckColor);
+
 }
