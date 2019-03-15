@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.9</p>
+    <p>3.10</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -133,10 +133,13 @@
           $getResults= sqlsrv_query($conn, $tsql);
           echo ("Reading data from table" . PHP_EOL);
           if ($getResults == FALSE)
+              echo 'help mee';
               echo (sqlsrv_errors());
           while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+            echo ' why doesnt this work?';
            echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
           }
+          echo 'this should work';
           sqlsrv_free_stmt($getResults);
       ?>
 
