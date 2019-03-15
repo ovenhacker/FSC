@@ -74,10 +74,12 @@
 			<?php
         // PHP Data Objects(PDO) Sample Code:
         try {
+          echo "try";
           $conn = new PDO("sqlsrv:server = tcp:pucc.database.windows.net,1433; Database = PUCC DB", "mowag", "DaMcCoVa&WaGu");
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch (PDOException $e) {
+          echo "catch";
           print("Error connecting to SQL Server.");
           die(print_r($e));
         }
