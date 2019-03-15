@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.8</p>
+    <p>3.9</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -120,6 +120,25 @@
   			$results->free();
   			$conn->close();
 			?>
+      <?php
+          $serverName = "pucc.database.windows.net"; // update me
+          $connectionOptions = array(
+            "Database" => "pucc",
+            "Uid" => "mowag",
+            "PWD" => "DaMcCoVa&WaGu"
+          );
+          //Establishes the connection
+          $conn = sqlsrv_connect($serverName, $connectionOptions);
+          $tsql= "SELECT * FROM pilotShort order by pilotID";
+          $getResults= sqlsrv_query($conn, $tsql);
+          echo ("Reading data from table" . PHP_EOL);
+          if ($getResults == FALSE)
+              echo (sqlsrv_errors());
+          while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+           echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
+          }
+          sqlsrv_free_stmt($getResults);
+      ?>
 
 		</table>
   </div>
