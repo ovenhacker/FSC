@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.16</p>
+    <p>3.17</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -77,6 +77,7 @@
           echo "try";
           $conn = new PDO("sqlsrv:server = tcp:pucc.database.windows.net,1433; Database = PUCC DB", "mowag", "DaMcCoVa&WaGu");
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          echo "Error:".ERROR_MESSAGE();
         }
         catch (PDOException $e) {
           echo "catch";
