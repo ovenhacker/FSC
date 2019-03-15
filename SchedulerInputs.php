@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.10</p>
+    <p>3.11</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
