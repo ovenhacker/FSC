@@ -72,34 +72,43 @@
 		<table cellpadding="4">
 			<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>
 			<?php
+        // PHP Data Objects(PDO) Sample Code:
+        try {
+          $conn = new PDO("sqlsrv:server = tcp:pucc.database.windows.net,1433; Database = PUCC DB", "mowag", "DaMcCoVa&WaGu");
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+        catch (PDOException $e) {
+          print("Error connecting to SQL Server.");
+          die(print_r($e));
+        }
 
+        // SQL Server Extension Sample Code:
+        $connectionInfo = array("UID" => "mowag@pucc", "pwd" => "DaMcCoVa&WaGu", "Database" => "PUCC DB", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+        $serverName = "tcp:pucc.database.windows.net,1433";
+        $conn = sqlsrv_connect($serverName, $connectionInfo);
+
+        echo "trying to connect to DB";
 			  // open connection to the database on azure with
-        $serverName = "pucc.database.windows.net";
-        $connectionOptions = array(
-        "Database" => "pucc",
-        "Uid" => "mowag",
-        "PWD" => "DaMcCoVa&WaGu" );
+        // $serverName = "pucc.database.windows.net";
+        // $connectionOptions = array(
+        // "Database" => "pucc",
+        // "Uid" => "mowag",
+        // "PWD" => "DaMcCoVa&WaGu" );
 
         //Establishes the connection
-        $conn = sqlsrv_connect($serverName, $connectionOptions);
+        // $conn = sqlsrv_connect($serverName, $connectionOptions);
 
   			// Check if there were error and if so, report and exit
-  			if (mysqli_connect_errno()){
-  				echo 'ERROR: Could not connect to database.  Error is '.mysqli_connect_error();
-  				exit;
-  			}
+  			//if (mysqli_connect_errno()){
+  			//	echo 'ERROR: Could not connect to database.  Error is '.mysqli_connect_error();
+  			//	exit;
+  			//}
 
 
   			// run the SQL query to retrieve the lastest changed entity
   			$results = $conn->query('SELECT * FROM pilotShort order by pilotID');
 
-  			// determine how many rows were returned allows for changing of size if desired later. also not running without the for loop.
-  			// $num_results = $results->num_rows;
-
   			// loop through each row building the table rows and data columns
-        // $r =  $results->fetch_assoc();
-        // echo "<tr><td>".$r["pilotID"]."</td><td>".$r["fName"]."</td><td>".$r["lName"]."</td><td>".$r["callSign"]."</td><td>".$r["rank"]."</td></tr>";
-
         if ($result->num_rows > 0) {
             echo "<p> there is something </p>";
             // output data of each row
@@ -111,37 +120,10 @@
             echo "0 results";
         }
 
-  			//for ($i=0; $i < $num_results; $i++){
-  			//	$r= $results->fetch_assoc();
-  			//	print '<tr><td>'.$r['pilotID'].'</td><td>'.$r['fName'].'</td><td>'.$r['lName'].'</td><td>'.$r['callSign'].'</td><td>'.$r['rank'].'</td></tr>';
-  			//}
-
   			// deallocate memory for the results and close the database connection
   			$results->free();
   			$conn->close();
 			?>
-      <?php
-          $serverName = "pucc.database.windows.net"; // update me
-          $connectionOptions = array(
-            "Database" => "pucc",
-            "Uid" => "mowag",
-            "PWD" => "DaMcCoVa&WaGu"
-          );
-          //Establishes the connection
-          $conn = sqlsrv_connect($serverName, $connectionOptions);
-          $tsql= "SELECT * FROM pilotShort order by pilotID";
-          $getResults= sqlsrv_query($conn, $tsql);
-          echo ("Reading data from table" . PHP_EOL);
-          if ($getResults == FALSE)
-              echo 'help mee';
-              echo (sqlsrv_errors());
-          while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-            echo ' why doesnt this work?';
-           echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
-          }
-          echo 'this should work';
-          sqlsrv_free_stmt($getResults);
-      ?>
 
 		</table>
   </div>
