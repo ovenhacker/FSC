@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.14</p>
+    <p>3.15</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -109,9 +109,7 @@
 
   			// run the SQL query to retrieve the lastest changed entity
   			$results = $conn->query('SELECT * FROM pilotShort ORDER BY pilotID');
-        if($results != null){
-          echo "not null";
-        }
+        echo "just did query";
 
   			// loop through each row building the table rows and data columns
         if ($result->num_rows > 0) {
