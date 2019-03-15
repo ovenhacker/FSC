@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.12</p>
+    <p>3.13</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -118,7 +118,7 @@
             echo "<p> there is something </p>";
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$r["callSign"]."</td><td>".$r["rank"]."</td></tr>";
+                print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$r["callSign"]."</td><td>".$r["rank"]."</td></tr>";
             }
             echo "</table>";
         } else {
@@ -128,6 +128,7 @@
   			// deallocate memory for the results and close the database connection
   			$results->free();
   			$conn->close();
+        echo "end";
 			?>
 
 		</table>
