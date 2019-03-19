@@ -74,10 +74,10 @@
 			<?php
         // PHP Data Objects(PDO) Sample Code:
         try {
-          echo "try";
+
           $conn = new PDO("sqlsrv:server = tcp:pucc.database.windows.net,1433; Database = PUCC DB", "mowag", "DaMcCoVa&WaGu");
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+          echo "try";
           // lol killed it
           //echo "Error:".ERROR_MESSAGE();
         }
@@ -93,15 +93,6 @@
         $conn = sqlsrv_connect($serverName, $connectionInfo);
 
         echo "trying to connect to DB";
-			  // open connection to the database on azure with
-        // $serverName = "pucc.database.windows.net";
-        // $connectionOptions = array(
-        // "Database" => "pucc",
-        // "Uid" => "mowag",
-        // "PWD" => "DaMcCoVa&WaGu" );
-
-        //Establishes the connection
-        // $conn = sqlsrv_connect($serverName, $connectionOptions);
 
   			// Check if there were error and if so, report and exit
   			if (ERROR_MESSAGE()){
@@ -111,7 +102,7 @@
 
 
   			// run the SQL query to retrieve the lastest changed entity
-  			$results = $conn->query('SELECT * FROM pilotShort ORDER BY pilotID');
+  			$results = $conn->query("SELECT * FROM pilotShort");
         echo "just did query";
 
   			// loop through each row building the table rows and data columns
