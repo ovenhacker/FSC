@@ -77,7 +77,9 @@
           echo "try";
           $conn = new PDO("sqlsrv:server = tcp:pucc.database.windows.net,1433; Database = PUCC DB", "mowag", "DaMcCoVa&WaGu");
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          echo "Error:".ERROR_MESSAGE();
+
+          // lol killed it
+          //echo "Error:".ERROR_MESSAGE();
         }
         catch (PDOException $e) {
           echo "catch";
