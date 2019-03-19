@@ -123,6 +123,18 @@ interact('.slot').dropzone({
       slot.appendChild(syllabusDiv);
       item.remove();
     }
+    else{
+      var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
+      var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
+      var puckColor = item.style.backgroundColor;
+      //create and adds pilot info
+      var pilot2 = document.createElement('div');
+      pilot2.className = 'slot-pilot';
+      pilot2.innerHTML = puckName;
+      slot.appendChild(pilot2);
+      $(pilot2).css("background-color", puckColor);
+      item.remove();
+    }
   },
   ondropdeactivate: function (event) {
   }
