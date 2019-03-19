@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.21</p>
+    <p>3.22</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -88,18 +88,11 @@
         }
 
         // SQL Server Extension Sample Code:
-        $connectionInfo = array("UID" => "mowag@pucc", "pwd" => "DaMcCoVa&WaGu", "Database" => "PUCC DB", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-        $serverName = "tcp:pucc.database.windows.net,1433";
-        $conn = sqlsrv_connect($serverName, $connectionInfo);
+        //$connectionInfo = array("UID" => "mowag@pucc", "pwd" => "DaMcCoVa&WaGu", "Database" => "PUCC DB", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+        //$serverName = "tcp:pucc.database.windows.net,1433";
+        //$conn = sqlsrv_connect($serverName, $connectionInfo);
 
         echo "trying to connect to DB";
-
-  			// Check if there were error and if so, report and exit
-  			//if (ERROR_MESSAGE()){
-  			//	echo 'ERROR: Could not connect to database.  Error is '.ERROR_MESSAGE();
-  			//	exit;
-  			//}
-        echo "after error";
 
   			// run the SQL query to retrieve the lastest changed entity
   			$results = $conn->query("SELECT * FROM dbo.pilotShort;");
