@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.23</p>
+    <p>3.24</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -78,8 +78,6 @@
           $conn = new PDO("sqlsrv:server = tcp:pucc.database.windows.net,1433; Database = PUCC DB", "mowag", "DaMcCoVa&WaGu");
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           echo "try";
-          // lol killed it
-          //echo "Error:".ERROR_MESSAGE();
         }
         catch (PDOException $e) {
           echo "catch";
@@ -87,18 +85,9 @@
           die(print_r($e));
         }
 
-        // SQL Server Extension Sample Code:
-        //$connectionInfo = array("UID" => "mowag@pucc", "pwd" => "DaMcCoVa&WaGu", "Database" => "PUCC DB", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-        //$serverName = "tcp:pucc.database.windows.net,1433";
-        //$conn = sqlsrv_connect($serverName, $connectionInfo);
-
-        echo "trying to connect to DB";
-
   			// run the SQL query to retrieve the lastest changed entity
-  			$results = $conn->query("SELECT * FROM dbo.pilotShort;");
-        echo "just did query";
-
-        print $results;
+        $query = "SELECT * FROM dbo.pilotShort";
+  			$results = $conn->query($query);
 
   			// loop through each row building the table rows and data columns
         if ($result->num_rows > 0) {
