@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.18</p>
+    <p>3.19</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -102,7 +102,7 @@
 
 
   			// run the SQL query to retrieve the lastest changed entity
-  			$results = $conn->query("SELECT * FROM pucc.pilotShort");
+  			$results = $conn->query("SELECT * FROM dbo.pilotShort");
         echo "just did query";
 
   			// loop through each row building the table rows and data columns
