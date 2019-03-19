@@ -95,10 +95,10 @@
         echo "trying to connect to DB";
 
   			// Check if there were error and if so, report and exit
-  			if (ERROR_MESSAGE()){
-  				echo 'ERROR: Could not connect to database.  Error is '.ERROR_MESSAGE();
-  				exit;
-  			}
+  			//if (ERROR_MESSAGE()){
+  			//	echo 'ERROR: Could not connect to database.  Error is '.ERROR_MESSAGE();
+  			//	exit;
+  			//}
         echo "after error";
 
   			// run the SQL query to retrieve the lastest changed entity
