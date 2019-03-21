@@ -7,11 +7,7 @@ interact('.palette').draggable({
   // enable inertial throwing
   inertia: true,
   // keep the element within the area of it's parent
-  restrict: {
-    restriction: '#schedule',
-    endOnly: false,
-    elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-  },
+  
   // enable autoScroll
   autoScroll: true,
   // call this function on every dragstart event
@@ -108,20 +104,12 @@ interact('.slot').dropzone({
     slot = event.target;
     //only allow drop if the slot is empty
     if(slot.innerHTML == ""){
-      //get name and syllabus values
-      var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
-      var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
       //show the popbox to choose inputs
       $(".popbox").show();
       //make it appear where item was dropped
       $(".popbox").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
       //creates and adds divs for the info
       populateSlot();
-      var syllabusDiv = document.createElement('div');
-      syllabusDiv.innerHTML = puckSyllabus;
-      syllabusDiv.className = 'puck-syllabus';
-      slot.appendChild(syllabusDiv);
-      item.remove();
     }
     else{
       var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
@@ -281,5 +269,10 @@ function populateSlot(){
   pilot1.innerHTML = puckName;
   slot.appendChild(pilot1);
   $(pilot1).css("background-color", puckColor);
+  var syllabusDiv = document.createElement('div');
+  syllabusDiv.innerHTML = puckSyllabus;
+  syllabusDiv.className = 'puck-syllabus';
+  slot.appendChild(syllabusDiv);
+  item.remove();
 
 }
