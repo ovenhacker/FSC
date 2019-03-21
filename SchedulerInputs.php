@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.25</p>
+    <p>3.26</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -86,19 +86,22 @@
         }
 
   			// run the SQL query to retrieve the lastest changed entity
-        $query = "SELECT * FROM pilotShort";
+        $query = "SELECT * FROM pilotShort"; // maybe add dbo.pilotShort
   			$results = $conn->query($query);
-        
+
   			// loop through each row building the table rows and data columns
         if ($result->num_rows > 0) {
             echo "<p> there is something </p>";
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$r["callSign"]."</td><td>".$r["rank"]."</td></tr>";
+                print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
             }
             echo "</table>";
         } else {
             echo "0 results";
+            while($row = $result->fetch_assoc()) {
+                print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
+            }
         }
 
   			// deallocate memory for the results and close the database connection
