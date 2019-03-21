@@ -88,7 +88,7 @@
   			// run the SQL query to retrieve the lastest changed entity
         $query = "SELECT * FROM pilotShort";
   			$results = $conn->query($query);
-        print $results;
+        
   			// loop through each row building the table rows and data columns
         if ($result->num_rows > 0) {
             echo "<p> there is something </p>";
