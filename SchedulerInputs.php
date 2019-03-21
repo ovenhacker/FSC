@@ -66,11 +66,10 @@
   </div>
 
   <div class="container">
-    <p>3.26</p>
+    <p>3.27</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
-			<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>
 			<?php
         // PHP Data Objects(PDO) Sample Code:
         try {
@@ -89,20 +88,23 @@
         $query = "SELECT * FROM pilotShort"; // maybe add dbo.pilotShort
   			$results = $conn->query($query);
 
-  			// loop through each row building the table rows and data columns
-        if ($result->num_rows > 0) {
-            echo "<p> there is something </p>";
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
-            }
-            echo "</table>";
-        } else {
-            echo "0 results";
-            while($row = $result->fetch_assoc()) {
-                print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
-            }
+        print "<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>";
+
+        while($row = $result->fetch_assoc()) {
+            print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
         }
+
+        // loop through each row building the table rows and data columns
+        //if ($result->num_rows > 0) {
+        //    echo "<p> there is something </p>";
+        //    // output data of each row
+        //    while($row = $result->fetch_assoc()) {
+        //        print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
+        //    }
+        //    echo "</table>";
+        //} else {
+        //    echo "0 results";
+        //}
 
   			// deallocate memory for the results and close the database connection
   			$results->free();
