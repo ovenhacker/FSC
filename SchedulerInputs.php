@@ -86,7 +86,7 @@
         }
 
   			// run the SQL query to retrieve the lastest changed entity
-        $query = "SELECT * FROM dbo.pilotShort";
+        $query = "SELECT * FROM pilotShort";
   			$results = $conn->query($query);
         print $results;
   			// loop through each row building the table rows and data columns
