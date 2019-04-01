@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.31</p>
+    <p>3.32</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -95,8 +95,8 @@
         // print "<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>";
 
         while($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
-            print "ahhhh";
-            print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
+            echo "ahhhh";
+            echo "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
         }
 
         // loop through each row building the table rows and data columns
