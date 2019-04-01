@@ -94,7 +94,8 @@ interact('.item').on('tap', function (event) {
     var infobox = document.createElement('div');
     infobox.className = 'infobox';
     item.appendChild(infobox);
-    $(infobox).css({top:item.offsetHeight});
+    $(infobox).css({top:item.offsetHeight-1, width: item.offsetWidth});
+    infobox.innerHTML += '<button type="button" style = "float: left" onclick="$(this).parent().parent().remove();">Delete</button>';
   } else {
     $(item).find('.infobox').remove();
   }

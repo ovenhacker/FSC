@@ -46,18 +46,13 @@ html, body {
   border: 2px solid !important;
 }
 
-.infobox{
-  font-style: oblique;
+.infobox {
   text-align: center;
-  background-color: red;
-  font-size: 20px;
-  max-height: 0;
-  width: 18vw;
-  min-width: 300px;
+  font-size: 12px;
   overflow: hidden;
   position: absolute;
-/*transition: max-height 0s;*/
-  z-index: 90 !important
+  background-color : #c9c9c9;
+  z-index: 89 !important;
 }
 
 .puck-name{
