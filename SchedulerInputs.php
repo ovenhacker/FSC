@@ -66,11 +66,40 @@
   </div>
 
   <div class="container">
-    <p>3.32</p>
+    <p>3.33</p>
+
+    <!-- Testing -->
+    <?php
+      $serverName = "pucc.database.windows.net"; // update me
+      $connectionOptions = array(
+          "Database" => "PUCC DB", // update me
+          "Uid" => "mowag", // update me
+          "PWD" => "DaMcCoVa&WaGu" // update me
+      );
+      //Establishes the connection
+      $conn = sqlsrv_connect($serverName, $connectionOptions);
+      $tsql= "SELECT * FROM pilotShort";
+      $getResults= sqlsrv_query($conn, $tsql);
+      echo ("Reading data from table" . PHP_EOL);
+      if ($getResults == FALSE)
+          echo (sqlsrv_errors());
+      while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+       echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
+      }
+      sqlsrv_free_stmt($getResults);
+    ?>
+
+
+
+
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
-			<?php
+
+
+
+
+			<!--
         // PHP Data Objects(PDO) Sample Code:
         try {
 
@@ -117,7 +146,7 @@
   			// $results->free();
   			$conn->close();
         echo "end";
-			?>
+			?> -->
 
 		</table>
   </div>
