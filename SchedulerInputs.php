@@ -66,9 +66,11 @@
   </div>
 
   <div class="container">
-    <p>3.34</p>
+    <p>3.35</p>
 
     <!-- Testing -->
+    <table cellpadding="4">
+
     <?php
       $serverName = "pucc.database.windows.net"; // update me
       $connectionOptions = array(
@@ -82,10 +84,12 @@
       $getResults= sqlsrv_query($conn, $tsql);
       echo ("Reading data from table" . PHP_EOL);
       echo "<br />";
+      echo "<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>";
       if ($getResults == FALSE)
           echo (sqlsrv_errors());
       while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-       echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
+       //echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
+       echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>");
       }
       sqlsrv_free_stmt($getResults);
     ?>
@@ -95,7 +99,6 @@
 
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
-		<table cellpadding="4">
 
 
 
