@@ -80,16 +80,16 @@
       );
       //Establishes the connection
       $conn = sqlsrv_connect($serverName, $connectionOptions);
-      $tsql= "SELECT * FROM pilotShort";
+      $tsql= "SELECT * FROM pilot";
       $getResults= sqlsrv_query($conn, $tsql);
       echo ("Reading data from table" . PHP_EOL);
       echo "<br />";
-      echo "<tr><th> Pilot ID </th><th> First Name </th><th> Last Name </th><th> Call Sign </th><th> Rank </th></tr>";
+      echo "<tr><th> Pilot ID </th><th> Last Name </th><th> First Name </th><th> Call Sign </th><th> Rank </th></tr>";
       if ($getResults == FALSE)
           echo (sqlsrv_errors());
       while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
        //echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
-       echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]."</td><td>".$row["lName"]."</td><td>".$row["rank"]."</td><td>".$row["callSign"]."</td></tr>");
+       echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["lName"]."</td><td>".$row["fName"]."</td><td>".$row["rank"]."</td><td>".$row["callSign"]."</td></tr>");
       }
       sqlsrv_free_stmt($getResults);
     ?>

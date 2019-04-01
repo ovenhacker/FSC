@@ -1,20 +1,23 @@
 
 
-CREATE TABLE pilots (
-pilotID INTEGER,
+CREATE TABLE pilot (
+pilotID INT NOT NULL,
 lName   VARCHAR(256),
 fName   VARCHAR(256),
 callSign VARCHAR(256),
 rank    VARCHAR(256),
-isIP    CHAR(1),
+isIP    CHAR(10),
+fcprcp  CHAR(10),
 sylbOne VARCHAR(256),
 sylbTwo VARCHAR(256),
-sylbThree VARCHAR(256));
+sylbThree VARCHAR(256),
+PRIMARY KEY (pilotID)
+);
 
-INSERT INTO pilots VALUES (1, 'Lipkin', 'Sean', 'POTUS', 'Cpt','y','B','I','N/A');
-INSERT INTO pilots VALUES (2, 'Johnson', 'Dillon', 'Shoe', 'LtCol','y','B','I','S');
-INSERT INTO pilots VALUES (3, 'McGillick', 'Giles', 'Ski', '2Lt','n','B','N/A','N/A');
-INSERT INTO pilots VALUES (4, 'Coffic-Shiavon', 'Sean', 'Headphones', '2Lt','y','B','N/A','N/A');
+INSERT INTO pilot VALUES (1, 'Lipkin', 'Sean', 'POTUS', 'Cpt','y','f','B','I','N/A');
+INSERT INTO pilot VALUES (2, 'Johnson', 'Dillon', 'Shoe', 'LtCol','y','r','B','I','S');
+INSERT INTO pilot VALUES (3, 'McGillick', 'Giles', 'Ski', '2Lt','n','f','B','N/A','N/A');
+INSERT INTO pilot VALUES (4, 'Coffin-Shiavon', 'Donny', 'Headphones', '2Lt','n','r','B','N/A','N/A');
 
 ///////////////////////////////////////////////////////////////////////
 
