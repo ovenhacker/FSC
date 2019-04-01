@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.29</p>
+    <p>3.30</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -88,7 +88,11 @@
         $query = "SELECT * FROM pilotShort"; // maybe add dbo.pilotShort
   			$results = $conn->query($query);
 
-        print "<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>";
+        echo ("Reading data from table" . PHP_EOL);
+          if ($getResults == FALSE)
+            echo (sqlsrv_errors());
+
+        // print "<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>";
 
         while($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
             print "ahhhh";
@@ -107,8 +111,10 @@
         //    echo "0 results";
         //}
 
+        sqlsrv_free_stmt($results);
+
   			// deallocate memory for the results and close the database connection
-  			$results->free();
+  			// $results->free();
   			$conn->close();
         echo "end";
 			?>
