@@ -66,7 +66,7 @@
   </div>
 
   <div class="container">
-    <p>3.30</p>
+    <p>3.31</p>
     <!-- this is for testing the databse contection -->
     <!-- display of the suggestions -->
 		<table cellpadding="4">
@@ -89,7 +89,7 @@
   			$results = $conn->query($query);
 
         echo ("Reading data from table" . PHP_EOL);
-          if ($getResults == FALSE)
+        if ($results == FALSE)
             echo (sqlsrv_errors());
 
         // print "<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>";
