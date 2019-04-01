@@ -46,6 +46,20 @@ html, body {
   border: 2px solid !important;
 }
 
+.infobox{
+  font-style: oblique;
+  text-align: center;
+  background-color: red;
+  font-size: 20px;
+  max-height: 0;
+  width: 18vw;
+  min-width: 300px;
+  overflow: hidden;
+  position: absolute;
+/*transition: max-height 0s;*/
+  z-index: 90 !important
+}
+
 .puck-name{
   /* shadows off*/
   -webkit-box-shadow: none !important;
@@ -191,7 +205,7 @@ html, body {
   min-width: 300px;
   overflow: hidden;
   position: absolute;
-  transition: max-height 0s ease-out;
+/*transition: max-height 0s;*/
   z-index: 80 !important;
 }
 /*******************************END PALETTE CSS********************************/

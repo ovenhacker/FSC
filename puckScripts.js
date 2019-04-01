@@ -1,13 +1,15 @@
 var item;
 var slot;
 var newItem;
-//-----------------------------PALETTE PROPERTIES----------------------------------//
+//Interact.js documentation at http://interactjs.io/docs/
+
+//-------------------------------PALETTE DRAG------------------------------------//
 // target elements with the "palette" class
 interact('.palette').draggable({
   // enable inertial throwing
   inertia: true,
   // keep the element within the area of it's parent
-  
+
   // enable autoScroll
   autoScroll: true,
   // call this function on every dragstart event
@@ -18,9 +20,9 @@ interact('.palette').draggable({
   // call this function on every dragend event
   // onend:
 });
-//---------------------------END PALETTE PROPERTIES--------------------------------//
 
-//-------------------------------PALETTE EXPAND------------------------------------//
+
+//-------------------------------PALETTE TAP------------------------------------//
 //palette expand functionality
 interact('.palette').on('tap', function (event) {
   var palette = event.target;
@@ -35,9 +37,33 @@ interact('.palette').on('tap', function (event) {
   }
   $(content).css({top: palette.offsetTop + palette.offsetHeight, left: palette.offsetLeft});
 });
-//------------------------------END PALETTE EXPAND---------------------------------//
 
-//-------------------------------ITEM PROPERTIES------------------------------------//
+
+//-------------------------------SOURCE DRAG------------------------------------//
+// target elements with the "source" class
+interact('.source').draggable({
+  onmove: dragItem
+})
+.on('move',function(event){
+  var interaction = event.interaction;
+    // if the pointer was moved while being held down and an interaction hasn't started yet
+    if (interaction.pointerIsDown && !interaction.interacting()) {
+      // create an item clone of the element
+      item = cloneSource(event);
+      // start a drag interaction targeting the clone
+      interaction.start({ name: 'drag' }, event.interactable, item);
+    }
+  });
+
+
+//-------------------------------SOURCE CLICK-------------------------------------//
+//upon click on a source, an item is created and moved to mouse location
+interact('.source').on('tap', function (event) {
+  cloneSource(event);
+});
+
+
+//-------------------------------ITEM DRAG------------------------------------//
 // target elements with the "item" class
 interact('.item').draggable({
   // enable inertial throwing
@@ -59,32 +85,21 @@ interact('.item').draggable({
   // call this function on every dragend event
   // onend:
   });
-//------------------------------END ITEM PROPERTIES--------------------------------//
 
-//-------------------------------SOURCE PROPERTIES------------------------------------//
-// target elements with the "source" class
-interact('.source')
-.draggable({
-  onmove: dragItem
-})
-.on('move',function(event){
-  var interaction = event.interaction;
-    // if the pointer was moved while being held down and an interaction hasn't started yet
-    if (interaction.pointerIsDown && !interaction.interacting()) {
-      // create an item clone of the element
-      item = cloneSource(event);
-      // start a drag interaction targeting the clone
-      interaction.start({ name: 'drag' }, event.interactable, item);
-    }
-  });
-//------------------------------END SOURCE PROPERTIES--------------------------------//
-
-//-------------------------------SOURCE CLICK-------------------------------------//
-//upon click on a source, an item is created and moved to mouse location
-interact('.source').on('tap', function (event) {
-  cloneSource(event);
+//------------------------------ITEM TAP-----------------------------------------//
+interact('.item').on('tap', function (event) {
+  item = event.target;
+  //if infobox doesn't exist
+  if($(item).find('.infobox').length == 0){
+    var infobox = document.createElement('div');
+    infobox.className = 'infobox';
+    item.appendChild(infobox);
+    $(infobox).css({top:item.offsetHeight});
+  } else {
+    $(item).find('.infobox').remove();
+  }
 });
-//-----------------------------END SOURCE CLICK-------------------------------------//
+
 
 //---------------------------------ITEM DROP---------------------------------------//
 //slot dropzone features for item
@@ -127,9 +142,9 @@ interact('.slot').dropzone({
   ondropdeactivate: function (event) {
   }
 });
-//-------------------------------END ITEM DROP-------------------------------------//
 
-//--------------------------------SLOT CLICK--------------------------------------//
+
+//--------------------------------SLOT TAP--------------------------------------//
 //upon click on a slot, an item is created and moved to mouse location, slot info is deleted
 interact('.slot').on('tap', function (event) {
   slot = event.target;
@@ -165,7 +180,7 @@ interact('.slot').on('tap', function (event) {
     newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
   }
 });
-//-------------------------------END SLOT CLICK------------------------------------//
+
 
 //----------------------------------TRASH CAN--------------------------------------//
 // trash dropzone features
@@ -177,7 +192,7 @@ interact('.trash').dropzone({
     item.remove();
     }
 });
-//--------------------------------END TRASH CAN------------------------------------//
+
 
 //--------------------------------HELPER FUNCTIONS--------------------------------//
 //keeps track of absolute item position
@@ -258,6 +273,7 @@ function clearPopBox() {
   $(".popbox").hide();
 }
 
+//transfers info from item and popbox into the slot
 function populateSlot(){
   //get info from source puck
   var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
