@@ -89,7 +89,7 @@
           echo (sqlsrv_errors());
       while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
        //echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
-       echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>");
+       echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]."</td><td>"..$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>");
       }
       sqlsrv_free_stmt($getResults);
     ?>
