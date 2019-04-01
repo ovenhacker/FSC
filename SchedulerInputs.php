@@ -72,11 +72,11 @@
     <table cellpadding="4">
 
     <?php
-      $serverName = "pucc.database.windows.net"; // update me
+      $serverName = "pucc.database.windows.net";
       $connectionOptions = array(
-          "Database" => "PUCC DB", // update me
-          "Uid" => "mowag", // update me
-          "PWD" => "DaMcCoVa&WaGu" // update me
+          "Database" => "PUCC DB",
+          "Uid" => "mowag",
+          "PWD" => "DaMcCoVa&WaGu"
       );
       //Establishes the connection
       $conn = sqlsrv_connect($serverName, $connectionOptions);
@@ -89,7 +89,7 @@
           echo (sqlsrv_errors());
       while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
        //echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
-       echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]."</td><td>".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>");
+       echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]."</td><td>".$row["lName"]."</td></tr>".$row["rank"]."</td><td>".$row["callSign"]."</td></tr>");
       }
       sqlsrv_free_stmt($getResults);
     ?>
