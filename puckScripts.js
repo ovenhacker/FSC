@@ -95,7 +95,15 @@ interact('.item').on('tap', function (event) {
     infobox.className = 'infobox';
     item.appendChild(infobox);
     $(infobox).css({top:item.offsetHeight-1, width: item.offsetWidth});
-    infobox.innerHTML += '<button type="button" style = "float: left" onclick="$(this).parent().parent().remove();">Delete</button>';
+    var info = document.createElement('div');
+    info.innerHTML = "Some info about this puck";
+    info.className = "info-info";
+    infobox.appendChild(info);
+    var deleter = document.createElement('button');
+    deleter.setAttribute('onClick','$(this).parent().parent().remove();');
+    deleter.textContent = "Delete";
+    deleter.className = 'info-delete';
+    infobox.appendChild(deleter);
   } else {
     $(item).find('.infobox').remove();
   }
@@ -180,18 +188,6 @@ interact('.slot').on('tap', function (event) {
     newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
     newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
   }
-});
-
-
-//----------------------------------TRASH CAN--------------------------------------//
-// trash dropzone features
-interact('.trash').dropzone({
-  accept: '.item',
-  overlap: 0.10,
-  ondrop: function (event) {
-    item = event.relatedTarget;
-    item.remove();
-    }
 });
 
 

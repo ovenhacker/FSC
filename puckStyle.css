@@ -4,6 +4,16 @@ html, body {
   /*
   background:#A1A1A1 !important;*/
 }
+
+#schedule{
+  width: 100vw;
+}
+
+#navigation{
+  height: 50px;
+  z-index: 99 !important;
+}
+
 .navbar {
   position: fixed;
 }
@@ -25,129 +35,6 @@ html, body {
   font-style: bold;
 }
 
-.source {
-  cursor: pointer;
-  border-radius: 5px;
-  width: 50%;
-  height: 6vh;
-  min-height: 40px;
-  float: left;
-  /* shadows */
-  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  border: 1px solid black;
-  user-select: none;
-  -ms-touch-action: none;
-  touch-action: none;
-}
-
-.source:hover {
-  border: 2px solid !important;
-}
-
-.infobox {
-  text-align: center;
-  font-size: 12px;
-  overflow: hidden;
-  position: absolute;
-  background-color : #c9c9c9;
-  z-index: 89 !important;
-}
-
-.puck-name{
-  /* shadows off*/
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-  width: 30% !important;
-  height: auto !important;
-  position: relative !important;
-  float: left !important;
-  font-size: 20px !important;
-  font-style: oblique !important;
-  left: 5% !important;
-  top: 0% !important;
-  border: none !important;
-  pointer-events: none !important;
-  overflow: visible !important;
-}
-
-.puck-syllabus {
-  /* shadows off */
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-  width: 30% !important;
-  height: auto !important;
-  position: relative !important;
-  float: right !important;
-  font-size: 10px !important;
-  font-style: oblique !important;
-  right: 5% !important;
-  top: 60% !important;
-  border: none !important;
-  pointer-events: none !important;
-  overflow: visible !important;
-}
-
-.item,
-.item * {
-  font-size: 20px;
-  /* shadows */
-  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  border-radius: 5px;
-  text-align: center;
-  font-size: 20;
-  width: 100px;
-  height: 50px;
-  min-height: 50px;
-  border: 1px solid black;
-  z-index: 90 !important;
-  cursor: pointer;
-  position: absolute;
-  user-select: none;
-  -ms-touch-action: none;
-  touch-action: none;
-}
-
-.slot-pilot {
-  font-size: 18px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 20;
-  width: 55%;
-  height: 35%;
-  min-height: 30px;
-  border: 1px solid black;
-  float: right !important;
-  pointer-events: none !important;
-}
-.slot-airspace {
-  font-size: 18px;
-  text-align: center;
-  font-size: 20;
-  width: 55%;
-  height: 35%;
-  min-height: 30px;
-  float: right !important;
-  pointer-events: none !important;
-}
-
-.slot {
-  /* shadows */
-  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
-  background-color: white;
-  height: 12vh;
-  min-height: 100px;
-  cursor: pointer;
-  border: 1px solid black;
-  z-index: 70;
-}
 
 /********************************PALETTE CSS**********************************/
 .palette,
@@ -203,17 +90,153 @@ html, body {
 /*transition: max-height 0s;*/
   z-index: 80 !important;
 }
-/*******************************END PALETTE CSS********************************/
 
-.trash {
-  position: fixed;
-  z-index: 70 !important;
-  height: 5vw;
-  width: 5vw;
-  top: 84vh;
-  right: 1vw;
+/******************************PUCK CSS*************************************/
+.item,
+.item * {
+  font-size: 20px;
+  /* shadows */
+  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  border-radius: 5px;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  min-height: 50px;
+  border: 1px solid black;
+  z-index: 90 !important;
+  cursor: pointer;
+  position: absolute;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
+.source {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 50%;
+  height: 6vh;
+  min-height: 40px;
+  float: left;
+  /* shadows */
+  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  border: 1px solid black;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+.source:hover {
+  border: 2px solid;
+}
+
+.infobox {
+  text-align: center;
+  font-size: 12px;
+  overflow: hidden;
+  height: auto;
+  position: absolute;
+  background-color : #c9c9c9;
+  cursor: default;
+  z-index: 89 !important;
+}
+
+.info-info {
+  font-size: 12px;
+  border-radius: 5px;
+  height: auto;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.info-delete {
+  font-size: 12px;
+  border-radius: 5px;
+  height:auto;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.puck-name{
+  /* shadows off*/
+  -webkit-box-shadow: none ;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+  width: 30% ;
+  height: auto ;
+  position: relative ;
+  float: left ;
+  font-size: 20px ;
+  font-style: oblique ;
+  left: 5% ;
+  top: 0% ;
+  border: none ;
+  pointer-events: none ;
+  overflow: visible ;
+}
+
+.puck-syllabus {
+  /* shadows off */
+  -webkit-box-shadow: none ;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+  width: 30% ;
+  height: auto ;
+  position: relative ;
+  float: right ;
+  font-size: 10px ;
+  font-style: oblique ;
+  right: 5% ;
+  top: 60% ;
+  border: none ;
+  pointer-events: none ;
+  overflow: visible ;
+}
+
+/***************************SLOT CSS***************************************/
+.slot {
+  /* shadows */
+  -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
+  background-color: white;
+  height: 12vh;
+  min-height: 100px;
+  cursor: pointer;
+  border: 1px solid black;
+  z-index: 70;
+}
+
+.slot-pilot {
+  font-size: 18px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20;
+  width: 55%;
+  height: 35%;
+  min-height: 30px;
+  border: 1px solid black;
+  float: right ;
+  pointer-events: none ;
+}
+.slot-airspace {
+  font-size: 18px;
+  text-align: center;
+  font-size: 20;
+  width: 55%;
+  height: 35%;
+  min-height: 30px;
+  float: right ;
+  pointer-events: none ;
+}
+
+/********************************OTHER CSS*******************************/
 .popbox{
   /*added padding */
   padding: 15px;
@@ -259,17 +282,3 @@ input:checked + label {
 .config {color: dodgerblue;}
 .airspace {color: orange;}
 /* testing buttons */
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-#schedule{
-  width: 100vw;
-}
-
-#navigation{
-  height: 50px;
-  z-index: 99 !important;
-}
