@@ -25,25 +25,28 @@
 
   <div class="container">
     <h3>Enter All Inputs Here!</h3>
-    <p>This is mainly a testing page for all the inputs so they are consolidated,
-      this is also a potential look at how this website would be if instead of
-      other people entering inputs, the scheduler input everything.</p>
+    <p>Consolidated input page for testing</p>
   </div>
 
   <div class="container">
-    <p>Input instructors</p>
-    <p>Input students (including which flight they are on)(csv) (name,course,fl#)</p>
-    <p>Input syllabus for each course(csv) (including needed configs)</p>
-    <p>Input which airspaces are available</p>
 
     <form>
       <fieldset>
         <legend>Manual inputs</legend>
         <p>
           <label>Pilots</label>
-          <input id="studentList" type="file"
+          <form action="php/submitPilot.php" method="post">
+            <label for="file">Choose a file:</label>
+            <input type="file" name="pilotList"
+              accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />/>
+            <input type="submit" value ="Update"/>
+
+
+          <!--<input id="studentList" type="file"
             accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
-          <button class ="submit" onclick="submitPilots()">Update</button>
+          <button class ="submit" onclick="updatePilots(studentList)" >Update</button>-->
+          </form>
+
 
         </p>
         <p>
@@ -66,9 +69,6 @@
   </div>
 
   <div class="container">
-    <p>3.36</p>
-
-    <!-- Testing -->
     <table cellpadding="4">
 
     <?php
@@ -80,6 +80,7 @@
       );
       //Establishes the connection
       $conn = sqlsrv_connect($serverName, $connectionOptions);
+
       $tsql= "SELECT * FROM pilot";
       $getResults= sqlsrv_query($conn, $tsql);
       echo ("Reading data from table" . PHP_EOL);
@@ -94,56 +95,6 @@
       sqlsrv_free_stmt($getResults);
     ?>
     </table>
-
-			<!--
-        // PHP Data Objects(PDO) Sample Code:
-        try {
-
-          $conn = new PDO("sqlsrv:server = tcp:pucc.database.windows.net,1433; Database = PUCC DB", "mowag", "DaMcCoVa&WaGu");
-          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          echo "try";
-        }
-        catch (PDOException $e) {
-          echo "catch";
-          print("Error connecting to SQL Server.");
-          die(print_r($e));
-        }
-
-  			// run the SQL query to retrieve the lastest changed entity
-        $query = "SELECT * FROM pilotShort"; // maybe add dbo.pilotShort
-  			$results = $conn->query($query);
-
-        echo ("Reading data from table" . PHP_EOL);
-        if ($results == FALSE)
-            echo (sqlsrv_errors());
-
-        // print "<tr> <th>Pilot ID</th> <th>First Name</th> <th>Last Name</th> <th> Call Sign</th> <th> Rank</th> </tr>";
-
-        while($row = sqlsrv_fetch_array($results, SQLSRV_FETCH_ASSOC)) {
-            echo "ahhhh";
-            echo "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
-        }
-
-        // loop through each row building the table rows and data columns
-        //if ($result->num_rows > 0) {
-        //    echo "<p> there is something </p>";
-        //    // output data of each row
-        //    while($row = $result->fetch_assoc()) {
-        //        print "<tr><td>".$row["pilotID"]."</td><td>".$row["fName"]." ".$row["lName"]."</td></tr>".$row["callSign"]."</td><td>".$row["rank"]."</td></tr>";
-        //    }
-        //    echo "</table>";
-        //} else {
-        //    echo "0 results";
-        //}
-
-        sqlsrv_free_stmt($results);
-
-  			// deallocate memory for the results and close the database connection
-  			// $results->free();
-  			$conn->close();
-        echo "end";
-			?> -->
-
 
   </div>
 
