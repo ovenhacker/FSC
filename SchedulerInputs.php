@@ -38,8 +38,8 @@
           <form action="php/submitPilot.php" method="post">
             <label for="file">Choose a file:</label>
             <input type="file" name="pilotList"
-              accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />/>
-            <input type="submit" value ="Update"/>
+              accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            <input type="submit" value ="Update" action="php/submitPilot.php" />
 
 
           <!--<input id="studentList" type="file"

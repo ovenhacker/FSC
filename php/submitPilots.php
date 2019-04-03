@@ -16,6 +16,12 @@
   $tsql= "INSERT INTO pilot VALUES (5, 'TRYING', 'DID THIS WORK?', 'HELP', 'Cpt','y','f','B','I','N/A');";
   $getResults = sqlsrv_query($conn, $tsql);
 
+  if ($getResults == FALSE)
+      echo (sqlsrv_errors());
+  while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+   //echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
+  }
+
   echo $getResults;
 
   sqlsrv_free_stmt($getResults);
