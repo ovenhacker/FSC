@@ -83,10 +83,10 @@
 
       /////////////////
       $usql= "INSERT INTO pilot VALUES (5, 'a', 'b?', 'c', 'Cpt','y','f','B','I','N/A');";
-      if (sqlsrv_query($conn, $usql) === TRUE) {
+      if (sqlsrv_query($conn, $usql) == TRUE) {
         echo "Record updated successfully";
       } else {
-        echo "Error updating record: " . echo(sqlsrv_errors);
+        echo "Error updating record: " . echo(sqlsrv_errors());
       }
       /////////////////
 

@@ -74,6 +74,8 @@ img {
 input:checked + label {
     background: #eee;
 }
+
+/* for any button across the pages */
 .btn {
   border: none;
   background-color: inherit;
@@ -96,6 +98,17 @@ input:checked + label {
 .submit {
   border-radius: 5px;
 }
+/* end buttons */
+
+/* for tables */
+
+.table {
+  border: 1px;
+  border-radius: 5px; 
+}
+
+/* end tables */
+
 
 
 .container {
