@@ -35,11 +35,11 @@
         <legend>Manual inputs</legend>
         <p>
           <label>Pilots</label>
-          <form action="php/submitPilot.php" method="post">
+          <form action="php/submitPilot.php" method="post" enctype="multipart/form-data">
             <label for="file">Choose a file:</label>
             <input type="file" name="pilotList"
               accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
-            <input type="submit" value ="Update" action="php/submitPilot.php" />
+            <input type="submit" value ="Update" onclick="php/submitPilot.php" />
 
 
           <!--<input id="studentList" type="file"
@@ -80,6 +80,16 @@
       );
       //Establishes the connection
       $conn = sqlsrv_connect($serverName, $connectionOptions);
+
+      /////////////////
+      $usql= "INSERT INTO pilot VALUES (5, 'a', 'b?', 'c', 'Cpt','y','f','B','I','N/A');";
+      if ($conn->query($sql) === TRUE) {
+        echo "Record updated successfully";
+      } else {
+        echo "Error updating record: " . $conn->error;
+      }
+      /////////////////
+
 
       $tsql= "SELECT * FROM pilot";
       $getResults= sqlsrv_query($conn, $tsql);

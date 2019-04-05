@@ -2,6 +2,7 @@
 <!-- this is where the submitted file gets uploaded to the database -->
 
 <?php
+  echo("anything");
   start_session(); // creates a secure space to load and access things like user and password...
   $serverName = "pucc.database.windows.net";
   $connectionOptions = array(
@@ -19,7 +20,7 @@
   if ($getResults == FALSE)
       echo (sqlsrv_errors());
   while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-   //echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
+   echo ($row['pilotID'] . " " . $row['fName'] . " " . $row['lName'] . " " . $row['callSign'] . " " . $row['rank'] . PHP_EOL);
   }
 
   echo $getResults;
