@@ -69,7 +69,7 @@
   </div>
 
   <div class="container">
-    <table cellpadding="4" style="border:1px;">
+    <table class="table" cellpadding="4" >
 
     <?php
       $serverName = "pucc.database.windows.net";
