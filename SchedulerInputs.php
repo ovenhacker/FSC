@@ -69,7 +69,7 @@
   </div>
 
   <div class="container">
-    <table cellpadding="4">
+    <table cellpadding="4" style="border:1px;">
 
     <?php
       $serverName = "pucc.database.windows.net";
@@ -82,12 +82,12 @@
       $conn = sqlsrv_connect($serverName, $connectionOptions);
 
       /////////////////
-      //$usql= "INSERT INTO pilot VALUES (5, 'a', 'b?', 'c', 'Cpt','y','f','B','I','N/A');";
-      //if ($conn->query($sql) === TRUE) {
-      //  echo "Record updated successfully";
-      //} else {
-      //  echo "Error updating record: " . $conn->error;
-      //}
+      $usql= "INSERT INTO pilot VALUES (5, 'a', 'b?', 'c', 'Cpt','y','f','B','I','N/A');";
+      if (sqlsrv_query($conn, $usql) === TRUE) {
+        echo "Record updated successfully";
+      } else {
+        echo "Error updating record: " . echo(sqlsrv_errors);
+      }
       /////////////////
 
 
