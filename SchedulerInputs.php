@@ -82,12 +82,12 @@
       $conn = sqlsrv_connect($serverName, $connectionOptions);
 
       /////////////////
-      //$usql= "INSERT INTO pilot VALUES (5, 'a', 'b?', 'c', 'Cpt','y','f','B','I','N/A');";
-      //if (sqlsrv_query($conn, $usql) == TRUE) {
-      //  echo "Record updated successfully";
-      //} else {
-      //  echo "Error updating record: " . echo(sqlsrv_errors());
-      //}
+      $usql= "INSERT INTO pilot VALUES (5, 'a', 'b?', 'c', 'Cpt','y','f','B','I','N/A');";
+      if (sqlsrv_query($conn, $usql) == TRUE) {
+        echo "Record updated successfully";
+      } else {
+        echo "Error updating record: " . sqlsrv_errors();
+      }
       /////////////////
 
 
@@ -95,7 +95,7 @@
       $getResults= sqlsrv_query($conn, $tsql);
       echo ("Reading data from table" . PHP_EOL);
       echo "<br />";
-      echo "<tr><th> Pilot ID </th><th> Last Name </th><th> First Name </th><th> Call Sign </th><th> Rank </th></tr>";
+      echo "<tr><th> Pilot ID </th><th> Last Name </th><th> First Name </th><th> Rank </th><th> Call Sign </th></tr>";
       if ($getResults == FALSE)
           echo (sqlsrv_errors());
       while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {

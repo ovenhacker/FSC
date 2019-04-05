@@ -3,7 +3,7 @@
 
 <?php
   echo("anything");
-  start_session(); // creates a secure space to load and access things like user and password...
+  // start_session(); // creates a secure space to load and access things like user and password...
   $serverName = "pucc.database.windows.net";
   $connectionOptions = array(
       "Database" => "PUCC DB",
