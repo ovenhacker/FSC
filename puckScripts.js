@@ -95,15 +95,12 @@ interact('.item').on('tap', function (event) {
     infobox.className = 'infobox';
     item.appendChild(infobox);
     $(infobox).css({top:item.offsetHeight-1, width: item.offsetWidth});
-    var info = document.createElement('div');
-    info.innerHTML = "Some info about this puck";
-    info.className = "info-info";
-    infobox.appendChild(info);
     var deleter = document.createElement('button');
     deleter.setAttribute('onClick','$(this).parent().parent().remove();');
     deleter.textContent = "Delete";
     deleter.className = 'info-delete';
     infobox.appendChild(deleter);
+    infobox.innerHTML += "Some info about this puck";
   } else {
     $(item).find('.infobox').remove();
   }

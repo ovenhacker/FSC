@@ -1,3 +1,6 @@
+$(function(){
+    $("#navigation").load("navbar.html");
+});
 // trying to make a function that updates the DB when the CSV is loaded
 function updatePilots (item) {
 
