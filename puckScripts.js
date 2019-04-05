@@ -90,22 +90,23 @@ interact('.item').draggable({
 interact('.item').on('tap', function (event) {
   item = event.target;
   //if infobox doesn't exist
-  if($(item).find('.infobox').length == 0){
-    var infobox = document.createElement('div');
-    infobox.className = 'infobox';
-    item.appendChild(infobox);
-    $(infobox).css({top:item.offsetHeight-1, width: item.offsetWidth});
+  if($(item).find('.item-info').length == 0 && item.className == 'item'){
+    var info = document.createElement('div');
+    info.className = 'item-info';
+    info.innerHTML += "Some info about this puck that can be read once the puck is clicked";
+    item.appendChild(info);
+    $(info).css({top:item.offsetHeight-1, width: item.offsetWidth});
     var deleter = document.createElement('button');
-    deleter.setAttribute('onClick','$(this).parent().parent().remove();');
-    deleter.textContent = "Delete";
-    deleter.className = 'info-delete';
-    infobox.appendChild(deleter);
-    infobox.innerHTML += "Some info about this puck";
+    deleter.setAttribute('onClick','$(this).parent().remove();');
+    deleter.className = 'item-delete';
+    deleter.innerHTML += '<img src="trash-icon.png" />';
+    item.appendChild(deleter);
+    $(deleter).css({left: item.offsetWidth-1});
   } else {
-    $(item).find('.infobox').remove();
+    $(item).find('.item-info').remove();
+    $(item).find('.item-delete').remove();
   }
 });
-
 
 //---------------------------------ITEM DROP---------------------------------------//
 //slot dropzone features for item

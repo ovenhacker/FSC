@@ -6,12 +6,23 @@ html, body {
 }
 
 #schedule{
-  width: 100vw;
+  width: auto;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding-left: 200px;
 }
 
 #navigation{
   height: 50px;
   z-index: 99 !important;
+}
+
+#palette{
+  float: left;
+  height: 100%;
+  width: 200px;
+  position:fixed;
 }
 
 .navbar {
@@ -21,6 +32,11 @@ html, body {
 .row {
   width: 100%;
   min-width: 1200px;
+  margin: 0px;
+}
+
+.column {
+  display : table-cell;
 }
 
 .nopadding {
@@ -94,11 +110,8 @@ html, body {
 /******************************PUCK CSS*************************************/
 .source {
   cursor: pointer;
-  border-radius: 5px;
-  width: 50%;
-  height: 6vh;
-  min-height: 40px;
-  float: left;
+  width: 100%;
+  height: 40px;
   /* shadows */
   -webkit-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
   -moz-box-shadow: 10px 10px 39px -10px rgba(0,0,0,0.9);
@@ -134,24 +147,28 @@ html, body {
   touch-action: none;
 }
 
-.infobox {
-  text-align: center;
+.item-info {
   font-size: 12px;
   background-color : #c9c9c9;
+  position: absolute;
   cursor: default;
 }
 
-.info-delete {
-  font-size: 12px;
-  border-radius: 5px;
-  height: 20px;
+.item-delete {
   min-height: 0px;
-  width: 50px;
-  text-align: center;
-  border: 1px solid black;
   cursor: pointer;
-  position: absolute;
-  bottom: 5px;
+  width: 50px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+
+.item-delete img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .puck-name{
