@@ -101,7 +101,7 @@ interact('.item').on('tap', function (event) {
     deleter.className = 'item-delete';
     deleter.innerHTML += '<img src="trash-icon.png" />';
     item.appendChild(deleter);
-    $(deleter).css({left: item.offsetWidth-1});
+    $(deleter).css({left: item.offsetWidth-1, top: 0});
   } else {
     $(item).find('.item-info').remove();
     $(item).find('.item-delete').remove();
@@ -157,7 +157,7 @@ interact('.slot').on('tap', function (event) {
   slot = event.target;
   if (slot.innerHTML != ""){
     var puckName = slot.getElementsByClassName("slot-pilot")[0].innerHTML;
-    var puckSyllabus = slot.getElementsByClassName("puck-syllabus")[0].innerHTML;
+    var puckSyllabus = slot.getElementsByClassName("slot-syllabus")[0].innerHTML;
     var puckColor = slot.getElementsByClassName("slot-pilot")[0].style.backgroundColor;
   }
   //if slot is not blank
@@ -282,7 +282,7 @@ function populateSlot(){
   $(pilot1).css("background-color", puckColor);
   var syllabusDiv = document.createElement('div');
   syllabusDiv.innerHTML = puckSyllabus;
-  syllabusDiv.className = 'puck-syllabus';
+  syllabusDiv.className = 'slot-syllabus';
   slot.appendChild(syllabusDiv);
   item.remove();
 
