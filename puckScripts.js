@@ -137,11 +137,12 @@ interact('.slot').dropzone({
       var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
       var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
       var puckColor = item.style.backgroundColor;
+      var slotPilots = slot.getElementsByClassName("slot-pilots")[0];
       //create and adds pilot info
       var pilot2 = document.createElement('div');
       pilot2.className = 'slot-pilot';
       pilot2.innerHTML = puckName;
-      slot.appendChild(pilot2);
+      slotPilots.appendChild(pilot2);
       $(pilot2).css("background-color", puckColor);
       item.remove();
     }
@@ -157,7 +158,7 @@ interact('.slot').on('tap', function (event) {
   slot = event.target;
   if (slot.innerHTML != ""){
     var puckName = slot.getElementsByClassName("slot-pilot")[0].innerHTML;
-    var puckSyllabus = slot.getElementsByClassName("slot-syllabus")[0].innerHTML;
+    var puckSyllabus = slot.getElementsByClassName("slot-mission")[0].innerHTML;
     var puckColor = slot.getElementsByClassName("slot-pilot")[0].style.backgroundColor;
   }
   //if slot is not blank
@@ -182,7 +183,7 @@ interact('.slot').on('tap', function (event) {
     $(newItem).css("background-color", puckColor);
     //match the mouse click's position
     $(newItem).css( {top: event.pageY, left: event.pageX});
-    // resize object to match slot's size
+    // resize object to match source's size
     newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
     newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
   }
@@ -274,11 +275,12 @@ function populateSlot(){
   var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
   var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
   var puckColor = item.style.backgroundColor;
+  var slotPilots = slot.getElementsByClassName("slot-pilots")[0];
   //create and adds pilot info
   var pilot1 = document.createElement('div');
   pilot1.className = 'slot-pilot';
   pilot1.innerHTML = puckName;
-  slot.appendChild(pilot1);
+  slotPilots.appendChild(pilot1);
   $(pilot1).css("background-color", puckColor);
   var syllabusDiv = document.createElement('div');
   syllabusDiv.innerHTML = puckSyllabus;
