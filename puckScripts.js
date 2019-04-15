@@ -42,18 +42,16 @@ interact('.palette').on('tap', function (event) {
 //-------------------------------SOURCE DRAG------------------------------------//
 // target elements with the "source" class
 interact('.source').draggable({
-  onmove: dragItem
-})
-.on('move',function(event){
-  var interaction = event.interaction;
-    // if the pointer was moved while being held down and an interaction hasn't started yet
-    if (interaction.pointerIsDown && !interaction.interacting()) {
+  onstart: function(event){
+    var interaction = event.interaction;
       // create an item clone of the element
       item = cloneSource(event);
       // start a drag interaction targeting the clone
       interaction.start({ name: 'drag' }, event.interactable, item);
-    }
-  });
+    },
+  onmove: dragItem
+});
+
 
 
 //-------------------------------SOURCE CLICK-------------------------------------//
@@ -108,9 +106,41 @@ interact('.item').on('tap', function (event) {
   }
 });
 
+interact('.slot-pilot').dropzone({
+  accept: '.item',
+  overlap: 0.30,
+  ondropactivate: function (event) {
+  },
+  ondragenter: function (event) {
+  },
+  ondragleave: function (event) {
+    //event.relatedTarget.textContent = 'Dragged out';
+  },
+  //destroys puck on drop, copies data to slot
+  ondrop: function (event) {
+    item = event.relatedTarget,
+    slot = event.target;
+    //only allow drop if the slot is empty
+    if(slot.innerHTML == ""){
+      var pilotName = item.getElementsByClassName("puck-name")[0].innerHTML;
+      var pilotColor = item.style.backgroundColor;
+      slot.innerHTML = pilotName;
+      $(slot).css("background-color", pilotColor);
+      slot.className = 'slot-pilot';
+      //show the popbox to choose inputs
+      $(".popbox").show();
+      //make it appear where item was dropped
+      $(".popbox").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
+      item.remove();
+    }
+  },
+  ondropdeactivate: function (event) {
+  }
+});
+
 //---------------------------------ITEM DROP---------------------------------------//
 //slot dropzone features for item
-interact('.slot').dropzone({
+/*interact('.slot').dropzone({
   accept: '.item',
   overlap: 0.60,
   ondropactivate: function (event) {
@@ -133,6 +163,7 @@ interact('.slot').dropzone({
       //creates and adds divs for the info
       populateSlot();
     }
+    //add second pilot
     else{
       var puckName = item.getElementsByClassName("puck-name")[0].innerHTML;
       var puckSyllabus = item.getElementsByClassName("puck-syllabus")[0].innerHTML;
@@ -149,12 +180,39 @@ interact('.slot').dropzone({
   },
   ondropdeactivate: function (event) {
   }
-});
+});*/
 
+interact('.slot-pilot').on('tap', function (event) {
+  var pilot = event.target;
+  //if a pilot exists in the slot
+  if (pilot.innerHTML != ""){
+    var pilotName = pilot.innerHTML;
+    var pilotColor = pilot.style.backgroundColor;
+    $(".popbox").hide();
+    //empty out the slot
+    pilot.innerHTML = "";
+    $(pilot).css("background-color", "white");
+    //create new puck item
+    var newItem = document.createElement('div');
+    newItem.className = 'item';
+    document.getElementById('schedule').appendChild(newItem);
+    //creates and adds divs for the info
+    var nameDiv = document.createElement('div');
+    nameDiv.innerHTML = pilotName;
+    nameDiv.className = 'puck-name';
+    newItem.appendChild(nameDiv);
+    $(newItem).css("background-color", pilotColor);
+    //match the mouse click's position
+    $(newItem).css( {top: event.pageY, left: event.pageX});
+    // resize object to match source's size
+    newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
+    newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
+  }
+});
 
 //--------------------------------SLOT TAP--------------------------------------//
 //upon click on a slot, an item is created and moved to mouse location, slot info is deleted
-interact('.slot').on('tap', function (event) {
+/*interact('.slot').on('tap', function (event) {
   slot = event.target;
   if (slot.innerHTML != ""){
     var puckName = slot.getElementsByClassName("slot-pilot")[0].innerHTML;
@@ -187,7 +245,7 @@ interact('.slot').on('tap', function (event) {
     newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
     newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
   }
-});
+});*/
 
 
 //--------------------------------HELPER FUNCTIONS--------------------------------//
