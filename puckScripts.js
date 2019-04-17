@@ -40,8 +40,9 @@ interact('.palette').on('tap', function (event) {
 
 
 //-------------------------------SOURCE DRAG------------------------------------//
-// target elements with the "source" class
+//source drag fuctionality in the x-direction (taking a puck)
 interact('.source').draggable({
+  startAxis: 'x',
   onstart: function(event){
     var interaction = event.interaction;
       // create an item clone of the element
@@ -50,6 +51,16 @@ interact('.source').draggable({
       interaction.start({ name: 'drag' }, event.interactable, item);
     },
   onmove: dragItem
+});
+
+//-------------------------------SOURCE DRAG------------------------------------//
+//source drag fuctionality in the y-direction (scrolling)
+interact('#palette').draggable({
+  startAxis: 'y',
+  onmove: function(event){
+    var palette = document.getElementById('palette');
+    $(palette).scrollTop($(palette).scrollTop() - event.dy);
+  }
 });
 
 
