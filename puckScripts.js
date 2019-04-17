@@ -39,7 +39,7 @@ interact('.palette').on('tap', function (event) {
 });
 
 
-//-------------------------------SOURCE DRAG------------------------------------//
+//-------------------------------SOURCE DRAG X------------------------------------//
 //source drag fuctionality in the x-direction (taking a puck)
 interact('.source').draggable({
   startAxis: 'x',
@@ -53,7 +53,7 @@ interact('.source').draggable({
   onmove: dragItem
 });
 
-//-------------------------------SOURCE DRAG------------------------------------//
+//-------------------------------SOURCE DRAG Y------------------------------------//
 //source drag fuctionality in the y-direction (scrolling)
 interact('#palette').draggable({
   startAxis: 'y',
@@ -76,7 +76,7 @@ interact('.source').on('tap', function (event) {
 // target elements with the "item" class
 interact('.item').draggable({
   // enable inertial throwing
-  inertia: true,
+  inertia: false,
   // keep the element within the area of it's parent
   restrict: {
     restriction: '#schedule',
@@ -116,10 +116,10 @@ interact('.item').on('tap', function (event) {
     $(item).find('.item-delete').remove();
   }
 });
-
+//----------------------------------ITEM DROP-----------------------------------//
 interact('.slot-pilot').dropzone({
   accept: '.item',
-  overlap: 0.30,
+  overlap: 0.25,
   ondropactivate: function (event) {
   },
   ondragenter: function (event) {
@@ -138,10 +138,6 @@ interact('.slot-pilot').dropzone({
       slot.innerHTML = pilotName;
       $(slot).css("background-color", pilotColor);
       slot.className = 'slot-pilot';
-      //show the popbox to choose inputs
-      $(".popbox").show();
-      //make it appear where item was dropped
-      $(".popbox").css({top: item.offsetTop + parseFloat(item.getAttribute('data-y')), left: item.offsetLeft + parseFloat(item.getAttribute('data-x'))});
       item.remove();
     }
   },
@@ -221,6 +217,13 @@ interact('.slot-pilot').on('tap', function (event) {
   }
 });
 
+interact('.slot-mission').on('tap', function (event) {
+  slot = event.target;
+  //show the popbox to choose inputs
+  $(".popbox").show();
+  //make it appear where item was dropped
+  $(".popbox").css({top: slot.offsetTop, left: slot.offsetLeft});
+});
 //--------------------------------SLOT TAP--------------------------------------//
 //upon click on a slot, an item is created and moved to mouse location, slot info is deleted
 /*interact('.slot').on('tap', function (event) {

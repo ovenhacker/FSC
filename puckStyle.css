@@ -19,7 +19,7 @@ html, body {
   height: calc(100% - 50px);
   padding: 0px;
   overflow-y: scroll;
-  padding-left: 10%;
+  padding-left: 150px;;
   min-padding-left:
 }
 #schedule::-webkit-scrollbar {
@@ -29,11 +29,11 @@ html, body {
 #palette{
   float: left;
   background-color: #c9c9c9;
-  min-width: 150px;
   height: calc(100% - 50px);
-  width: 10%;
-  position: absolute;
+  width: 150px;
+  position: fixed;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 #palette::-webkit-scrollbar {
   width: 0 !important;
@@ -81,8 +81,7 @@ html, body {
   border-radius: 5px;
   text-align: center;
   width: 100px;
-  height: 50px;
-  min-height: 50px;
+  height: 40px;
   border: 1px solid black;
   z-index: 90 !important;
   cursor: pointer;
@@ -104,7 +103,7 @@ html, body {
 .item-delete {
   min-height: 0px;
   cursor: pointer;
-  width: 50px;
+  width: 40px;
   position: absolute;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -155,7 +154,7 @@ html, body {
 /***************************SLOT CSS***************************************/
 .slot {
   background-color: white;
-  height: 60px;
+  height: 50px;
   border: 1px solid black;
   z-index: 70;
   font-size: 10;
@@ -163,17 +162,18 @@ html, body {
 
 .slot-line{
   float: left;
-  height: 100%;
-  width: 15%;
   font-size: 15;
+  width: 7%;
+  height: 100%;
   text-align: center;
-  writing-mode: ;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
 }
 
 .slot-pilots{
   float: left;
   height: 100%;
-  width: 45%;
+  width: 48%;
 }
 
 .slot-pilot {
@@ -183,30 +183,32 @@ html, body {
   width: 100%;
   height: 50%;
   float: left;
+  overflow: hidden;
   border: 1px solid black;
 }
 
 .slot-mission{
   float: left;
-  height: 75%;
-  width: 30%;
-  font-size: 15;
+  height: 77%;
+  width: 38%;
+  font-size: 12;
+  padding-bottom: 5px;
   text-align: center;
 }
 
 .slot-ship{
   float: left;
-  height: 75%;
-  width: 10%;
-  font-size: 26;
+  height: 70%;
+  width: 7%;
+  font-size: 22;
   text-align: center;
 }
 
 .slot-times{
   float: left;
-  height: 25%;
-  width: 40%;
-  font-size: 12;
+  height: 23%;
+  width: 45%;
+  font-size: 10;
   text-align: center;
 }
 
