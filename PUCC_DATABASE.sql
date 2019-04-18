@@ -3,138 +3,159 @@ DROP DATABASE IF EXISTS PUCC;
 CREATE DATABASE PUCC;
 USE PUCC;
 
--- Create a new blank table in the current database
+-- Create all tables
+CREATE TABLE syllabus (
+    fltID VARCHAR(8),
+    fltNxt VARCHAR(8),
+    fltNxtTwo VARCHAR(5),
+    fltRqOne VARCHAR(8),
+    fltRqTwo VARCHAR(5),
+    fltRqThree VARCHAR(5),
+    acReq VARCHAR(1),
+    mxConfig VARCHAR(24),
+    formationXships NUMERIC(2, 1),
+    night VARCHAR(1);
+);
+
+CREATE TABLE pilotFlt (
+    pilotID NUMERIC(4),
+    fltIDCompleted VarChar(8)
+);
+
 CREATE TABLE pilots (
-	pilotRANK CHAR (30) NOT NULL,
-    FName CHAR (30) NOT NULL,
-    LName CHAR (33) NOT NULL,
-    CSign CHAR (30),
-    pilotID int NOT NULL,
-    PRIMARY KEY (pilotID)
-    );
-    
--- Insert pilots into system
-INSERT INTO pilots VALUES ('Captain', 'Donny', 'Coffin', 'Headphones', 1);
-INSERT INTO pilots VALUES ('Captain', 'Meghan', 'Vandermass', 'Snow', 2);
-INSERT INTO pilots VALUES ('Captain', 'Morgan', 'Wagner', 'Oven', 3);
-INSERT INTO pilots VALUES ('Captain', 'Brian', 'Guerrero', 'Glass', 4);
-INSERT INTO pilots VALUES ('Captain', 'Giles', 'McGillick', 'Food', 5);
-INSERT INTO pilots VALUES ('Captain', 'Kyle', 'Daley', 'Gamer', 6);
-     
-CREATE TABLE flights (
-	flightID int NOT NULL,
-    flightDesc char (254),
-    PRIMARY KEY (flightID)
-	);
+    pilotID NUMERIC(4),
+    lName VARCHAR(30),
+    fName VARCHAR(8),
+    callSign VARCHAR(12),
+    rank VARCHAR(5),
+    ip VARCHAR(1),
+    fcpRcp VARCHAR(1),
+    syllabusOne NUMERIC(2),
+    syllabusTwo NUMERIC(2),
+    syllabusThree NUMERIC(2),
+		puckType VARCHAR(2)
+);
 
--- Insert flights into system
-INSERT INTO flights VALUES (1, 'Generic Description');
-INSERT INTO flights VALUES (2, 'Generic Description');
-INSERT INTO flights VALUES (3, 'Generic Description');
-INSERT INTO flights VALUES (4, 'Generic Description');
-INSERT INTO flights VALUES (5, 'Generic Description');
-INSERT INTO flights VALUES (6, 'Generic Description');
-INSERT INTO flights VALUES (7, 'Generic Description');
-INSERT INTO flights VALUES (8, 'Generic Description');
-INSERT INTO flights VALUES (9, 'Generic Description');
-INSERT INTO flights VALUES (10, 'Generic Description');
-INSERT INTO flights VALUES (11, 'Generic Description');
-INSERT INTO flights VALUES (12, 'Generic Description');
+CREATE TABLE syllabusIDs (
+	syllabusID NUMERIC(2),
+	syllabusName VARCHAR(30)
+);
 
-CREATE TABLE syllabi_events (
-	flightID int,
-    eventID int NOT NULL,
-    eventDesc char (254),
-    PRIMARY KEY (eventID),
-    CONSTRAINT FK_flights_se
-		FOREIGN KEY (flightID) REFERENCES flights (flightID)
-	);
+CREATE TABLE puckColors (
+	puckType VARCHAR(2),
+	background VARCHAR(32),
+	font VARCHAR(32)
+);
 
--- Insert Syllabi_events into system
-INSERT INTO syllabi_events VALUES (1, 1, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (2, 2, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (3, 3, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (4, 4, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (5, 5, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (6, 6, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (7, 7, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (8, 8, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (9, 9, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (10, 10, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (11, 11, 'SE Generic Description');
-INSERT INTO syllabi_events VALUES (null, 12, 'SE Generic Description');
+-- populate tables
+INSERT INTO syllabus VALUES
+    ('TR-1','TR-2','-','-','-','-','Y','cold gun',1.0,'n'),
+    ('TR-2','TR-3','-','TR-1','-','-','-','cold gun',1.0,'n'),
+    ('TR-3','TR-4','-','TR-2','-','-','-','cold gun',2.0,'n'),
+    ('TR-4','TR-5','-','TR-3','-','-','-','cold gun',2.0,'n'),
+    ('TR-5','TR-6 (P)','-','TR-4','-','-','-','cold gun',2.0,'n'),
+    ('TR-6 (P)','AHC','-','TR-5','-','-','Y','cold gun',2.0,'n'),
+    ('AHC','BFM-1','-','TR-6 (P)','-','-','Y','cold gun, 8xBDL50',2.0,'n'),
+    ('BFM-1','BFM-2','-','AHC','-','-','Y','cold gun, missile config',2.0,'n'),
+    ('BFM-2','BFM-3','-','BFM-1','-','-','-','cold gun, missile config',2.0,'n'),
+    ('BFM-3','BFM-4','-','BFM-2','-','-','-','cold gun, missile config',2.0,'n'),
+    ('BFM-4','BFM-5','-','BFM-3','-','-','-','cold gun, missile config',2.0,'n'),
+    ('BFM-5','BFM-6','-','BFM-4','-','-','-','cold gun, missile config',2.0,'n'),
+    ('BFM-6','BFM-7','-','BFM-5','-','-','-','cold gun, missile config',2.0,'n'),
+    ('BFM-7','BFM-8','-','BFM-6','-','-','Y','cold gun, missile config',2.0,'n'),
+    ('BFM-8','ACM-1','-','BFM-7','-','-','-','cold gun, missile config',2.0,'n'),
+    ('ACM-1','SA-1','-','BFM-8','-','-','Y','8xBDL50, 2xAMRAM',1.0,'n'),
+    ('SA-1','SA-2','-','ACM-1','-','-','Y','hot gun, 2xAMRAM',4.0,'n'),
+    ('SA-2','LASDT-1','-','SA-1','-','-','Y','hot gun, 2xAMRAM',4.0,'n'),
+    ('LASDT-1','LASDT-2','-','SA-2','-','-','Y','hot gun, 8xBDL50',4.0,'n'),
+    ('LASDT-2','SA-3','-','LASDT-1','-','-','-','hot gun, 8xBDL50',4.0,'n'),
+    ('SA-3','SA-4','-','LASDT-2','-','-','Y','hot gun, 2xAMRAM',2.0,'n'),
+    ('SA-4','ACM-2','-','SA-3','-','-','-','hot gun, 2xAMRAM',2.0,'n'),
+    ('ACM-2','ACM-3','-','SA-4','-','-','Y','8xBDL50, 2xAMRAM',4.0,'n'),
+    ('ACM-3','TI-1','-','ACM-2','-','-','-','8xBDL50, 2xAMRAM',4.0,'n'),
+    ('TI-1','TI-2','-','ACM-3','-','-','Y','cold gun',1.0,'n'),
+    ('TI-2','TI-3','-','TI-1','-','-','Y','cold gun',1.0,'n'),
+    ('TI-3','LASDT-3','NTR-1','TI-2','-','-','Y','cold gun',2.0,'n'),
+    ('LASDT-3','SA-5','-','TI-3','-','-','Y','hot gun, 8xBDL50',4.0,'n'),
+    ('SA-5','SA-6','-','LASDT-3','-','-','-','hot gun, 2xAMRAM',2.0,'n'),
+    ('SA-6','SA-7','-','SA-5','-','-','-','hot gun, 2xAMRAM',2.0,'n'),
+    ('SA-7','SA-8','-','SA-6','-','-','-','hot gun, 2xAMRAM',2.0,'n'),
+    ('SA-8','SA-9','-','SA-7','-','-','Y','hot gun, 2xAMRAM',2.0,'n'),
+    ('SA-9','SA-10','-','SA-8','-','-',NULL,'hot gun, 2xAMRAM',2.0,'n'),
+    ('SA-10','SAT-1','-','SA-9','-','-','Y','hot gun, 2xAMRAM',2.0,'n'),
+    ('NTR-1','NTR-2','-','TI-3','-','-','Y','8xBDL50, 4xAMRAM',1.0,'n'),
+    ('NTR-2','NTI','-','NTR-1','-','-','-','8xBDL50, 4xAMRAM',1.0,'n'),
+    ('NTI','SAN-1','SAN-3','NTR-2','-','-','Y','cold gun',2.0,'n'),
+    ('SAN-1','SAN-2','-','NTI','-','-','Y','8xBDL50, 4xAMRAM',2.0,'n'),
+    ('SAN-2','SAT-1','-','SAN-1','-','-','Y','8xBDL50, 4xAMRAM',4.0,'n'),
+    ('SAN-3','SAN-4','-','NTI','-','-','Y','8xBDL50, 4xAMRAM',2.0,'n'),
+    ('SAN-4','SAT-1','-','SAN-3','-','-','Y','8xBDL50, 4xAMRAM',2.0,'n'),
+    ('SAT-1','SAT-2','-','SA-10','SAN-2','SAN-4','-','hot gun, 4xBDL50',1.0,'n'),
+    ('SAT-2','-','-','SAT-1','-','-','-','hot gun, 4xBDL50',1.0,'n'),
+    ('DAAR','NAAR','-','TR-4','-','-','Y','cold gun',1.0,'n'),
+    ('NAAR','-','-','DAAR','-','-','Y','cold gun',1.0,'n');
 
-CREATE TABLE syllabi (
-	syllabiID int NOT NULL,
-    eventID int NOT NULL,
-    syllabiDesc char (254),
-    CONSTRAINT syllabi_PK PRIMARY KEY (syllabiID, eventID),
-    CONSTRAINT FK_syllabi_events_s
-		FOREIGN KEY (eventID) REFERENCES syllabi_events (eventID)
-	);
+INSERT INTO pilots VALUES
+    (1,'Lipkin',         'Sean',    'POTUS',      'Cpt',  'Y','F',3,2,    NULL, 'IP'),
+    (2,'Johnson',        'Dillon',  'Shoe',       'LtCol','Y','R',3,2,    1,    'IP'),
+    (3,'McGillick',      'Giles',   'Ski',        '2Lt',  'N','F',3,NULL, NULL, 'BS'),
+    (4,'Coffin-Shiavon', 'Donald',  'Headphones', '2Lt',  'N','R',3,NULL, NULL, 'BS'),
+    (6,'Miller',         'Joe',     'Window',     '1Lt',  'y','f',3,NULL, NULL, 'IP'),
+    (7,'Gutierrez',      'Luis',    'Misty',      '1LT',  'n','r',2,NULL, NULL, 'IS'),
+    (8,'Patel',          'Keeshan', 'Monty',      'Cpt',  'y','f',3,2,    NULL, 'IP'),
+    (9,'Balasubramanian','Partha',  'Reaper',     'Maj',  'y','r',3,2,    1,    'IP'),
+    (10,'Kostenbader',   'Karl',    'Tracker',    'Cpt',  'n','f',3,NULL, NULL, 'BS'),
+    (11,'Ollis',         'Seth',    'Chopper',    'Gen',  'N','r',1,NULL, NULL, 'SS'),
+    (12,'Emerson',       'Katie',   'Baby Giraffe','Cpt', 'Y','f',3,2,    NULL, 'IP'),
+    (13,'Young',         'Felix',   'BOLT',       '3Lt',  'N','r',3,NULL, NULL, 'BS'),
+    (14,'Mikos',         'Ed',      'AX',         '1Lt',  'n','f',3,NULL, NULL, 'BS'),
+    (15,'Pietrzak',      'George',  'Flipper',    '2lt',  'n','r',3,NULL, NULL, 'BS'),
+    (16,'Krishnan',      'Luke',    'Red Roper',  'cpt',  'n','r',1,NULL, NULL, 'SS'),
+    (17,'Higginbotham',  'Samuel',  'Ninja',      '1lt',  'n','f',3,NULL, NULL, 'BS'),
+    (18,'Auger',         'Tony',    'Legend',     'cpt',  'y','f',3,1,    NULL, 'IP'),
+    (19,'Ostendorf',     'Jordan',  'Zelda',      'ltCol','y','r',3,2,    1,    'IP'),
+    (20,'Huffman',       'Martin',  'Charzard',   'col',  'n','f',1,NULL, NULL, 'SS'),
+    (21,'Painter',       'Paul',    'Grumpy Cat', 'maj',  'y','r',3,NULL, NULL, 'BS'),
+    (22,'Livingston',    'John',    'Yellow',     'Col',  'n','f',1,NULL, NULL, 'SS'),
+    (23,'Eltz',          'Barb',    'Chair',      'cpt',  'y','r',3,2,    NULL, 'IP'),
+    (24,'Bruggeman',     'Jennifer','Reaper',     'ltcol','y','f',3,2,    1,    'IP'),
+    (25,'Breeze',        'Kiele',   'Spoon',      'ltgen','n','r',1,NULL, NULL, 'SS'),
+    (26,'Tilton',        'Paris',   'Python',     '2lt',  'n','f',3,NULL, NULL, 'BS');
 
--- Insert into Syllabi
-INSERT INTO syllabi VALUES (1, 1, 'S Generic Description');
-INSERT INTO syllabi VALUES (1, 2, 'S Generic Description');
-INSERT INTO syllabi VALUES (1, 3, 'S Generic Description');
-INSERT INTO syllabi VALUES (1, 4, 'S Generic Description');
-INSERT INTO syllabi VALUES (1, 5, 'S Generic Description');
-INSERT INTO syllabi VALUES (1, 6, 'S Generic Description');
-INSERT INTO syllabi VALUES (1, 7, 'S Generic Description');
-INSERT INTO syllabi VALUES (1, 8, 'S Generic Description');
+INSERT INTO pilotFlt VALUES
+    (3, 'BFM-8'),
+    (4, 'ACM-1'),
+    (7, 'SA-1'),
+    (10, 'SA-1'),
+    (11, 'ACM-1'),
+    (13, 'BFM-8'),
+    (14, 'BFM-8'),
+    (15, 'BFM-7'),
+    (16, 'BFM-7'),
+    (17, 'BFM-8'),
+    (20, 'BFM-8'),
+    (22, 'ACM-1'),
+    (25, 'ACM-1'),
+    (26, 'SA-1');
 
-CREATE TABLE syllabi_type (
-	pilotID int NOT NULL,
-    syllabiID int NOT NULL,
-    CONSTRAINT syllabi_list_PK PRIMARY KEY (pilotID, syllabiID),
-	CONSTRAINT FK_pilots_st
-		FOREIGN KEY (pilotID) REFERENCES pilots (pilotID),
-	CONSTRAINT FK_syllabi_st
-		FOREIGN KEY (syllabiID) REFERENCES syllabi (syllabiID)
-	);
+INSERT INTO syllabusIDs VALUES
+	(1, 'S-Course'),
+	(2, 'I-Course'),
+	(3, 'B-Course');
 
--- Insert into Syllabi_type
-INSERT INTO syllabi_type VALUES (1, 1);
-INSERT INTO syllabi_type VALUES (2, 1);
-INSERT INTO syllabi_type VALUES (3, 1);
-INSERT INTO syllabi_type VALUES (4, 1);
-INSERT INTO syllabi_type VALUES (5, 1);
-INSERT INTO syllabi_type VALUES (6, 1);
+INSERT INTO puckColors VALUES
+	('IP', 'black','white'),
+	('BS', 'green','black'),
+	('SS', 'magenta','black'),
+	('IS', 'yellow','black');
 
-CREATE TABLE completed_prereqs (
-	pilotID int NOT NULL,
-    eventID int NOT NULL,
-    CONSTRAINT completed_prereqs_PK PRIMARY KEY (pilotID, eventID),
-	CONSTRAINT FK_pilots_cp 
-		FOREIGN KEY (pilotID) REFERENCES pilots (pilotID),
-	CONSTRAINT FK_syllabi_events_cp
-		FOREIGN KEY (eventID) REFERENCES syllabi_events (eventID)
-	);
 
--- Insert into Completed_prereqs
-INSERT INTO completed_prereqs VALUES (1, 1);
-INSERT INTO completed_prereqs VALUES (1, 2);
-INSERT INTO completed_prereqs VALUES (1, 3);
-INSERT INTO completed_prereqs VALUES (2, 1);
-INSERT INTO completed_prereqs VALUES (2, 2);
-INSERT INTO completed_prereqs VALUES (2, 3);
-INSERT INTO completed_prereqs VALUES (3, 1);
-INSERT INTO completed_prereqs VALUES (3, 2);
-INSERT INTO completed_prereqs VALUES (3, 3);
-INSERT INTO completed_prereqs VALUES (4, 1);
-INSERT INTO completed_prereqs VALUES (4, 2);
-INSERT INTO completed_prereqs VALUES (4, 3);
-INSERT INTO completed_prereqs VALUES (5, 1);
-INSERT INTO completed_prereqs VALUES (5, 2);
-INSERT INTO completed_prereqs VALUES (5, 3);
-INSERT INTO completed_prereqs VALUES (6, 1);
-INSERT INTO completed_prereqs VALUES (6, 2);
-INSERT INTO completed_prereqs VALUES (6, 3);
 
-select * from pilots;
-select * from flights;
-select * from completed_prereqs;
-select * from syllabi_events;
-select * from syllabi_type;
-select * from syllabi;
-
+-- stored procedures
+-- to execute: EXEC procedure_name;
+CREATE PROCEDURE prioritize_pilots AS SELECT * FROM pilots ORDER BY syllabusOne, syllabusTwo, syllabusThree GO;
+SELECT lname, background, font FROM pilots RIGHT
+  JOIN puckColors ON pilots.puckType = puckColors.puckType ORDER BY syllabusOne;
+SELECT lname, fltIDCompleted, fltNxt fltNxtTwo FROM pilots
+    JOIN pilotFlt ON pilots.pilotID = pilotFlt.pilotID
+    JOIN syllabus ON pilotFlt.fltIDCompleted = syllabus.fltID
