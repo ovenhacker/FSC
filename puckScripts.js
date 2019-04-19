@@ -188,7 +188,7 @@ interact('.slot-pilot').dropzone({
   ondropdeactivate: function (event) {
   }
 });*/
-
+//------------------------------SLOT PILOT TAP-----------------------------------//
 interact('.slot-pilot').on('tap', function (event) {
   var pilot = event.target;
   //if a pilot exists in the slot
@@ -217,7 +217,8 @@ interact('.slot-pilot').on('tap', function (event) {
   }
 });
 
-interact('.slot-mission').on('tap', function (event) {
+//-----------------------------------SLOT SPECIFICS TAP-----------------------------//
+interact('.slot-specifics').on('tap', function (event) {
   slot = event.target;
   //show the popbox to choose inputs
   $(".popbox").show();
@@ -325,19 +326,17 @@ function cloneSource(event){
 }
 
 function clearPopBox() {
-  //var mission = document.getElementById("Mission").value,
-  //config = document.getElementById("Config").value,
-  //airspace = document.getElementById("Airspace").value;
-  //slot.innerHTML += '  [' + mission + '], [' + cofig + '], [' + airspace + ']';
-  //document.getElementById("Mission").value = "";
-  //document.getElementById("Config").value = "";
-  //document.getElementById("Airspace").value = "";
-  var missionChoice = $("input[name='mission']:checked").val();
-  var configChoice = $("input[name='config']:checked").val();
-  var airspaceChoice = $("input[name='airspace']:checked").val();
-  if(missionChoice){slot.innerHTML += missionChoice;}
-  if(configChoice){slot.innerHTML += configChoice;}
-  if(airspaceChoice){slot.innerHTML += airspaceChoice;}
+  var mission = $("input[id='Mission']").val();
+  var missionSize = $("input[id='Mission-Size']").val();
+  var takeoff = $("input[id='Takeoff']").val();
+  var land = $("input[id='Land']").val();
+  var notes = $("input[id='Notes']").val();
+  //jquery for finding specifics slots
+  if(mission){$(slot).find('div.slot-mission').html(mission);}
+  if(missionSize){$(slot).find("div.slot-ship").html(missionSize);}
+  if(takeoff){$(slot).find("div.slot-times").html("T: " + takeoff);}
+  if(land){$(slot).find("div.slot-times").append("      L: " + land);}
+  if(notes){$(slot).find("div.notes").html(notes);}
   $(".popbox").hide();
 }
 
@@ -359,5 +358,4 @@ function populateSlot(){
   syllabusDiv.className = 'slot-syllabus';
   slot.appendChild(syllabusDiv);
   item.remove();
-
 }
