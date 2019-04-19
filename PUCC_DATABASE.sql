@@ -14,7 +14,7 @@ CREATE TABLE syllabus (
     acReq VARCHAR(1),
     mxConfig VARCHAR(24),
     formationXships NUMERIC(2, 1),
-    night VARCHAR(1);
+    nightrq VARCHAR(1);
 );
 
 CREATE TABLE pilotFlt (
@@ -153,9 +153,20 @@ INSERT INTO puckColors VALUES
 
 -- stored procedures
 -- to execute: EXEC procedure_name;
-CREATE PROCEDURE prioritize_pilots AS SELECT * FROM pilots ORDER BY syllabusOne, syllabusTwo, syllabusThree GO;
-SELECT lname, background, font FROM pilots RIGHT
-  JOIN puckColors ON pilots.puckType = puckColors.puckType ORDER BY syllabusOne;
-SELECT lname, fltIDCompleted, fltNxt fltNxtTwo FROM pilots
+CREATE PROCEDURE prioritize_pilots AS SELECT * FROM pilots
+  ORDER BY syllabusOne, syllabusTwo, syllabusThree GO;
+
+-- query to get pilot puck info and order, and last completed flight
+CREATE PROCEDURE prioritize_pilots_with_colors AS
+SELECT lname, background, font, fltIDCompleted FROM pilots RIGHT
+  JOIN puckColors ON pilots.puckType = puckColors.puckType
+  JOIN pilotFlt ON pilots.pilotID = pilotFlt.pilotID
+  ORDER BY syllabusOne;
+EXEC prioritize_pilots_with_colors;
+-- query to get info for the pop up box when placing a puckType
+-- will probably need to be used as a prepared statement so we can insert the name of the pilot
+SELECT fltNxt, fltNxtTwo, mxConfig, formationXships, nightrq FROM pilots
     JOIN pilotFlt ON pilots.pilotID = pilotFlt.pilotID
     JOIN syllabus ON pilotFlt.fltIDCompleted = syllabus.fltID
+    WHERE lname = 'Ollis';
+    -- make it so you insert the name of the puck being handled in where ollis is
