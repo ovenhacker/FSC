@@ -63,7 +63,7 @@
 
           //echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["lName"]."</td><td>".$row["fName"]."</td><td>".$row["rank"]."</td><td>".$row["callSign"]."</td></tr>");
       }
-      echo("</div>")
+      echo("</div>");
       sqlsrv_free_stmt($getResults);
   ?>
 
