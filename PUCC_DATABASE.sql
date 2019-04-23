@@ -149,8 +149,6 @@ INSERT INTO puckColors VALUES
 	('SS', 'magenta','black'),
 	('IS', 'yellow','black');
 
-
-
 -- stored procedures
 -- to execute: EXEC procedure_name;
 CREATE PROCEDURE prioritize_pilots AS SELECT * FROM pilots
@@ -158,9 +156,9 @@ CREATE PROCEDURE prioritize_pilots AS SELECT * FROM pilots
 
 -- query to get pilot puck info and order, and last completed flight
 CREATE PROCEDURE prioritize_pilots_with_colors AS
-SELECT lname, background, font, fltIDCompleted FROM pilots RIGHT
+SELECT lname, background, font, fltIDCompleted FROM pilots
   JOIN puckColors ON pilots.puckType = puckColors.puckType
-  JOIN pilotFlt ON pilots.pilotID = pilotFlt.pilotID
+  LEFT JOIN pilotFlt ON pilots.pilotID = pilotFlt.pilotID
   ORDER BY syllabusOne;
 EXEC prioritize_pilots_with_colors;
 -- query to get info for the pop up box when placing a puckType
