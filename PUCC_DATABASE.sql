@@ -143,11 +143,11 @@ INSERT INTO syllabusIDs VALUES
 	(2, 'I-Course'),
 	(3, 'B-Course');
 
-INSERT INTO puckColors VALUES
-	('IP', 'black','white'),
-	('BS', 'green','black'),
-	('SS', 'magenta','black'),
-	('IS', 'yellow','black');
+  INSERT INTO puckColors VALUES
+	('IP', 'floralwhite','black'),
+	('BS', 'lightgreen','black'),
+	('SS', 'purple','black'),
+	('IS', 'gold','black');
 
 -- stored procedures
 -- to execute: EXEC procedure_name;
