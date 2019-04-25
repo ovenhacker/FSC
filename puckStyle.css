@@ -176,7 +176,6 @@ html, body {
   float: left;
   height: 100%;
   width: 48%;
-  background: pink;
 }
 
 .slot-pilot {
@@ -205,7 +204,6 @@ html, body {
   padding-bottom: 5px;
   text-align: center;
   pointer-events: none;
-  background: lightgreen;
 }
 
 .slot-ship{
@@ -214,7 +212,6 @@ html, body {
   width: 35%;
   font-size: 25;
   text-align: center;
-  background: lightblue;
 }
 
 .slot-times{
@@ -223,7 +220,6 @@ html, body {
   width: 35%;
   font-size: 10;
   text-align: center;
-  background: lightyellow;
 }
 
 /********************************OTHER CSS*******************************/
