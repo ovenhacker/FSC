@@ -245,9 +245,9 @@
         <div class="slot-line"><b>301</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission">LASDT-2<br>8xBDL50</div>
-          <div class="slot-ship">4</div>
-          <div class="slot-times">T: 1315<br>L: 1500</div>
+          <div class="slot-mission"></div>
+          <div class="slot-ship"></div>
+          <div class="slot-times"></div>
         </div>
       </div>
       <div class="slot">
@@ -412,9 +412,9 @@
         <div class="slot-line"><b>301</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission">LASDT-2<br>8xBDL50</div>
-          <div class="slot-ship">4</div>
-          <div class="slot-times">T: 1315<br>L: 1500</div>
+          <div class="slot-mission"></div>
+          <div class="slot-ship"></div>
+          <div class="slot-times"></div>
         </div>
       </div>
       <div class="slot">
@@ -579,9 +579,9 @@
         <div class="slot-line"><b>301</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission">LASDT-2<br>8xBDL50</div>
-          <div class="slot-ship">4</div>
-          <div class="slot-times">T: 1315<br>L: 1500</div>
+          <div class="slot-mission"></div>
+          <div class="slot-ship"></div>
+          <div class="slot-times"></div>
         </div>
       </div>
       <div class="slot">
@@ -746,9 +746,9 @@
         <div class="slot-line"><b>301</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission">LASDT-2<br>8xBDL50</div>
-          <div class="slot-ship">4</div>
-          <div class="slot-times">T: 1315<br>L: 1500</div>
+          <div class="slot-mission"></div>
+          <div class="slot-ship"></div>
+          <div class="slot-times"></div>
         </div>
       </div>
       <div class="slot">
