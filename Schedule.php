@@ -87,7 +87,7 @@
         <div class="slot-line"><b>302</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -96,7 +96,7 @@
         <div class="slot-line"><b>303</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -105,7 +105,7 @@
         <div class="slot-line"><b>304</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -114,7 +114,7 @@
         <div class="slot-line"><b>305</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -123,7 +123,7 @@
         <div class="slot-line"><b>306</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -132,7 +132,7 @@
         <div class="slot-line"><b>307</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -141,7 +141,7 @@
         <div class="slot-line"><b>308</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -150,7 +150,7 @@
         <div class="slot-line"><b>309</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -159,7 +159,7 @@
         <div class="slot-line"><b>310</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -168,7 +168,7 @@
         <div class="slot-line"><b>311</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -177,7 +177,7 @@
         <div class="slot-line"><b>312</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -186,7 +186,7 @@
         <div class="slot-line"><b>313</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -195,7 +195,7 @@
         <div class="slot-line"><b>314</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -204,7 +204,7 @@
         <div class="slot-line"><b>315</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -213,7 +213,7 @@
         <div class="slot-line"><b>316</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -222,7 +222,7 @@
         <div class="slot-line"><b>317</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -231,7 +231,7 @@
         <div class="slot-line"><b>318</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -245,7 +245,7 @@
         <div class="slot-line"><b>301</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -254,7 +254,7 @@
         <div class="slot-line"><b>302</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -263,7 +263,7 @@
         <div class="slot-line"><b>303</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -272,7 +272,7 @@
         <div class="slot-line"><b>304</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -281,7 +281,7 @@
         <div class="slot-line"><b>305</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -290,7 +290,7 @@
         <div class="slot-line"><b>306</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -299,7 +299,7 @@
         <div class="slot-line"><b>307</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -308,7 +308,7 @@
         <div class="slot-line"><b>308</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -317,7 +317,7 @@
         <div class="slot-line"><b>309</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -326,7 +326,7 @@
         <div class="slot-line"><b>310</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -335,7 +335,7 @@
         <div class="slot-line"><b>311</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -344,7 +344,7 @@
         <div class="slot-line"><b>312</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -353,7 +353,7 @@
         <div class="slot-line"><b>313</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -362,7 +362,7 @@
         <div class="slot-line"><b>314</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -371,7 +371,7 @@
         <div class="slot-line"><b>315</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -380,7 +380,7 @@
         <div class="slot-line"><b>316</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -389,7 +389,7 @@
         <div class="slot-line"><b>317</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -398,7 +398,7 @@
         <div class="slot-line"><b>318</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -412,7 +412,7 @@
         <div class="slot-line"><b>301</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -421,7 +421,7 @@
         <div class="slot-line"><b>302</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -430,7 +430,7 @@
         <div class="slot-line"><b>303</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -439,7 +439,7 @@
         <div class="slot-line"><b>304</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -448,7 +448,7 @@
         <div class="slot-line"><b>305</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -457,7 +457,7 @@
         <div class="slot-line"><b>306</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -466,7 +466,7 @@
         <div class="slot-line"><b>307</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -475,7 +475,7 @@
         <div class="slot-line"><b>308</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -484,7 +484,7 @@
         <div class="slot-line"><b>309</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -493,7 +493,7 @@
         <div class="slot-line"><b>310</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -502,7 +502,7 @@
         <div class="slot-line"><b>311</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -511,7 +511,7 @@
         <div class="slot-line"><b>312</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -520,7 +520,7 @@
         <div class="slot-line"><b>313</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -529,7 +529,7 @@
         <div class="slot-line"><b>314</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -538,7 +538,7 @@
         <div class="slot-line"><b>315</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -547,7 +547,7 @@
         <div class="slot-line"><b>316</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -556,7 +556,7 @@
         <div class="slot-line"><b>317</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -565,7 +565,7 @@
         <div class="slot-line"><b>318</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -579,7 +579,7 @@
         <div class="slot-line"><b>301</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -588,7 +588,7 @@
         <div class="slot-line"><b>302</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -597,7 +597,7 @@
         <div class="slot-line"><b>303</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -606,7 +606,7 @@
         <div class="slot-line"><b>304</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -615,7 +615,7 @@
         <div class="slot-line"><b>305</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -624,7 +624,7 @@
         <div class="slot-line"><b>306</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -633,7 +633,7 @@
         <div class="slot-line"><b>307</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -642,7 +642,7 @@
         <div class="slot-line"><b>308</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -651,7 +651,7 @@
         <div class="slot-line"><b>309</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -660,7 +660,7 @@
         <div class="slot-line"><b>310</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -669,7 +669,7 @@
         <div class="slot-line"><b>311</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -678,7 +678,7 @@
         <div class="slot-line"><b>312</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -687,7 +687,7 @@
         <div class="slot-line"><b>313</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -696,7 +696,7 @@
         <div class="slot-line"><b>314</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -705,7 +705,7 @@
         <div class="slot-line"><b>315</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -714,7 +714,7 @@
         <div class="slot-line"><b>316</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -723,7 +723,7 @@
         <div class="slot-line"><b>317</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -732,7 +732,7 @@
         <div class="slot-line"><b>318</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -746,7 +746,7 @@
         <div class="slot-line"><b>301</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -755,7 +755,7 @@
         <div class="slot-line"><b>302</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -764,7 +764,7 @@
         <div class="slot-line"><b>303</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -773,7 +773,7 @@
         <div class="slot-line"><b>304</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -782,7 +782,7 @@
         <div class="slot-line"><b>305</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -791,7 +791,7 @@
         <div class="slot-line"><b>306</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -800,7 +800,7 @@
         <div class="slot-line"><b>307</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -809,7 +809,7 @@
         <div class="slot-line"><b>308</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -818,7 +818,7 @@
         <div class="slot-line"><b>309</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -827,7 +827,7 @@
         <div class="slot-line"><b>310</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -836,7 +836,7 @@
         <div class="slot-line"><b>311</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -845,7 +845,7 @@
         <div class="slot-line"><b>312</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -854,7 +854,7 @@
         <div class="slot-line"><b>313</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -863,7 +863,7 @@
         <div class="slot-line"><b>314</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -872,7 +872,7 @@
         <div class="slot-line"><b>315</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -881,7 +881,7 @@
         <div class="slot-line"><b>316</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -890,7 +890,7 @@
         <div class="slot-line"><b>317</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
@@ -899,7 +899,7 @@
         <div class="slot-line"><b>318</b></div>
         <div class="slot-pilots"><div class="slot-pilot"></div><div class="slot-pilot"></div></div>
         <div class="slot-specifics">
-          <div class="slot-mission"></div>
+          <div class="slot-mission">____</div>
           <div class="slot-ship"></div>
           <div class="slot-times"></div>
         </div>
