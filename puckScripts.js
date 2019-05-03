@@ -169,7 +169,7 @@ function onceAWeek(){
     if(nameBank.includes(sources[i].getElementsByClassName('puck-name').innerHTML)){
       sources[i].getElementsByClassName('puck-warning').innerHTML = " ";
       //if it doesnt
-    } else {sources[i].getElementsByClassName('puck-warning').innerHTML = "!"}
+    } else {sources[i].getElementsByClassName('puck-warning').innerHTML = "!";}
   }
 }
 
