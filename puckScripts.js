@@ -3,9 +3,9 @@ var slot;
 var newItem;
 //Interact.js documentation at http://interactjs.io/docs/
 
-window.onload = function({
+window.onload = function(){
   onceAWeek();
-});
+};
 //-------------------------------SOURCE DRAG X------------------------------------//
 //source drag fuctionality in the x-direction (taking a puck)
 interact('.source').draggable({
