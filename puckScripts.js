@@ -153,12 +153,12 @@ interact('.slot-specifics').on('tap', function (event) {
 //initial check if all pilots have been scheduled this week
 function onceAWeek(){
   //name bank initial population
-  var pilotSlots = document.getElementsByClassName('slot-pilot').innerHTML;
+  var pilotSlots = document.getElementsByClassName('slot-pilot');
   var nameBank = [];
   var i;
   for(i = 0; i < pilotSlots.length; i++){
-    if(!nameBank.includes(pilotSlots[i])){
-      nameBank.push(pilotSlots[i]);
+    if(!nameBank.includes(pilotSlots[i].innerHTML)){
+      nameBank.push(pilotSlots[i].innerHTML);
     }
   }
   //check source puck name against word bank, add/remove warning
