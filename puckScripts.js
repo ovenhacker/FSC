@@ -165,11 +165,11 @@ function onceAWeek(){
   var sources = document.getElementsByClassName('source');
   var i;
   for(i = 0; i < sources.length; i++){
-    //if name bank doesnt have the name
-    if(!nameBank.includes(sources[i].getElementsByClassName('puck-name').innerHTML)){
-      sources[i].getElementsByClassName('puck-warning').innerHTML = "!";
-      //if it does
-    } else {sources[i].getElementsByClassName('puck-warning').innerHTML = " "}
+    //if name bank has the name, remove warning
+    if(nameBank.includes(sources[i].getElementsByClassName('puck-name').innerHTML)){
+      sources[i].getElementsByClassName('puck-warning').innerHTML = " ";
+      //if it doesnt
+    } else {sources[i].getElementsByClassName('puck-warning').innerHTML = "!"}
   }
 }
 
