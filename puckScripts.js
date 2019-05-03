@@ -108,6 +108,7 @@ interact('.slot-pilot').dropzone({
       slot.className = 'slot-pilot';
       item.remove();
       addToNameBank(pilotName);
+      checkForNames();
     }
   },
   ondropdeactivate: function (event) {
@@ -141,6 +142,7 @@ interact('.slot-pilot').on('tap', function (event) {
     newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
     newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
     removeFromNameBank(pilotName);
+    checkForNames();
   }
 });
 
