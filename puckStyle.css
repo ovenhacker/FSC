@@ -19,9 +19,9 @@ html, body {
   height: calc(100% - 50px);
   padding: 0px;
   overflow-y: scroll;
-  padding-left: 150px;;
-  min-padding-left:
+  padding-left: 130px;
 }
+
 #schedule::-webkit-scrollbar {
   width: 0 !important;
 }
@@ -30,7 +30,7 @@ html, body {
   float: left;
   background-color: #c9c9c9;
   height: calc(100% - 50px);
-  width: 150px;
+  width: 130px;
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -81,7 +81,7 @@ html, body {
   border-radius: 5px;
   text-align: center;
   width: 100px;
-  height: 40px;
+  height: 35px;
   border: 1px solid black;
   z-index: 90 !important;
   cursor: pointer;
@@ -124,11 +124,10 @@ html, body {
   -moz-box-shadow: none;
   box-shadow: none;
   position: relative;
-  min-height: 0px;
   height: 60%;
   width: 100%;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 8px;
   text-align: left;
   font-weight: bold;
