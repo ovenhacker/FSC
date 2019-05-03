@@ -14,7 +14,7 @@ CREATE TABLE syllabus (
     acReq VARCHAR(1),
     mxConfig VARCHAR(24),
     formationXships INT,
-    nightrq VARCHAR(1);
+    nightrq VARCHAR(1)
 );
 
 CREATE TABLE pilotFlt (
