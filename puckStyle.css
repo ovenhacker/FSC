@@ -19,7 +19,7 @@ html, body {
   height: calc(100% - 50px);
   padding: 0px;
   overflow-y: scroll;
-  padding-left: 130px;
+  padding-left: 140px;
 }
 
 #schedule::-webkit-scrollbar {
@@ -30,7 +30,7 @@ html, body {
   float: left;
   background-color: #c9c9c9;
   height: calc(100% - 50px);
-  width: 130px;
+  width: 140px;
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
