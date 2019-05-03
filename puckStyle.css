@@ -37,6 +37,7 @@ html, body {
   overflow-x: hidden;
   z-index: 5 !important;
 }
+
 #palette::-webkit-scrollbar {
   width: 0 !important;
 }
@@ -120,6 +121,7 @@ html, body {
   height: 100%;
 }
 
+/*"puck" applies to both source and item*/
 .puck-name{
   /* shadows off*/
   -webkit-box-shadow: none;
@@ -143,12 +145,28 @@ html, body {
   -moz-box-shadow: none;
   box-shadow: none;
   position: relative;
-  min-height: 0;
   height: 30%;
   font-size: 10px;
   padding-left: 8px;
+  width: 80%;
   text-align: left;
   font-style: oblique;
+  border: none;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.puck-warning {
+  /* shadows off */
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  height: 30%;
+  font-size: 10px;
+  width: 20%;
+  text-align: right;
+  font-weight: bold;
   border: none;
   pointer-events: none;
   overflow: visible;
