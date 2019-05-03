@@ -172,7 +172,7 @@ function checkForNames(){
   var i;
   for(i = 0; i < sources.length; i++){
     //if name bank has the name, remove warning
-    if(nameBank.includes(sources[i].getElementsByClassName('puck-name').innerHTML)){
+    if(nameBank.includes(sources[i].getElementsByClassName('puck-name')[0].innerHTML)){
       sources[i].getElementsByClassName('puck-warning')[0].innerHTML = " ";
       //if it doesnt, add warning
     } else {sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";}
@@ -182,7 +182,7 @@ function checkForNames(){
 function removeFromNameBank(name){
   var index = nameBank.indexOf(name);
   if (index > -1) {
-    array.splice(index, 1);
+    nameBank.splice(index, 1);
   }
 }
 
