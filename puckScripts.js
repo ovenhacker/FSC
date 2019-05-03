@@ -82,7 +82,7 @@ interact('.item').on('tap', function (event) {
 //----------------------------------ITEM DROP-----------------------------------//
 interact('.slot-pilot').dropzone({
   accept: '.item',
-  overlap: 0.55,
+  overlap: 0.50,
   ondropactivate: function (event) {
   },
   ondragenter: function (event) {
