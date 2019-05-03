@@ -5,6 +5,7 @@ var newItem;
 
 window.onload = function(){
   onceAWeek();
+  document.getElementsByClassName('source')[0].getElementsByClassName('puck-warning').innerHTML = "!";
 };
 //-------------------------------SOURCE DRAG X------------------------------------//
 //source drag fuctionality in the x-direction (taking a puck)
@@ -168,7 +169,7 @@ function onceAWeek(){
     //if name bank has the name, remove warning
     if(nameBank.includes(sources[i].getElementsByClassName('puck-name').innerHTML)){
       sources[i].getElementsByClassName('puck-warning').innerHTML = " ";
-      //if it doesnt
+      //if it doesnt, add warning
     } else {sources[i].getElementsByClassName('puck-warning').innerHTML = "!";}
   }
 }
