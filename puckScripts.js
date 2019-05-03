@@ -1,10 +1,12 @@
 var item;
 var slot;
 var newItem;
+var nameBank = [];
 //Interact.js documentation at http://interactjs.io/docs/
 
 window.onload = function(){
-  onceAWeek();
+  populateNameBank();
+  checkForNames();
 };
 //-------------------------------SOURCE DRAG X------------------------------------//
 //source drag fuctionality in the x-direction (taking a puck)
@@ -150,17 +152,17 @@ interact('.slot-specifics').on('tap', function (event) {
 });
 
 //-----------------------------BUSINESS RULES FUNCTIONS----------------------------//
-//initial check if all pilots have been scheduled this week
-function onceAWeek(){
+function populateNameBank(){
   //name bank initial population
   var pilotSlots = document.getElementsByClassName('slot-pilot');
-  var nameBank = [];
   var i;
   for(i = 0; i < pilotSlots.length; i++){
     if(!nameBank.includes(pilotSlots[i].innerHTML)){
       nameBank.push(pilotSlots[i].innerHTML);
     }
   }
+}
+function checkForNames(){
   //check source puck name against word bank, add/remove warning
   var sources = document.getElementsByClassName('source');
   var i;
@@ -171,6 +173,17 @@ function onceAWeek(){
       //if it doesnt, add warning
     } else {sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";}
   }
+}
+
+function removeFromNameBank(name){
+  var index = nameBank.indexOf(name);
+  if (index > -1) {
+    array.splice(index, 1);
+  }
+}
+
+function addToNameBank(name){
+  if
 }
 
 //--------------------------------HELPER FUNCTIONS--------------------------------//
