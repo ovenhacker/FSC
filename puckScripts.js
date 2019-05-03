@@ -3,7 +3,7 @@ var slot;
 var newItem;
 //Interact.js documentation at http://interactjs.io/docs/
 
-document.onload({
+window.onload = function({
   onceAWeek();
 });
 //-------------------------------SOURCE DRAG X------------------------------------//
