@@ -161,9 +161,7 @@ function populateNameBank(){
   var pilotSlots = document.getElementsByClassName('slot-pilot');
   var i;
   for(i = 0; i < pilotSlots.length; i++){
-    if(!nameBank.includes(pilotSlots[i].innerHTML)){
-      nameBank.push(pilotSlots[i].innerHTML);
-    }
+    nameBank.push(pilotSlots[i].innerHTML);
   }
 }
 function checkForNames(){
@@ -187,9 +185,7 @@ function removeFromNameBank(name){
 }
 
 function addToNameBank(name){
-  if (!nameBank.includes(name)){
-    nameBank.push(name);
-  }
+  nameBank.push(name);
 }
 
 //--------------------------------HELPER FUNCTIONS--------------------------------//
