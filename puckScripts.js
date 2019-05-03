@@ -107,6 +107,7 @@ interact('.slot-pilot').dropzone({
       $(slot).css("background-color", pilotColor);
       slot.className = 'slot-pilot';
       item.remove();
+      addToNameBank(pilotName);
     }
   },
   ondropdeactivate: function (event) {
@@ -139,6 +140,7 @@ interact('.slot-pilot').on('tap', function (event) {
     // resize object to match source's size
     newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
     newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
+    removeFromNameBank(pilotName);
   }
 });
 
@@ -183,7 +185,9 @@ function removeFromNameBank(name){
 }
 
 function addToNameBank(name){
-  if
+  if (!nameBank.includes(name)){
+    nameBank.push(name);
+  }
 }
 
 //--------------------------------HELPER FUNCTIONS--------------------------------//
