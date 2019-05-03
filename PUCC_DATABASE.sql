@@ -22,6 +22,11 @@ CREATE TABLE pilotFlt (
     fltIDCompleted VarChar(8)
 );
 
+CREATE TABLE pilotFltDate (
+    pilotID NUMERIC(4),
+    dateFlew DATE
+);
+
 CREATE TABLE pilots (
     pilotID NUMERIC(4),
     lName VARCHAR(30),
@@ -120,7 +125,17 @@ INSERT INTO pilots VALUES
     (23,'Eltz',          'Barb',    'Chair',      'cpt',  'y','r',3,2,    NULL, 'IP'),
     (24,'Bruggeman',     'Jennifer','Reaper',     'ltcol','y','f',3,2,    1,    'IP'),
     (25,'Breeze',        'Kiele',   'Spoon',      'ltgen','n','r',1,NULL, NULL, 'SS'),
-    (26,'Tilton',        'Paris',   'Python',     '2lt',  'n','f',3,NULL, NULL, 'BS');
+    (26,'Tilton',        'Paris',   'Python',     '2lt',  'n','f',3,NULL, NULL, 'BS'),
+    (27,'Yarnel',        'Jeff',    'Fabulous',   '1lt',  'n','f',2,NULL,NULL,  'IS'),
+    (28,'Brecbhul',      'Lu',      'Bird',       '1lt',  'n','r',3,NULL,NULL,'BS'),
+    (29,'O''Mally',      'Riley',   'Panther',    'capt', 'y','f',3,NULL,NULL,'IP'),
+    (30,'Keller',        'Fred',    'Dirty',      '2lt',  'n','r',3,NULL,NULL,'BS'),
+    (31,'Hack',          'Kylie',   'Grim',       '1lt',  'n','f',3,NULL,NULL,'BS'),
+    (32,'Mustaine',      'Anna',    'Runner',     'capt', 'y','r',3,NULL,NULL,'IP'),
+    (33,'Brawl',         'Smash',   'King',       '1lt',  'n','f',3,NULL,NULL,'BS'),
+    (34,'Mustang',       'Jenny',   'Hawg',       '1lt',  'n','r',3,NULL,NULL,'BS'),
+    (35,'Hawkeye',       'Risa',    'Wild',       'capt', 'y','f',3,1,NULL,'IP'),
+    (36,'Elric',         'Ted',     'Pink',        'maj', 'y','r',3,2,1,'IP');;
 
 INSERT INTO pilotFlt VALUES
     (3, 'BFM-8'),
@@ -134,9 +149,54 @@ INSERT INTO pilotFlt VALUES
     (16, 'BFM-7'),
     (17, 'BFM-8'),
     (20, 'BFM-8'),
+    (21, 'ACM-1'),
     (22, 'ACM-1'),
     (25, 'ACM-1'),
-    (26, 'SA-1');
+    (26, 'SA-1'),
+    (27, 'BFM-8'),
+    (28, 'BFM-7'),
+    (30, 'BFM-7'),
+    (31, 'BFM-8'),
+    (33, 'BFM-8'),
+    (34, 'ACM-1');
+
+
+INSERT INTO pilotFltDate VALUES
+    (1,'2019-04-26'),
+    (2,'2019-04-25'),
+    (3,'2019-04-26'),
+    (4,'2019-04-25'),
+    (6,'2019-04-26'),
+    (7,'2019-04-25'),
+    (8,'2019-04-24'),
+    (9,'2019-04-25'),
+    (10,'2019-04-26'),
+    (11,'2019-04-25'),
+    (12,'2019-04-24'),
+    (13,'2019-04-25'),
+    (14,'2019-04-26'),
+    (15,'2019-04-26'),
+    (16,'2019-04-25'),
+    (17,'2019-04-25'),
+    (18,'2019-04-26'),
+    (19,'2019-04-25'),
+    (20,'2019-04-24'),
+    (21,'2019-04-25'),
+    (22,'2019-04-26'),
+    (23,'2019-04-26'),
+    (24,'2019-04-25'),
+    (25,'2019-04-26'),
+    (27,'2019-04-25'),
+    (28,'2019-04-26'),
+    (29,'2019-04-25'),
+    (30,'2019-04-24'),
+    (31,'2019-04-25'),
+    (32,'2019-04-26'),
+    (33,'2019-04-26'),
+    (34,'2019-04-25'),
+    (35,'2019-04-26'),
+    (36,'2019-04-25');
+
 
 INSERT INTO syllabusIDs VALUES
 	(1, 'S-Course'),
@@ -156,10 +216,11 @@ CREATE PROCEDURE prioritize_pilots AS SELECT * FROM pilots
 
 -- query to get pilot puck info and order, and last completed flight
 CREATE PROCEDURE prioritize_pilots_with_colors AS
-SELECT lname, background, font, fltIDCompleted FROM pilots
+SELECT lname, background, font, dateFlew, fltIDCompleted FROM pilots
   JOIN puckColors ON pilots.puckType = puckColors.puckType
+  JOIN pilotFltDate ON pilots.pilotID = pilotFltDate.pilotID
   LEFT JOIN pilotFlt ON pilots.pilotID = pilotFlt.pilotID
-  ORDER BY syllabusOne;
+  ORDER BY syllabusOne, dateFlew;
 EXEC prioritize_pilots_with_colors;
 -- query to get info for the pop up box when placing a puckType
 -- will probably need to be used as a prepared statement so we can insert the name of the pilot
