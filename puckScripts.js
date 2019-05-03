@@ -167,9 +167,9 @@ function onceAWeek(){
   for(i = 0; i < sources.length; i++){
     //if name bank doesnt have the name
     if(!nameBank.includes(sources[i].getElementsByClassName('puck-name').innerHTML)){
-      source.getElementsByClassName('puck-warning').innerHTML = "!";
+      sources[i].getElementsByClassName('puck-warning').innerHTML = "!";
       //if it does
-    } else {source.getElementsByClassName('puck-warning').innerHTML = " "}
+    } else {sources[i].getElementsByClassName('puck-warning').innerHTML = " "}
   }
 }
 
