@@ -18,8 +18,10 @@ interact('.source').draggable({
       item = cloneSource(event);
       // start a drag interaction targeting the clone
       interaction.start({ name: 'drag' }, event.interactable, item);
+      highlightSlots(item.getElementsByClassName("puck-name")[0].innerHTML);
     },
-  onmove: dragItem
+  onmove: dragItem,
+  onend: unhighlightSlots
 });
 
 //-------------------------------PALETTE DRAG Y------------------------------------//
@@ -214,7 +216,7 @@ function highlightSlots(name){
         //
         if(pilotSlots[i].innerHTML == ''){
           pilotSlots[i].innerHTML = '-';
-          pilotSlots[i].style.backgroundColor = 'green';
+          pilotSlots[i].style.backgroundColor = 'lightgreen';
         }
       }
     }
@@ -226,9 +228,8 @@ function unhighlightSlots(){
   var pilotSlots = document.getElementsByClassName('slot-pilot');
   for(i = 0; i < pilotSlots.length; i++){
     if(pilotSlots[i].innerHTML == '-'){
-      console.log("comparison worked");
       pilotSlots[i].innerHTML = '';
-      pilotSlots[i].style.backgroundColor =='silver';
+      pilotSlots[i].style.backgroundColor = 'silver';
     }
   }
 }
