@@ -176,7 +176,9 @@ html, body {
 
 .tooltip {
   visibility: hidden;
-  width: 120px;
+  width: auto;
+  margin-left: 120px;
+  margin-bottom: -15px;
   background-color: black;
   color: #fff;
   text-align: center;
