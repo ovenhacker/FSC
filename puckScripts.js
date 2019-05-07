@@ -59,9 +59,9 @@ interact('.item').draggable({
     highlightSlots(item.getElementsByClassName("puck-name")[0].innerHTML);
   },
   // call this function on every dragmove event
-  onmove: dragItem
+  onmove: dragItem,
   // call this function on every dragend event
-  // onend:
+  onend: unhighlightSlots
   });
 
 //------------------------------ITEM TAP-----------------------------------------//
@@ -214,10 +214,20 @@ function highlightSlots(name){
       for(i = 0; i < pilotSlots.length; i++){
         //
         if(pilotSlots[i].innerHTML == ''){
-          console.log("comparison worked");
           pilotSlots[i].style.backgroundColor = 'green';
         }
       }
+    }
+  }
+}
+
+function unhighlightSlots(){
+  var i;
+  var pilotSlots = document.getElementsByClassName('slot-pilot');
+  for(i = 0; i < pilotSlots.length; i++){
+    if($(pilotSlots[i]).css("background-color")=='green'){
+      console.log("comparison worked");
+      pilotSlots[i].style.backgroundColor =='silver';
     }
   }
 }
