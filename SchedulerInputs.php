@@ -1,3 +1,7 @@
+<!-- this is primarily a testing page for centralized access to the database -->
+<!-- if the whole website were unable to interact with the other groups, the
+      scheduler could upload all of the information here -->
+
 <html lang="en">
 <head>
   <title>Scheduler Inputs</title>
