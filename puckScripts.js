@@ -179,7 +179,7 @@ function checkForNames(){
       var tooltip = document.createElement('div');
       tooltip.className = 'tooltip';
       tooltip.innerHTML = 'Pilot has not been scheduled this week.';
-      sources[i].getElementsByClassName('puck-warning')[0].appendChild(tooltip);
+      sources[i].appendChild(tooltip);
     }
   }
 }

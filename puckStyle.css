@@ -186,7 +186,7 @@ html, body {
   opacity: 1;
 
   /* Position the tooltip */
-  position: absolute;
+  position: fixed;
   z-index: 11 !important;
 }
 
