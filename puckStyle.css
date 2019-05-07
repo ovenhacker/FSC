@@ -177,12 +177,12 @@ html, body {
 .tooltip {
   visibility: hidden;
   width: 120px;
-  height:200px;
   background-color: black;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
+  opacity: 1;
 
   /* Position the tooltip */
   position: absolute;

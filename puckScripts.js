@@ -172,6 +172,7 @@ function checkForNames(){
     //if name bank has the name, remove warning
     if(nameBank.includes(sources[i].getElementsByClassName('puck-name')[0].innerHTML)){
       sources[i].getElementsByClassName('puck-warning')[0].innerHTML = " ";
+        $(sources[i]).find('.tooltip').remove();
       //if it doesnt, add warning
     } else {
       sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";
