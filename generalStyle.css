@@ -1,3 +1,5 @@
+/* CSS things besides the schedule page, should be organized */
+
 /* general stuff */
 html,body {
     max-width: 100%;
@@ -104,7 +106,7 @@ input:checked + label {
 
 .table {
   border: 1px;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 /* end tables */
