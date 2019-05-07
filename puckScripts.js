@@ -211,8 +211,8 @@ function highlightSlots(name){
     if(!alreadyIn){
       for(i = 0; i < pilotSlots.length; i++){
         //color will need to change if idle slot color is changed
-        if(pilotSlot.style.backgroundColor == 'silver'){
-          pilotSlot.style.backgroundColor = 'green';
+        if(pilotSlots[i].style.backgroundColor == 'silver'){
+          pilotSlots[i].style.backgroundColor = 'green';
         }
       }
     }
