@@ -175,7 +175,7 @@ function checkForNames(){
       //if it doesnt, add warning
     } else {
       sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";
-      var tooltip = document.createElement('span');
+      var tooltip = document.createElement('div');
       tooltip.className = 'tooltip';
       tooltip.innerHTML = 'Pilot has not been scheduled this week.';
       sources[i].appendChild(tooltip);
