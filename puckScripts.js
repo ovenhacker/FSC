@@ -56,6 +56,7 @@ interact('.item').draggable({
   // call this function on every dragstart event
   onstart: function (event) {
     item = event.target;
+    highlightSlots(item.getElementsByClassName("puck-name")[0].innerHTML);
   },
   // call this function on every dragmove event
   onmove: dragItem
@@ -195,6 +196,44 @@ function addToNameBank(name){
   nameBank.push(name);
 }
 
+function highlightSlots(name){
+  //get all namespaces in a column, ensuring name isnt already there
+  var days = document.getElementsByClassName('column');
+  var i;
+  for(j = 0; j < days.length; j++){
+    var pilotSlots = document.getElementsByClassName('slot-pilot');
+    var alreadyIn = false;
+    for(i = 0; i < pilotSlots.length; i++){
+      if(pilotSlots[i].innerHTML == name){
+        alreadyIn = true;
+      }
+    }
+    if(!alreadyIn){
+      for(i = 0; i < pilotSlots.length; i++){
+        //color will need to change if idle slot color is changed
+        if(pilotSlot.style.backgroundColor == 'silver'){
+          pilotSlot.style.backgroundColor = 'green';
+        }
+      }
+    }
+  }
+}
+  //check source puck name against word bank, add/remove warning
+  var sources = document.getElementsByClassName('source');
+  var i;
+  for(i = 0; i < sources.length; i++){
+    //if name bank has the name, remove warning
+    if(nameBank.includes(sources[i].getElementsByClassName('puck-name')[0].innerHTML)){
+      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = " ";
+        $(sources[i]).find('.tooltip').remove();
+      //if it doesnt, add warning
+    } else {
+      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";
+      var tooltip = document.createElement('div');
+      tooltip.className = 'tooltip';
+      tooltip.innerHTML = 'Pilot has not been scheduled this week.';
+      sources[i].appendChild(tooltip);
+}
 //--------------------------------HELPER FUNCTIONS--------------------------------//
 //keeps track of items absolute position
 function dragItem (event) {
