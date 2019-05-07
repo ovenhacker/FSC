@@ -218,22 +218,6 @@ function highlightSlots(name){
     }
   }
 }
-  //check source puck name against word bank, add/remove warning
-  var sources = document.getElementsByClassName('source');
-  var i;
-  for(i = 0; i < sources.length; i++){
-    //if name bank has the name, remove warning
-    if(nameBank.includes(sources[i].getElementsByClassName('puck-name')[0].innerHTML)){
-      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = " ";
-        $(sources[i]).find('.tooltip').remove();
-      //if it doesnt, add warning
-    } else {
-      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";
-      var tooltip = document.createElement('div');
-      tooltip.className = 'tooltip';
-      tooltip.innerHTML = 'Pilot has not been scheduled this week.';
-      sources[i].appendChild(tooltip);
-}
 //--------------------------------HELPER FUNCTIONS--------------------------------//
 //keeps track of items absolute position
 function dragItem (event) {
