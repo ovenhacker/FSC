@@ -210,10 +210,10 @@ function highlightSlots(name){
       }
     }
     if(!alreadyIn){
-      console.log("in already in");
       for(i = 0; i < pilotSlots.length; i++){
         //
         if(pilotSlots[i].innerHTML == ''){
+          pilotSlots[i].innerHTML = '-';
           pilotSlots[i].style.backgroundColor = 'green';
         }
       }
@@ -225,8 +225,9 @@ function unhighlightSlots(){
   var i;
   var pilotSlots = document.getElementsByClassName('slot-pilot');
   for(i = 0; i < pilotSlots.length; i++){
-    if($(pilotSlots[i]).css("background-color")=='green'){
+    if(pilotSlots[i].innerHTML == '-'){
       console.log("comparison worked");
+      pilotSlots[i].innerHTML = '';
       pilotSlots[i].style.backgroundColor =='silver';
     }
   }
