@@ -200,8 +200,9 @@ function highlightSlots(name){
   //get all namespaces in a column, ensuring name isnt already there
   var days = document.getElementsByClassName('column');
   var i;
+  console.log(name);
   for(j = 0; j < days.length; j++){
-    var pilotSlots = document.getElementsByClassName('slot-pilot');
+    var pilotSlots = days[j].getElementsByClassName('slot-pilot');
     var alreadyIn = false;
     for(i = 0; i < pilotSlots.length; i++){
       if(pilotSlots[i].innerHTML == name){
