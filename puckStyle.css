@@ -174,10 +174,6 @@ html, body {
   overflow: visible;
 }
 
-.puck-warning:hover .tooltip {
-  visibility: visible;
-}
-
 .tooltip {
   visibility: hidden;
   width: 120px;
@@ -190,6 +186,10 @@ html, body {
   /* Position the tooltip */
   position: absolute;
   z-index: 11 !important;
+}
+
+.source:hover .tooltip {
+  visibility: visible;
 }
 
 /***************************SLOT CSS***************************************/
