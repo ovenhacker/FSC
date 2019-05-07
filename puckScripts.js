@@ -18,8 +18,10 @@ interact('.source').draggable({
       item = cloneSource(event);
       // start a drag interaction targeting the clone
       interaction.start({ name: 'drag' }, event.interactable, item);
+      highlightSlots(item.getElementsByClassName("puck-name")[0].innerHTML);
     },
-  onmove: dragItem
+  onmove: dragItem,
+  onend: unhighlightSlots
 });
 
 //-------------------------------PALETTE DRAG Y------------------------------------//
@@ -56,11 +58,12 @@ interact('.item').draggable({
   // call this function on every dragstart event
   onstart: function (event) {
     item = event.target;
+    highlightSlots(item.getElementsByClassName("puck-name")[0].innerHTML);
   },
   // call this function on every dragmove event
-  onmove: dragItem
+  onmove: dragItem,
   // call this function on every dragend event
-  // onend:
+  onend: unhighlightSlots
   });
 
 //------------------------------ITEM TAP-----------------------------------------//
@@ -195,6 +198,41 @@ function addToNameBank(name){
   nameBank.push(name);
 }
 
+function highlightSlots(name){
+  //get all namespaces in a column, ensuring name isnt already there
+  var days = document.getElementsByClassName('column');
+  var i;
+  console.log(name);
+  for(j = 0; j < days.length; j++){
+    var pilotSlots = days[j].getElementsByClassName('slot-pilot');
+    var alreadyIn = false;
+    for(i = 0; i < pilotSlots.length; i++){
+      if(pilotSlots[i].innerHTML == name){
+        alreadyIn = true;
+      }
+    }
+    if(!alreadyIn){
+      for(i = 0; i < pilotSlots.length; i++){
+        //
+        if(pilotSlots[i].innerHTML == ''){
+          pilotSlots[i].innerHTML = '-';
+          pilotSlots[i].style.backgroundColor = 'lightgreen';
+        }
+      }
+    }
+  }
+}
+
+function unhighlightSlots(){
+  var i;
+  var pilotSlots = document.getElementsByClassName('slot-pilot');
+  for(i = 0; i < pilotSlots.length; i++){
+    if(pilotSlots[i].innerHTML == '-'){
+      pilotSlots[i].innerHTML = '';
+      pilotSlots[i].style.backgroundColor = 'silver';
+    }
+  }
+}
 //--------------------------------HELPER FUNCTIONS--------------------------------//
 //keeps track of items absolute position
 function dragItem (event) {
