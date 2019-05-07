@@ -210,9 +210,11 @@ function highlightSlots(name){
       }
     }
     if(!alreadyIn){
+      console.log("in already in");
       for(i = 0; i < pilotSlots.length; i++){
-        //color will need to change if idle slot color is changed
-        if(pilotSlots[i].style.backgroundColor == 'silver'){
+        //
+        if(pilotSlots[i].innerHTML == ''){
+          console.log("comparison worked");
           pilotSlots[i].style.backgroundColor = 'green';
         }
       }
