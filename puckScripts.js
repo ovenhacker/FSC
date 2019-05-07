@@ -174,8 +174,8 @@ function checkForNames(){
       sources[i].getElementsByClassName('puck-warning')[0].innerHTML = " ";
       //if it doesnt, add warning
     } else {
-      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";
-      
+      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "! <span class= \"tooltip\" > Pilot has not been scheduled this week. </span>";
+
     }
   }
 }
