@@ -60,7 +60,7 @@
           // ;color:".$row["font"]."
         echo("<div class= \"puck-name\" >".strtoupper($row["lname"])."</div>" );
         echo("<div class= \"puck-syllabus\" >".$row["fltIDCompleted"]."</div>" );
-        echo("<div class= \"puck-warning\" > </div>");
+        echo("<div class= \"puck-warning\" > <span class= \"tooltip\" > Pilot has not been scheduled this week. </span> </div>");
         echo("</div>");
 
           //echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["lName"]."</td><td>".$row["fName"]."</td><td>".$row["rank"]."</td><td>".$row["callSign"]."</td></tr>");

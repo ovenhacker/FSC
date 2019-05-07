@@ -173,7 +173,10 @@ function checkForNames(){
     if(nameBank.includes(sources[i].getElementsByClassName('puck-name')[0].innerHTML)){
       sources[i].getElementsByClassName('puck-warning')[0].innerHTML = " ";
       //if it doesnt, add warning
-    } else {sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";}
+    } else {
+      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";
+      
+    }
   }
 }
 
