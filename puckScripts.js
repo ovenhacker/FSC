@@ -1,8 +1,13 @@
 var item;
 var slot;
 var newItem;
+var nameBank = [];
 //Interact.js documentation at http://interactjs.io/docs/
 
+window.onload = function(){
+  populateNameBank();
+  checkForNames();
+};
 //-------------------------------SOURCE DRAG X------------------------------------//
 //source drag fuctionality in the x-direction (taking a puck)
 interact('.source').draggable({
@@ -82,7 +87,7 @@ interact('.item').on('tap', function (event) {
 //----------------------------------ITEM DROP-----------------------------------//
 interact('.slot-pilot').dropzone({
   accept: '.item',
-  overlap: 0.55,
+  overlap: 0.50,
   ondropactivate: function (event) {
   },
   ondragenter: function (event) {
@@ -102,6 +107,8 @@ interact('.slot-pilot').dropzone({
       $(slot).css("background-color", pilotColor);
       slot.className = 'slot-pilot';
       item.remove();
+      addToNameBank(pilotName);
+      checkForNames();
     }
   },
   ondropdeactivate: function (event) {
@@ -118,7 +125,7 @@ interact('.slot-pilot').on('tap', function (event) {
     $(".popbox").hide();
     //empty out the slot
     pilot.innerHTML = "";
-    $(pilot).css("background-color", "white");
+    $(pilot).css("background-color", "silver");
     //create new puck item
     var newItem = document.createElement('div');
     newItem.className = 'item';
@@ -134,6 +141,8 @@ interact('.slot-pilot').on('tap', function (event) {
     // resize object to match source's size
     newItem.style.width = document.getElementsByClassName('source')[0].offsetWidth;
     newItem.style.height = document.getElementsByClassName('source')[0].offsetHeight;
+    removeFromNameBank(pilotName);
+    checkForNames();
   }
 });
 
@@ -145,6 +154,45 @@ interact('.slot-specifics').on('tap', function (event) {
   //make it appear where item was dropped
   $(".popbox").css({top: slot.offsetTop, left: slot.offsetLeft});
 });
+
+//-----------------------------BUSINESS RULES FUNCTIONS----------------------------//
+function populateNameBank(){
+  //name bank initial population
+  var pilotSlots = document.getElementsByClassName('slot-pilot');
+  var i;
+  for(i = 0; i < pilotSlots.length; i++){
+    nameBank.push(pilotSlots[i].innerHTML);
+  }
+}
+function checkForNames(){
+  //check source puck name against word bank, add/remove warning
+  var sources = document.getElementsByClassName('source');
+  var i;
+  for(i = 0; i < sources.length; i++){
+    //if name bank has the name, remove warning
+    if(nameBank.includes(sources[i].getElementsByClassName('puck-name')[0].innerHTML)){
+      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = " ";
+      //if it doesnt, add warning
+    } else {
+      sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";
+      var tooltip = document.createElement('span');
+      tooltip.className = 'tooltip';
+      tooltip.innerHTML = 'Pilot has not been scheduled this week.';
+      sources[i].getElementsByClassName('puck-warning')[0].appendChild(tooltip);
+    }
+  }
+}
+
+function removeFromNameBank(name){
+  var index = nameBank.indexOf(name);
+  if (index > -1) {
+    nameBank.splice(index, 1);
+  }
+}
+
+function addToNameBank(name){
+  nameBank.push(name);
+}
 
 //--------------------------------HELPER FUNCTIONS--------------------------------//
 //keeps track of items absolute position

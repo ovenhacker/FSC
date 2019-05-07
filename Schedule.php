@@ -53,13 +53,14 @@
       $getResults= sqlsrv_query($conn, $sql);
       if ($getResults == FALSE)
         echo (sqlsrv_errors());
-
+      //creates source pucks in the palette div
       echo("<div id=\"palette\">");
       while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         echo("<div class= \"source\" style=\"background-color:".$row["background"]."\">" );
           // ;color:".$row["font"]."
         echo("<div class= \"puck-name\" >".strtoupper($row["lname"])."</div>" );
         echo("<div class= \"puck-syllabus\" >".$row["fltIDCompleted"]."</div>" );
+        echo("<div class= \"puck-warning\"> </div>");
         echo("</div>");
 
           //echo ("<tr><td>".$row["pilotID"]."</td><td>".$row["lName"]."</td><td>".$row["fName"]."</td><td>".$row["rank"]."</td><td>".$row["callSign"]."</td></tr>");

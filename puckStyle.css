@@ -10,7 +10,7 @@ html, body {
 
 #navigation{
   height: 50px;
-  z-index: 99 !important;
+  z-index: 10 !important;
 }
 
 #schedule{
@@ -20,6 +20,7 @@ html, body {
   padding: 0px;
   overflow-y: scroll;
   padding-left: 140px;
+  z-index: 1 !important;
 }
 
 #schedule::-webkit-scrollbar {
@@ -34,7 +35,9 @@ html, body {
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
+  z-index: 5 !important;
 }
+
 #palette::-webkit-scrollbar {
   width: 0 !important;
 }
@@ -83,7 +86,7 @@ html, body {
   width: 100px;
   height: 35px;
   border: 1px solid black;
-  z-index: 90 !important;
+  z-index: 7 !important;
   cursor: pointer;
   position: absolute;
   user-select: none;
@@ -118,6 +121,7 @@ html, body {
   height: 100%;
 }
 
+/*"puck" applies to both source and item*/
 .puck-name{
   /* shadows off*/
   -webkit-box-shadow: none;
@@ -141,10 +145,11 @@ html, body {
   -moz-box-shadow: none;
   box-shadow: none;
   position: relative;
-  min-height: 0;
   height: 30%;
   font-size: 10px;
+  float: left;
   padding-left: 8px;
+  width: 80%;
   text-align: left;
   font-style: oblique;
   border: none;
@@ -152,12 +157,46 @@ html, body {
   overflow: visible;
 }
 
+.puck-warning {
+  /* shadows off */
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  height: 30%;
+  float: left;
+  font-size: 10px;
+  width: 20%;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.puck-warning:hover .tooltip {
+  visibility: visible;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 11 !important;
+}
+
 /***************************SLOT CSS***************************************/
 .slot {
   background-color: white;
   height: 50px;
   border: 1px solid black;
-  z-index: 70;
   font-size: 10;
 }
 
@@ -186,6 +225,7 @@ html, body {
   float: left;
   overflow: hidden;
   border: 1px solid black;
+  background-color: silver;
 }
 
 .slot-specifics{
