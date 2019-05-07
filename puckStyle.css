@@ -136,7 +136,7 @@ html, body {
   text-align: left;
   font-weight: bold;
   border: none;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .puck-syllabus {
@@ -225,6 +225,7 @@ html, body {
   float: left;
   overflow: hidden;
   border: 1px solid black;
+  background-color: silver;
 }
 
 .slot-specifics{

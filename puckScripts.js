@@ -125,7 +125,7 @@ interact('.slot-pilot').on('tap', function (event) {
     $(".popbox").hide();
     //empty out the slot
     pilot.innerHTML = "";
-    $(pilot).css("background-color", "white");
+    $(pilot).css("background-color", "silver");
     //create new puck item
     var newItem = document.createElement('div');
     newItem.className = 'item';
@@ -177,6 +177,7 @@ function checkForNames(){
       sources[i].getElementsByClassName('puck-warning')[0].innerHTML = "!";
       var tooltip = document.createElement('span');
       tooltip.className = 'tooltip';
+      tooltip.innerHTML = 'Pilot has not been scheduled this week.';
       sources[i].getElementsByClassName('puck-warning')[0].appendChild(tooltip);
     }
   }
